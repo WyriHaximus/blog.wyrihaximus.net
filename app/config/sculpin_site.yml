@@ -29,4 +29,8 @@ disqus_show_comment_count: true
 # Facebook Like
 facebook_like: true
 
+# emoji.rodeo
+emoji_rodeo_client_id: e634b6248f19d60112a6d55088c2558a2a10f57a60a5c03cc59536d2bed77994
+emoji_rodeo_theme: slack
+
 #url: http://192.168.1.15:8000
