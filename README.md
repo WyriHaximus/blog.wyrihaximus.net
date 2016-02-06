@@ -1,2 +1,2 @@
 # blog.wyrihaximus.net
-URL: http://blog.wyrihaximus.net/
+URL: https://blog.wyrihaximus.net/
