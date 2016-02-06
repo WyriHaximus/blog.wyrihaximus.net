@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{{ page.title }}{% endblock %} &mdash; {{ site.title }}</title>
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#1abc9c">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="google-site-verification" content="wWTnH_l1Gfq3CiRkUtbFcuVcXZO9MB1ar0740K3F55Q" />
+        <link href="/css/wyrihaximus.net.css" rel="stylesheet">
+
+        <link rel="apple-touch-startup-image" href="/images/jackson/2048x2048.png">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" sizes="76x76" href="/images/jackson/76x76.png">
+        <link rel="shortcut icon" sizes="120x120" href="/images/jackson/120x120.png">
+        <link rel="shortcut icon" sizes="128x128" href="/images/jackson/128x128.png">
+        <link rel="shortcut icon" sizes="152x152" href="/images/jackson/152x152.png">
+        <link rel="shortcut icon" sizes="196x196" href="/images/jackson/196x196.png">
+        <link rel="shortcut icon" sizes="512x512" href="/images/jackson/512x512.png">
+        <link rel="shortcut icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+        <link rel="shortcut icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/images/jackson/76x76.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/images/jackson/120x120.png">
+        <link rel="apple-touch-icon" sizes="128x128" href="/images/jackson/128x128.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/images/jackson/152x152.png">
+        <link rel="apple-touch-icon" sizes="196x196" href="/images/jackson/196x196.png">
+        <link rel="apple-touch-icon" sizes="512x512" href="/images/jackson/512x512.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+        <link rel="apple-touch-icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+
+        <link rel="stylesheet" href="{{ site.url }}/components/highlightjs/styles/github.css" />
+        {#<link rel="stylesheet" href="{{ site.url }}/stylesheets/pygments.css" />#}
+        <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/atom.xml" title="{{ site.title }} activity feed" />
+        {% block metaTags %}
+            <meta name="robots" content="noindex, follow">
+        {% endblock %}
+        <style>
+            /** quick fix because bootstrap <pre> has a background-color. */
+            pre code { background-color: inherit; }
+        </style>
+    </head>
+    <body class="blog">
+        <header>
+            <nav>
+                <div class="navbar navbar-inverse navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="/">Cees-Jan</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="http://wyrihaximus.net/">Home</a>
+                                </li>
+                                <li>
+                                    <a href="http://wyrihaximus.net/projects.html">Projects</a>
+                                </li>
+                                <li>
+                                    <a href="/">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="http://wyrihaximus.net/contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+
+        <footer>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h4>Powered by</h4>
+                            <p>
+                                <span class="credit">
+                                    <a href="https://sculpin.io/">Sculpin</a><br />
+                                    <a href="https://aws.amazon.com/">AWS S3 + CloudFront</a><br />
+                                    <a href="https://disqus.com/">Disqus</a><br />
+                                    {#<a href="https://github.com/wyrihaximus/ratchet">wyrihaximus/rathet</a><br />#}
+                                    {#<a href="https://github.com/wyrihaximus/html-compress">wyrihaximus/html-compress</a><br />#}
+                                </span>
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>My Links</h4>
+                            <p>
+                                <i class="fa fa-google-plus fa-fw"></i> <a href="https://plus.google.com/116291745551237181952?rel=author">Google+</a><br/>
+                                <i class="fa fa-twitter fa-fw"></i> <a href="http://twitter.com/WyriHaximus">Twitter</a><br/>
+                                <i class="fa fa-github fa-fw"></i> <a href="https://github.com/WyriHaximus">Github</a><br/>
+                                <i class="fa fa-rss fa-fw"></i> <a href="/atom.xml">Feed</a><br/>
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>Copyright</h4>
+                            <p>Copyright &copy; {{ "now"|date("Y") }} - Cees-Jan Kiewiet</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ site.url }}/components/jquery/jquery.min.js"><\/script>')</script>
+        <script src="{{ site.url }}/components/bootstrap/js/bootstrap.min.js"></script>
+        {% block scripts %}
+        {% endblock %}
+
+        {% if site.google_analytics_tracking_id %}
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', '{{ site.google_analytics_tracking_id }}']);
+                _gaq.push(['_setSiteSpeedSampleRate', 100]);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+        {% endif %}
+
+        {% if site.piwik_host_name and site.piwik_site_id %}
+            <script type="text/javascript">
+                var _paq = _paq || [];
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+
+                (function() {
+                    var u="//{{ site.piwik_host_name }}/";
+                    _paq.push(['setTrackerUrl', u+'piwik.php']);
+                    _paq.push(['setSiteId', {{ site.piwik_site_id }}]);
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                })();
+            </script>
+            <noscript><p><img src="//{{ site.piwik_host_name }}/piwik.php?idsite={{ site.piwik_site_id }}" style="border:0;" alt="" /></p></noscript>
+        {% endif %}
+
+        {% if site.disqus_short_name and page.comments != false %}
+            <script type="text/javascript">
+                var disqus_shortname = '{{- site.disqus_short_name -}}';
+                {% if page.comments == true %}
+                    // var disqus_developer = 1;
+                    {% if page.wordpress_id %}
+                        var disqus_identifier = '{{ page.wordpress_id }} {{ site.url }}/?p={{ page.wordpress_id }}';
+                    {% else %}
+                        var disqus_identifier = '{{ site.url }}{{ page.url }}';
+                    {% endif %}
+                    var disqus_url = '{{ site.url }}{{ page.url }}';
+                    var disqus_script = 'embed.js';
+                {% else %}
+                    var disqus_script = 'count.js';
+                {% endif %}
+                (function () {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                }());
+            </script>
+        {% endif %}
+
+
+        <script type="text/javascript">
+            (function(){
+                var twitterWidgets = document.createElement('script');
+                twitterWidgets.type = 'text/javascript';
+                twitterWidgets.async = true;
+                twitterWidgets.src = '//platform.twitter.com/widgets.js';
+                document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+            })();
+        </script>
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id; js.async = true;
+            js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            (function() {
+                var s = document.createElement('script');
+                var t = document.getElementsByTagName('script')[0];
+
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = '//api.flattr.com/js/0.6/load.js?mode=auto';
+
+                t.parentNode.insertBefore(s, t);
+            })();
+            /* ]]> */
+        </script>
+
+        <script type="text/javascript">
+            (function() {
+                var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+                script.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+            })();
+        </script>
+
+        <script src="{{ site.url }}/components/highlightjs/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

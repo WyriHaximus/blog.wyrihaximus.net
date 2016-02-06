@@ -1,0 +1,32 @@
+# The contents of this file are parsed and made available as
+# via `site.*`. So for example, {{ site.title }} can be used
+# in a template to get the contents of the `title` key.
+title: Cees-Jan Kiewiet's blog
+author: Cees-Jan Kiewiet
+
+# Flattr
+flattr_uid: WyriHaximus
+# For a list of all languages: https://api.flattr.com/rest/v2/languages.txt
+flattr_language: en_GB
+
+# Twitter
+twitter_user: WyriHaximus
+twitter_tweet_button: true
+
+# Google +1
+google_plus_one: true
+google_plus_one_size: medium
+
+# Google Plus Profile
+# Hidden: No visible button, just add author information to search results
+googleplus_user: 116291745551237181952
+googleplus_hidden: false
+
+# Disqus Comments
+disqus_short_name: ramblingsofadeveloper
+disqus_show_comment_count: true
+
+# Facebook Like
+facebook_like: true
+
+#url: http://192.168.1.15:8000

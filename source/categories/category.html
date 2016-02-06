@@ -1,0 +1,98 @@
+---
+layout: default
+title: Category Archive
+generator: [posts_category_index, pagination]
+pagination:
+    provider: page.category_posts
+
+---
+
+{% block metaTags %}
+    <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/categories/{{ page.category|lower|replace({' ': '-'}) }}.xml" title="{{ site.title }} '{{ page.category }}' category feed" />
+    <meta name="robots" content="noindex, follow">
+{% endblock %}
+
+{% block title %}{{ page.title }} "{{ page.category }}"{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+            <header id="archive-header">
+                <h1 class="alignleft">Category: {{ page.category }}</h1>
+            </header>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    {% set year = '0' %}
+    {% set this_year = '0' %}
+    {% set closed_off = false %}
+    {% for post in page.pagination.items %}
+        {% if this_year == '0' %}
+            {% set this_year %}{{ post.date | date("Y") }}{% endset %}
+        {% endif %}
+        {% if year != this_year %}
+            {% set closed_off = false %}
+            <section class="archives">
+                <div class="container">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h2>{{ this_year }}</h2>
+            {% set year = this_year %}
+            {% set year = this_year %}
+        {% endif %}
+        {% set this_year %}{{ post.date | date("Y") }}{% endset %}
+        <div class="archive">
+            <h3 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <time itemprop="datePublished" content="{{ post.date|date('c') }}" datetime="{{ post.date|date('c') }}">
+                <span class="day">{{ post.date|date('j') }}</span>&nbsp;<span class="month">{{ post.date|date('F') }}</span>&nbsp;<span class="year">{{ post.date|date('Y') }}</span>
+            </time>
+            <br />
+            {% if post.categories|length > 0 %}
+                <bt>Categories:
+                    {% for category in post.categories %}<a class="category" href="/categories/{{ category|lower|replace({' ': '-'}) }}/">{{ category }}</a>{% if loop.last == false %} - {% endif %}{% endfor %}
+                </bt>
+            {% endif %}
+            {% if post.tags|length > 0 %}
+                <bt>Tags:
+                    {% for tag in post.tags %}<a class="category" href="/tags/{{ tag|lower|replace({' ': '-'}) }}/">{{ tag }}</a>{% if loop.last == false %} - {% endif %}{% endfor %}
+                </bt>
+            {% endif %}
+        </div>
+        {% if year != this_year %}
+                    </div>
+                </div>
+            </section>
+            {% set closed_off = true %}
+        {% endif %}
+    {% endfor %}
+
+    {% if closed_off == false %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    {% if page.pagination.previous_page or page.pagination.next_page %}
+        <div class="article">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <hr />
+                        <ul class="pager">
+                            {% if page.pagination.previous_page %}
+                                <li class="previous">
+                                    <a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>
+                                </li>
+                            {% endif %}
+                            {% if page.pagination.next_page %}
+                                <li class="next">
+                                    <a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock content %}

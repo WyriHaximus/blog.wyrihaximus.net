@@ -1,0 +1,11 @@
+imports:
+- sculpin_site.yml
+
+url: https://blog.wyrihaximus.net
+
+# Google Analytics
+google_analytics_tracking_id: UA-63526-12
+
+# Piwik
+piwik_host_name: piwik.wyrihaximus.net
+piwik_site_id: 5

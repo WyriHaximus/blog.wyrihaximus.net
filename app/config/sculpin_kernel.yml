@@ -1,0 +1,27 @@
+sculpin_pagination:
+    max_per_page: 50
+sculpin_content_types:
+    posts:
+        permalink: :year/:month/:filename/
+        taxonomies:
+            - name: tags
+              strategies:
+                - \Sculpin\Contrib\Taxonomy\PermalinkStrategy\ConvertToLowercaseStrategy
+                - \Sculpin\Contrib\Taxonomy\PermalinkStrategy\TranslateSpacesToDashesStrategy
+            - name: categories
+              strategies:
+                - \Sculpin\Contrib\Taxonomy\PermalinkStrategy\ConvertToLowercaseStrategy
+                - \Sculpin\Contrib\Taxonomy\PermalinkStrategy\TranslateSpacesToDashesStrategy
+services:
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+    wyrihaximus.html_compress.compress:
+        class: \WyriHaximus\HtmlCompress\Frameworks\SculpinListener
+        tags:
+            - {  name: kernel.event_listener, event: sculpin.core.after_format, method: onAfterFormatFastest }
+#    dflydev.twig.extension.debug:
+#        class: \Dflydev\Twig\Extension\GitHubGist\GistTwigExtension
+#        tags:
+#             - { name: twig.extension }
