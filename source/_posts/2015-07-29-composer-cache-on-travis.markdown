@@ -17,7 +17,7 @@ social:
   image_relative: /images/posts/docker-travis-composer-packagist.png
 ---
 
-Ever since the [Test lowest, current, and highest possible on Travis](/2015/06/test-lowest-current-and-highest-possible-on-travis/) post I wanted to dive into caching composers cache and vendor on Travis. My experiments started the day after that post. 
+Ever since the [Test lowest, current, and highest possible on Travis](/2015/06/test-lowest-current-and-highest-possible-on-travis/) post I wanted to dive into caching composers cache on Travis. My experiments started the day after that post. 
 
 ![Docker Composer Packagist Travis Hybrid](/images/posts/docker-travis-composer-packagist.png)
 
@@ -25,7 +25,7 @@ Ever since the [Test lowest, current, and highest possible on Travis](/2015/06/t
 
 ##### The setup #####
 
-Travis has a [`cache` configuration directive](http://docs.travis-ci.com/user/caching/) that has support for caching entire directories. In our setup we'll cache two directories, namely the `vendor` directory and composer's own cache directory. `$HOME/.composer/cache`.  where it stores dist downloads. To enable cache the `sudo` directive also has to be set to `false` so our tests run on the [container infrastructure](http://docs.travis-ci.com/user/workers/container-based-infrastructure/).   
+Travis has a [`cache` configuration directive](http://docs.travis-ci.com/user/caching/) that has support for caching entire directories. In our setup we'll cache composer's own cache directory, `$HOME/.composer/cache`,  where it stores dist downloads. To enable cache the `sudo` directive also has to be set to `false` so our tests run on the [container infrastructure](http://docs.travis-ci.com/user/workers/container-based-infrastructure/).   
 
 ```yml
 ## Run on container environment
@@ -34,7 +34,6 @@ sudo: false
 ## Cache composer bits
 cache:
   directories:
-    - vendor
     - $HOME/.composer/cache
 ```
 
