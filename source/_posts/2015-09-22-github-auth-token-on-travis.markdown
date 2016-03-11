@@ -8,8 +8,8 @@ categories:
 - Github
 - Composer
 - TravisCI
-- TravisCI Series
 tags:
+- Obsolete
 - PHP
 - Github
 - Cache
@@ -24,6 +24,10 @@ The [composer cache](/2015/07/composer-cache-on-travis/) greatly speeds up your 
 ![Composer Github auth error](/images/posts/composer-github-auth-error.png)
 
 <!-- More -->
+
+# Obsolete post #
+
+[Github recently made a change to their API removing the need to do this.](https://github.com/composer/composer/issues/4884#issuecomment-195229989)
 
 ##### The setup #####
 
