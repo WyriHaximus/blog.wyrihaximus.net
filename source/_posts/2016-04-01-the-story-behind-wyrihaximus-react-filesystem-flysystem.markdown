@@ -21,7 +21,7 @@ Ever since [Frank de Jonge](https://twitter.com/frankdejonge) created [`Flysyste
 
 ##### react/filesystem #####
 
-During my work on [`react/filesystem`](https://github.com/reactphp/filesystem) one thing was every clear, only building on `EIO` was very limiting the possible reachable user base. Since creating a blocking adapter is out of the question the only way would be another extension adapter or using child processes to pool. At the time I was also looking into using child processes for async database access. Not that isn't directly the best way to go but more of an intrem solution. The devs at [`Voryx`](http://voryx.net/) made an true async [https://github.com/voryx/PgAsync](PostGres package) which is the way to go.
+During my work on [`react/filesystem`](https://github.com/reactphp/filesystem) one thing was every clear, only building on `EIO` was very limiting the possible reachable user base. Since creating a blocking adapter is out of the question the only way would be another extension adapter or using child processes to pool. At the time I was also looking into using child processes for async database access. Not that isn't directly the best way to go but more of an intrem solution. The devs at [`Voryx`](http://voryx.net/) made an true async [PostGres package](https://github.com/voryx/PgAsync) which is the way to go.
 
 ##### wyrihaximus/react-child-process-messenger #####
 
