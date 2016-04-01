@@ -37,7 +37,7 @@ Now the CPU core detector had a lot of WET code in it. Starting a process, captu
 
 ##### wyrihaximus/react-filesystem-flysystem #####
 
-Now that I have all of this created for [`react/filesystem`](https://github.com/reactphp/filesystem) and some of my other projects the thought came to try out how much work it was to run `Flysystem` inside a child process. That actually ran pretty well. Decided to try it out against [TransIP's STACK](https://www.transip.nl/stack/) (1TB free storage, NL only). And within a couple of hours I had a working adapter that could up and download from STACK. It might not be the wisest idea to do, but it was fun and work rather well and should be seen as an intrem solution untill we have fully functional async adapters for all filesystems flysystem supports.
+Now that I have all of this created for [`react/filesystem`](https://github.com/reactphp/filesystem) and some of my other projects. The thought came to try out how much work it was to run `Flysystem` inside a child process. That actually ran pretty well. Decided to try it out against [TransIP's STACK](https://www.transip.nl/stack/) (1TB free storage, NL only). And within a couple of hours I had a working adapter that could up and download from STACK. It might not be the wisest idea to do, but it was fun and work rather well and should be seen as an intrem solution untill we have fully functional async adapters for all filesystems flysystem supports.
 
 ##### TL;DR #####
 
