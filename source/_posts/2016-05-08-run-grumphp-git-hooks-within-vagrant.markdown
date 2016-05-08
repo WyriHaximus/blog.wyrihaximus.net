@@ -16,7 +16,7 @@ social:
   image_relative: /images/posts/grumphp-grumpy.png
 ---
 
-A couple of weeks back when attending [AmsterdamPHP](https://php.amsterdam/) [Mike Chernev](https://twitter.com/MikeChernev) gave a talk about [GrumPHP](https://github.com/phpro/grumphp). Very cool looking took, but during implementation I found out it the default setup assumes running grumphp on the same machine (whether that is a VM or iron) as committing. That is a problem in my set up where all `PHP` related code runs in vagrant and comitting on the host using PHPStorm. Lets fix that. 
+A couple of weeks back when attending [AmsterdamPHP](https://php.amsterdam/) [Mike Chernev](https://twitter.com/MikeChernev) gave a talk about [GrumPHP](https://github.com/phpro/grumphp). Very cool looking tool, but during implementation I found out it the default setup assumes running grumphp on the same machine (whether that is a VM or iron) as committing. That is a problem in my set up where all `PHP` related code runs in vagrant and comitting on the host using PHPStorm. Lets fix that. 
 
 ![GrumPHP from grumpy to happy](/images/posts/grumphp-grumpy-to-happy.gif)
 
