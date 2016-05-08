@@ -29,7 +29,7 @@ When I first set out to build [`wyrihaximus/react-child-process-pool`](https://g
 
 ##### wyrihaximus/react-child-process-pool #####
 
-The pooling package makes it possible to run a call on the first available child process in the pool, and with the messenger taking care of all the communication the pool does just pooling. But there was something missing, what if you run CPU heavy? The way operating systems work your process gets assigned a CPU core to work on. Now that isn't ideal, you might end up with 5 processes on the same core. Thus [`wyrihaximus/cpu-core-detector`](https://github.com/WyriHaximus/php-cpu-core-detector) was born to find out the number of CPU cores and get the right command to assign a process to a core. This way the pool just gets the ammount of cores and starts the processes based on how many cores are on the box.
+The pooling package makes it possible to run a call on the first available child process in the pool, and with the messenger taking care of all the communication the pool does just pooling. But there was something missing, what if you run CPU heavy? The way operating systems work your process gets assigned a CPU core to work on. Now that isn't ideal, you might end up with 5 processes on the same core. Thus [`wyrihaximus/cpu-core-detector`](https://github.com/WyriHaximus/php-cpu-core-detector) was born to find out the number of CPU cores and get the right command to assign a process to a core. This way the pool just gets the amount of cores and starts the processes based on how many cores are on the box.
 
 ##### wyrihaximus/cpu-core-detector #####
 
