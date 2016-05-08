@@ -28,7 +28,7 @@ Running GrumPHP within vagrant from the host is just a matter of appending the `
 vagrant ssh --command "./vendor/bin/grumphp run"
 ```
 
-And creating the following git hooks needed to do the full GrumPHP within vagrant instead of the host machine
+And creating the following git hooks needed to do the full GrumPHP within vagrant instead of the host machine. Took a little bit of research into to turn the stock hooks into ones that run everything within vagrant.
 
 ## commit-msg
 ```bash
