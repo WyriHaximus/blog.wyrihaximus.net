@@ -43,3 +43,4 @@ vagrant ssh --command "./vendor/bin/grumphp git:commit-msg '--git-user=$GIT_USER
 vagrant ssh --command "./vendor/bin/grumphp git:pre-commit --skip-success-output"
 ```
 
+But getting GrumPHP to install those hooks during install (`grumphp git:init`) required a relatively small change in the code. After some digging around in the code, I crafted a [PR](https://github.com/phpro/grumphp/pull/143) that adds the posibility to overwrite the default git hook template location.
