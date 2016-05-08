@@ -9,7 +9,22 @@ categories:
 tags:
 - PHP
 - GrumPHP
+- git
+- vagrant
+- ssh
 ---
+
+A couple of weeks back when attending [AmsterdamPHP](https://php.amsterdam/) [Mike Chernev](https://twitter.com/MikeChernev) gave a talk about [GrumPHP](https://github.com/phpro/grumphp). Very cool looking took, but during implementation I found out it the default setup assumes running grumphp on the same machine (whether that is a VM or iron) as committing. That is a problem in my set up where all `PHP` related code runs in vagrant and comitting on the host using PHPStorm. Lets fix that. 
+
+<!-- More -->
+
+Running GrumPHP within vagrant from the host is just a matter of appending the `--command` argument to `vagrant ssh`:
+
+```bash
+vagrant ssh --command "./vendor/bin/grumphp run"
+```
+
+And creating the following git hooks needed to do the full GrumPHP within vagrant instead of the host machine
 
 ## commit-msg
 ```bash
@@ -27,3 +42,4 @@ vagrant ssh --command "./vendor/bin/grumphp git:commit-msg '--git-user=$GIT_USER
 #!/bin/sh
 vagrant ssh --command "./vendor/bin/grumphp git:pre-commit --skip-success-output"
 ```
+
