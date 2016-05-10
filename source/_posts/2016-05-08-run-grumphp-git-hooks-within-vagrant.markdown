@@ -49,8 +49,7 @@ vagrant ssh --command "./vendor/bin/grumphp git:pre-commit --skip-success-output
 
 But getting GrumPHP to install those hooks during install (`grumphp git:init`) required a relatively small change in the code. After some digging around in the code, I crafted a [PR](https://github.com/phpro/grumphp/pull/143) that adds the posibility to overwrite the default git hook template location.
 
-[I'm aware this PR hasn't merged yet but prepping the post for that situation. Assuming it gets merged and tagged]
-With that PR tagged in `0.9.x` you can now drop the above hooks (titles are the filenames) in a dedicated folder it to your `grumphp.yml`. Lets say your folder is `./config/grumphp/hooks/` the config looks like this:
+With that PR tagged in `0.9.1` you can now drop the above hooks (titles are the filenames) in a dedicated folder it to your `grumphp.yml`. Lets say your folder is `./config/grumphp/hooks/` the config looks like this:
 
 ```yml
 parameters:
