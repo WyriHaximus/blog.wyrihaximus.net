@@ -49,9 +49,13 @@ vagrant ssh --command "./vendor/bin/grumphp git:pre-commit --skip-success-output
 
 But getting GrumPHP to install those hooks during install ([`grumphp git:init`](https://github.com/phpro/grumphp/blob/master/doc/commands.md#installation)) required a relatively small change in the code. After some digging around in the code, I crafted a [PR](https://github.com/phpro/grumphp/pull/143) that adds the posibility to overwrite the default git hook template location.
 
-With that PR tagged in [`0.9.1`](https://github.com/phpro/grumphp/releases/tag/v0.9.1) you can now drop the above hooks (titles are the filenames) in a dedicated folder it to your `grumphp.yml`. Lets say your folder is `./config/grumphp/hooks/` the config looks like this:
+With that PR tagged in [`0.9.1`](https://github.com/phpro/grumphp/releases/tag/v0.9.1) you can now drop the above hooks (titles are the filenames) in a dedicated folder it to your `grumphp.yml`. Lets say your folder is `./config/grumphp/hooks/` the config looks like this using the [`hooks_dir`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) parameter:
 
 ```yml
 parameters:
   hooks_dir: ./config/grumphp/hooks/
 ```
+
+# But wait there is more
+
+During the course of the [PR](https://github.com/phpro/grumphp/pull/143#issuecomment-217776465) the idea came up to not only make the hooks directory configuratable but to also include the vagrant hooks. That resulted in two presets: `local` and `vagrant`. The default preset is `local` while you can set `vagrant` using the [`hooks_reset`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) This should make it even easier to use GrumPHP as your code quality tool when using vagrant.
