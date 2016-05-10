@@ -16,19 +16,19 @@ social:
   image_relative: /images/posts/grumphp-grumpy.png
 ---
 
-A couple of weeks back when attending [AmsterdamPHP](https://php.amsterdam/) [Mike Chernev](https://twitter.com/MikeChernev) gave a talk about [GrumPHP](https://github.com/phpro/grumphp). Very cool looking tool, but during implementation I found out it the default setup assumes running grumphp on the same machine (whether that is a VM or iron) as committing. That is a problem in my set up where all `PHP` related code runs in vagrant and comitting on the host using PHPStorm. Lets fix that. 
+A couple of weeks back while attending [AmsterdamPHP](https://php.amsterdam/) [Mike Chernev](https://twitter.com/MikeChernev) gave a talk about [GrumPHP](https://github.com/phpro/grumphp). Very cool looking tool, but during implementation I found out it the default setup assumes running grumphp on the same machine (whether that is a VM or iron) as committing. That is a problem in my set up where all `PHP` related code runs in vagrant and comitting on the host using PHPStorm. Lets fix that. 
 
 ![GrumPHP from grumpy to happy](/images/posts/grumphp-grumpy-to-happy.gif)
 
 <!-- More -->
 
-Running GrumPHP within vagrant from the host is just a matter of appending the `--command` argument to `vagrant ssh`:
+Running GrumPHP within vagrant from the host is just a matter of appending the [`--command`](https://www.vagrantup.com/docs/cli/ssh.html#_c_COMMAND) argument to [`vagrant ssh`](https://www.vagrantup.com/docs/cli/ssh.html):
 
 ```bash
 vagrant ssh --command "./vendor/bin/grumphp run"
 ```
 
-And creating the following git hooks needed to do the full GrumPHP within vagrant instead of the host machine. Took a little bit of research into to turn the stock hooks into ones that run everything within vagrant.
+And creating the following git hooks needed to do the full GrumPHP within vagrant instead of the host machine. Took a little bit of research into to turn the stock hooks into ones that run everything within vagrant. (Note that your path might vary.)
 
 ## commit-msg
 ```bash
@@ -47,7 +47,7 @@ vagrant ssh --command "./vendor/bin/grumphp git:commit-msg '--git-user=$GIT_USER
 vagrant ssh --command "./vendor/bin/grumphp git:pre-commit --skip-success-output"
 ```
 
-But getting GrumPHP to install those hooks during install (`grumphp git:init`) required a relatively small change in the code. After some digging around in the code, I crafted a [PR](https://github.com/phpro/grumphp/pull/143) that adds the posibility to overwrite the default git hook template location.
+But getting GrumPHP to install those hooks during install ([`grumphp git:init`](https://github.com/phpro/grumphp/blob/master/doc/commands.md#installation)) required a relatively small change in the code. After some digging around in the code, I crafted a [PR](https://github.com/phpro/grumphp/pull/143) that adds the posibility to overwrite the default git hook template location.
 
 With that PR tagged in [`0.9.1`](https://github.com/phpro/grumphp/releases/tag/v0.9.1) you can now drop the above hooks (titles are the filenames) in a dedicated folder it to your `grumphp.yml`. Lets say your folder is `./config/grumphp/hooks/` the config looks like this:
 
