@@ -13,4 +13,4 @@ test:
   override:
     - ./vendor/bin/grumphp run
   post:
-    - cp junit.xml $CIRCLE_TEST_REPORTS/phpunit/junit.xml
+    - cp /tmp/junit.xml $CIRCLE_TEST_REPORTS/phpunit/junit.xml
