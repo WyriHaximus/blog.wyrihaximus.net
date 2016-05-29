@@ -2,6 +2,7 @@ parameters:
   bin_dir: "./vendor/bin"
   git_dir: "./"
   tasks:
+      phpunit:
       composer:
         no_check_publish: true
       yamllint:
