@@ -8,9 +8,9 @@ dependencies:
   override:
     - composer install --no-scripts --no-progress
 test:
-  pre:
-    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+#  pre:
+#    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
   override:
     - ./vendor/bin/grumphp run
-  post:
-    - cp junit.xml $CIRCLE_TEST_REPORTS/phpunit/junit.xml
+#  post:
+#    - cp junit.xml $CIRCLE_TEST_REPORTS/phpunit/junit.xml
