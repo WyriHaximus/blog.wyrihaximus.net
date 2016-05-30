@@ -14,3 +14,8 @@ test:
     - ./vendor/bin/grumphp run
   post:
     - cp /tmp/junit.xml $CIRCLE_TEST_REPORTS/phpunit/junit.xml
+deployment:
+  production:
+    tag: /.*/
+    commands:
+      - pwd
