@@ -5,10 +5,6 @@ dependencies:
   cache_directories:
     - vendor
     - ~/.composer/cache
-  pre:
-    - printf "[default]\naccess_key = $S3_ACCESS_KEY\n secret_key = $S3_SECRET_KEY" > ~/.s3cfg
-  override:
-    - sudo apt-get update; sudo apt-get install s3cmd
     - composer install --no-scripts --no-progress
 test:
   pre:
@@ -21,4 +17,4 @@ deployment:
   production:
     tag: /.*/
     commands:
-      - ./s3-publish.sh
+      - aws s3 sync output_prod/ s3://blogwyrihaximusnet/
