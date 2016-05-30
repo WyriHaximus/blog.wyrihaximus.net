@@ -17,7 +17,7 @@ tags:
 
 EDIT: <a title="Flattr CakePHP 1.3 Helper" href="http://www.dereuromark.de/2010/12/20/flattr-cakephp-1-3-helper/" target="_blank">DerEuroMark wrote an excellent replacement for this helper</a>.
 
-After the <a href="http://blog.wyrihaximus.net/2010/05/flattr-mod-for-phpbb3/">Flattr MOD for phpBB3</a> release 2 days ago I wrote this simple <a href="http://flattr.com/">flattr</a> <a href="http://book.cakephp.org/view/98/Helpers">cakephp helper</a> (basic cakephp helper knowledge is required) to aid cakephp developers integrate flattr quick and easy into their websites. The helper has only 1 function and is very simple in use.
+After the <a href="https://blog.wyrihaximus.net/2010/05/flattr-mod-for-phpbb3/">Flattr MOD for phpBB3</a> release 2 days ago I wrote this simple <a href="http://flattr.com/">flattr</a> <a href="http://book.cakephp.org/view/98/Helpers">cakephp helper</a> (basic cakephp helper knowledge is required) to aid cakephp developers integrate flattr quick and easy into their websites. The helper has only 1 function and is very simple in use.
 <!-- More -->
 ## Basic usage ##
 

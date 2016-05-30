@@ -18,7 +18,7 @@ tags:
 - Tags
 ---
 
-This post assumes you've completed reading Graham Weldon (<a href="http://twitter.com/predominant">@predominant</a>) <a href="http://www.cakedc.com/graham_weldon/2010/10/29/using-the-cakedc-tags-plugin-for-cakephp">article</a> on using the plugin, the <a href="http://cakedc.com/downloads#tags">plugin pages</a> them self and in specific the the <a href="https://github.com/CakeDC/tags/wiki/Display-a-Tag-cloud-with-the-TagCloud-helper">tag cloud helper page</a>. The helper example sets a size attribute  on the li tag. A way to utilize this would be writing a piece of jQuery (or javascript in general) that would take it and apply some styling to it. This would mean a lot more resource usage compared to pure CSS.
+This post assumes you've completed reading Graham Weldon (<a href="https://twitter.com/predominant">@predominant</a>) <a href="http://www.cakedc.com/graham_weldon/2010/10/29/using-the-cakedc-tags-plugin-for-cakephp">article</a> on using the plugin, the <a href="http://cakedc.com/downloads#tags">plugin pages</a> them self and in specific the the <a href="https://github.com/CakeDC/tags/wiki/Display-a-Tag-cloud-with-the-TagCloud-helper">tag cloud helper page</a>. The helper example sets a size attribute  on the li tag. A way to utilize this would be writing a piece of jQuery (or javascript in general) that would take it and apply some styling to it. This would mean a lot more resource usage compared to pure CSS.
 
 <!-- More -->
 
@@ -81,4 +81,4 @@ The script has a few configuration values.
 (<a href="http://static.wyrihaximus.net/blog/cakephp_tag_cloud.css">Click here for the complete list.</a>)
 
 ## The Result ##
-<a href="http://blog.wyrihaximus.net/wp-content/uploads/2010/10/cakephp_tagcloud_styled_example.jpg"><img class="aligncenter size-full wp-image-688" title="cakephp_tagcloud_styled_example" src="http://blog.wyrihaximus.net/wp-content/uploads/2010/10/cakephp_tagcloud_styled_example.jpg" alt="" width="400" height="104" /></a>
+<a href="https://blog.wyrihaximus.net/wp-content/uploads/2010/10/cakephp_tagcloud_styled_example.jpg"><img class="aligncenter size-full wp-image-688" title="cakephp_tagcloud_styled_example" src="https://blog.wyrihaximus.net/wp-content/uploads/2010/10/cakephp_tagcloud_styled_example.jpg" alt="" width="400" height="104" /></a>

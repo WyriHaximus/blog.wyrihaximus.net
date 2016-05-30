@@ -193,7 +193,7 @@ Lets take a look at this weeks community examples [`guzzlehttp/guzzle`](https://
 use GuzzleHttp\Client;
 use GuzzleHttp\Message\Response;
 
-(new Client())->get('http://blog.wyrihaximus.net/atom.xml', [
+(new Client())->get('https://blog.wyrihaximus.net/atom.xml', [
     'future' => true,
 ])->then(function(Response $response) { // Success callback
     echo $response->getBody()->getContents(), PHP_EOL;
