@@ -81,4 +81,4 @@ The script has a few configuration values.
 (<a href="http://static.wyrihaximus.net/blog/cakephp_tag_cloud.css">Click here for the complete list.</a>)
 
 ## The Result ##
-<a href="http://blog.wyrihaximus.net/wp-content/uploads/2010/10/cakephp_tagcloud_styled_example.jpg"><img class="aligncenter size-full wp-image-688" title="cakephp_tagcloud_styled_example" src="http://blog.wyrihaximus.net/wp-content/uploads/2010/10/cakephp_tagcloud_styled_example.jpg" alt="" width="400" height="104" /></a>
+<a href="https://blog.wyrihaximus.net/wp-content/uploads/2010/10/cakephp_tagcloud_styled_example.jpg"><img class="aligncenter size-full wp-image-688" title="cakephp_tagcloud_styled_example" src="https://blog.wyrihaximus.net/wp-content/uploads/2010/10/cakephp_tagcloud_styled_example.jpg" alt="" width="400" height="104" /></a>

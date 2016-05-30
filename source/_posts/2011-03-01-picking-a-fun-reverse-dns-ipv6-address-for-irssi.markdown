@@ -14,7 +14,7 @@ tags:
 - IRSSI
 ---
 
-[![](http://blog.wyrihaximus.net/wp-content/uploads/2011/03/IMAG0683-300x200.jpg)](http://blog.wyrihaximus.net/wp-content/uploads/2011/03/IMAG0683.jpg)
+[![](https://blog.wyrihaximus.net/wp-content/uploads/2011/03/IMAG0683-300x200.jpg)](https://blog.wyrihaximus.net/wp-content/uploads/2011/03/IMAG0683.jpg)
 
 
 The otherday I was looking for a cool IPv6 address to use with IRSSI as reverse DNS. ([A Pingdom article inspired me.](http://royal.pingdom.com/2009/02/06/ipv6-playtime-hiding-sentences-inside-addresses/)) The old one was a numeric IPv6 representation of the server running it so it had to be something more fun and cool :). So with some other people (my girlfriend (for some reason she came op with b00b :P), [Thor](http://thorerik.net/) and some random Google searches helped me putting together a simple list
@@ -38,4 +38,4 @@ The otherday I was looking for a cool IPv6 address to use with IRSSI as reverse 
 - :d09s (dogs)
 
 
-Picked :101:ca75 ([LOL Cats](icanhascheezburger.com)) as new IPv6 to use :). Now I'm off figuring out  fun addresses  for [WyriMaps](http://wyrimaps.net/wow) and [WoW-Screenshot](http://wow-screenshots.net/) content subdomains ;).
+Picked :101:ca75 ([LOL Cats](icanhascheezburger.com)) as new IPv6 to use :). Now I'm off figuring out  fun addresses  for [WyriMaps](https://wyrimaps.net/wow) and [WoW-Screenshot](http://wow-screenshots.net/) content subdomains ;).

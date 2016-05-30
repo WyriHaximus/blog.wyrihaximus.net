@@ -94,7 +94,7 @@ $dnsResolver = $dnsResolverFactory->createCached('8.8.8.8', $loop);
 $factory = new React\HttpClient\Factory();
 $client = $factory->create($loop, $dnsResolver);
 
-call($client, 'http://blog.wyrihaximus.net/');
+call($client, 'https://blog.wyrihaximus.net/');
 call($client, 'http://reactphp.org/');
 
 $loop->run();
