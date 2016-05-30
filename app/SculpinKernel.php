@@ -3,12 +3,14 @@
 use Ramsey\Sculpin\Bundle\CodeBlockBundle\RamseySculpinCodeBlockBundle;
 use Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel;
 
-class SculpinKernel extends AbstractKernel
-{
-    protected function getAdditionalSculpinBundles()
+if (!class_exists('SculpinKernel')) {
+    class SculpinKernel extends AbstractKernel
     {
-        return [
-            RamseySculpinCodeBlockBundle::class,
-        ];
+        protected function getAdditionalSculpinBundles()
+        {
+            return [
+                RamseySculpinCodeBlockBundle::class,
+            ];
+        }
     }
 }
