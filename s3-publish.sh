@@ -9,4 +9,4 @@ then
     exit 3
 fi
 
-s3cmd --force --recursive --no-delete-removed --bucket-location=eu-west-1 --progress --acl-public sync output_prod/ s3://blogwyrihaximusnet
+s3cmd --config="~/.aws/config" --force --recursive --no-delete-removed --bucket-location=eu-west-1 --progress --acl-public sync output_prod/ s3://blogwyrihaximusnet
