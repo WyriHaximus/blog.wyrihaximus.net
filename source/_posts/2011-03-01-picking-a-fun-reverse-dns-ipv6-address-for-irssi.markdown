@@ -38,4 +38,4 @@ The otherday I was looking for a cool IPv6 address to use with IRSSI as reverse 
 - :d09s (dogs)
 
 
-Picked :101:ca75 ([LOL Cats](icanhascheezburger.com)) as new IPv6 to use :). Now I'm off figuring out  fun addresses  for [WyriMaps](https://wyrimaps.net/wow) and [WoW-Screenshot](http://wow-screenshots.net/) content subdomains ;).
+Picked :101:ca75 ([LOL Cats](icanhascheezburger.com)) as new IPv6 to use :). Now I'm off figuring out  fun addresses  for [WyriMaps](https://wyrimaps.net/wow) and [WoW-Screenshot](https://wow-screenshots.net/) content subdomains ;).

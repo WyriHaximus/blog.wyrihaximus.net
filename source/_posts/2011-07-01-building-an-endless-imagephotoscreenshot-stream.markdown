@@ -23,7 +23,7 @@ tags:
 - wow-screenshots.net
 ---
 
-For <a title="World of Warcraft: Screenshots" href="http://wow-screenshots.net/">WoW-Screenshots.net</a> I was looking for a sweet Endless Stream script but I only stumbled into some weird scripts that did more then they should or nothing at all. Finally I ran into a simple script giving some good hints.
+For <a title="World of Warcraft: Screenshots" href="https://wow-screenshots.net/">WoW-Screenshots.net</a> I was looking for a sweet Endless Stream script but I only stumbled into some weird scripts that did more then they should or nothing at all. Finally I ran into a simple script giving some good hints.
 
 For this script jQuery is required and the <a href="http://phpjs.org/functions/str_replace:527">str_replace port from phpjs.org</a>.
 
@@ -221,4 +221,4 @@ The script expects a JSON object in the following format:
 
 As you can see the object holds 2 configuration settings and 1 array with all the items. (Heck while writing this I realize that shots as name for the array might not but the appropriate name for a more general class.) The count property optional. lastShot tells the script if the shots array contains the last item and should stop polling after this.
 
-<a href="https://github.com/WyriHaximus/endlessentitystream">This code is available on github.</a> As for the future of this project it will evolve for the upcoming time to become an even more powerful script. (Might turn it into a jQuery plugin.) For a live demo see <a title="World of Warcraft: Screenshots" href="http://wow-screenshots.net/">WoW-Screenshots.net</a>.
+<a href="https://github.com/WyriHaximus/endlessentitystream">This code is available on github.</a> As for the future of this project it will evolve for the upcoming time to become an even more powerful script. (Might turn it into a jQuery plugin.) For a live demo see <a title="World of Warcraft: Screenshots" href="https://wow-screenshots.net/">WoW-Screenshots.net</a>.
