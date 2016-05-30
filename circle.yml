@@ -18,4 +18,4 @@ deployment:
   production:
     tag: /.*/
     commands:
-      - pwd
+      - ./s3-publish.sh
