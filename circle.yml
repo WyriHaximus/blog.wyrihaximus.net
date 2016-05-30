@@ -6,6 +6,7 @@ dependencies:
     - vendor
     - ~/.composer/cache
   override:
+    - sudo apt-get update; sudo apt-get install s3cmd
     - composer install --no-scripts --no-progress
 test:
   pre:
