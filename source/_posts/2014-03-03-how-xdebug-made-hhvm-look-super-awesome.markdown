@@ -86,4 +86,4 @@ Resulted in:
 
 ### Conclusion ###
 
-My initial tweet was sent out because I was surprised by the huge timing discrepancy. The community responded in was great way. And I hope no one has the wrong impression about `HHVM` vs. `PHP` performance due to that tweet. `HHVM` is still the clear winner, completing the tests a good 10% faster. This `oopsie` has been a valuable lesson for me to always properly check my facts. Would like to thank [Claude](http://twitter.com/C_Duv) for pointing me in the right direction. 
+My initial tweet was sent out because I was surprised by the huge timing discrepancy. The community responded in was great way. And I hope no one has the wrong impression about `HHVM` vs. `PHP` performance due to that tweet. `HHVM` is still the clear winner, completing the tests a good 10% faster. This `oopsie` has been a valuable lesson for me to always properly check my facts. Would like to thank [Claude](https://twitter.com/C_Duv) for pointing me in the right direction. 

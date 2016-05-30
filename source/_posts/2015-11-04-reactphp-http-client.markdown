@@ -320,7 +320,7 @@ Guzzle 5:
 $client = new \GuzzleHttp\Client([
     'handler' => new \WyriHaximus\React\RingPHP\HttpClientAdapter($loop),
 ]);
-$client->get('http://github.com/', [ // This will redirect to https://github.com/
+$client->get('https://github.com/', [ // This will redirect to https://github.com/
     'future' => true,
 ])->then();
 
@@ -335,7 +335,7 @@ $client = new \GuzzleHttp\Client([
     'handler' => \GuzzleHttp\HandlerStack::create($handler),
 ]);
 
-$client->getAsync('http://github.com/')->then();
+$client->getAsync('https://github.com/')->then();
 ```
 <sub>[Full example](https://github.com/WyriHaximus/react-guzzle-psr7#examples)</sub>
 
