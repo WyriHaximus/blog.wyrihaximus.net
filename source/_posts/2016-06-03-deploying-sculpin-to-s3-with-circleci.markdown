@@ -32,3 +32,29 @@ Since porting git over to another [remote](https://help.github.com/articles/push
 * A sculpin blog on Github, in my case that was simple because [I already put my blog on github](https://github.com/WyriHaximus/blog.wyrihaximus.net) a whole ago so others could send PR's
 * A S3 bucket setup to use
 * A special IAM User and it's keys just for this project and deploying with 
+
+# circle.yml
+
+```yaml
+machine:
+  php:
+    version: 7.0.4
+dependencies:
+  cache_directories:
+    - vendor
+    - ~/.composer/cache
+    - composer install --no-scripts --no-progress
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+  override:
+    - ./vendor/bin/grumphp run
+  post:
+    - cp /tmp/junit.xml $CIRCLE_TEST_REPORTS/phpunit/junit.xml
+deployment:
+  production:
+    tag: /.*/
+    commands:
+      - vendor/bin/sculpin generate --env=prod || ( echo "Could not generate the site" && exit )
+      - aws s3 sync output_prod/ s3://the-s3-bucket-name/
+```
