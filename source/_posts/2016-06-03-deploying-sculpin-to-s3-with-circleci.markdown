@@ -32,7 +32,13 @@ Since porting git over to another [remote](https://help.github.com/articles/push
 * A S3 bucket setup to use
 * A special IAM User and it's keys just for this project and deploying with 
 
-To get started make sure your blog is on github.
+To get started make sure your blog is on github, and that you have create a new build/project in CircleCI.
+
+# IAM User
+
+We need an [IAM User](https://aws.amazon.com/documentation/iam/) to access the bucket securely. I'm leaving the correct permissions up to you as they might differ on a specific case basis. What we do need are the key and secret for the user. Enter those under `Project Settings` -> `Permissions` -> `AWS Permissions`.
+
+![AWS Permissions](/images/posts/x0Yxtgo.png)
 
 # circle.yml
 
