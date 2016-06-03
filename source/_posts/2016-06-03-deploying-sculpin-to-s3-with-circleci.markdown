@@ -9,6 +9,8 @@ categories:
 - CircleCI
 tags:
 - PHP
+- S3
+- AWS
 - Sculpin
 - CircleCI
 - Deployment
