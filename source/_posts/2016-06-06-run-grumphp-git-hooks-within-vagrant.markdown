@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Run GrumPHP git hooks within Vagrant"
-date: 2016-05-08 21:12dw
+date: 2016-06-06 21:12dw
 comments: true
 categories:
 - PHP
