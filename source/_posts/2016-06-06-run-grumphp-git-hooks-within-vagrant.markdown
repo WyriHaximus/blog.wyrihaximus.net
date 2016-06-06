@@ -11,7 +11,7 @@ tags:
 - GrumPHP
 - git
 - vagrant
-- ssh
+- SSH
 social:
   image_relative: /images/posts/grumphp-grumpy.png
 ---
@@ -58,9 +58,20 @@ parameters:
 
 # But wait there is more
 
-During the course of the [PR](https://github.com/phpro/grumphp/pull/143#issuecomment-217776465) the idea came up to not only make the hooks directory configuratable but to also include the vagrant hooks. That resulted in two presets: `local` and `vagrant`. The default preset is `local` while you can set `vagrant` using the [`hooks_reset`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) This should make it even easier to use GrumPHP as your code quality tool when using vagrant.
+During the course of the [PR](https://github.com/phpro/grumphp/pull/143#issuecomment-217776465) the idea came up to not only make the hooks directory configuratable but to also include the vagrant hooks. That resulted in two presets: `local` and `vagrant`. The default preset is `local` while you can set `vagrant` using the [`hooks_preset`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) This should make it even easier to use GrumPHP as your code quality tool when using vagrant.
+
+In your `YAML` set the `hooks_preset` to `vagrant` instead of `local` and hooks for running everything inside vagrant are used instead. (Note that these are more sophisticated hooks then mine earlier in this post.)
+
+```yml
+parameters:
+  hooks_preset: vagrant
+```
 
 # Gotchas
 
 To make the vagrant setup work correctly you have to ensure GrumPHP has access to your `.git` directory. This can be set using the [`git_dir`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) parameter. Also you might have to add
-`cd /your/project` to your `.bashrc`. (See the documentation for [`hooks_reset`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) on that.) And finally vagrant has to be running, otherwise `vagrant ssh` will fail with an error.
+`cd /your/project` to your `.bashrc`. (See the documentation for [`hooks_reset`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) on that.) And finally vagrant has to be running, otherwise `vagrant ssh` will fail with an error. 
+
+# Conclusion 
+
+[Toon](https://github.com/veewee) did a lot of great work ensuring that the `hooks_presets` work on most systems. The `hooks_dir` gives you a way to costumize your hooks when the `hooks_preset` doesn't work out in your environment. The time it takes to login and run grumphp over just running grumphp locally is negligible. So if your project runs on vagrant using GrumPHP just got easier.
