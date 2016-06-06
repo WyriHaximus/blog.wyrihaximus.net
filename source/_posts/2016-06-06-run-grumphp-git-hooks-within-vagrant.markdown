@@ -56,7 +56,7 @@ parameters:
   hooks_dir: ./config/grumphp/hooks/
 ```
 
-# But wait there is more
+# But wait it gets better
 
 During the course of the [PR](https://github.com/phpro/grumphp/pull/143#issuecomment-217776465) the idea came up to not only make the hooks directory configuratable but to also include the vagrant hooks. That resulted in two presets: `local` and `vagrant`. The default preset is `local` while you can set `vagrant` using the [`hooks_preset`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) This should make it even easier to use GrumPHP as your code quality tool when using vagrant.
 
