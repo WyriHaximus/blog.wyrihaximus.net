@@ -13,7 +13,7 @@ tags:
 - Websockets
 ---
 
-While working on my <a href="http://wyrihaximus.net/projects/cakephp/ratchet.html" title="Ratchet for CakePHP" target="_blank">CakePHP Ratchet plugin</a> I got to the point where my server had to be prepared for the new way of communication. Lukely nginx released 1.3.13 with websocket support recently. Thus allowing to serve both the website and websockets over the same port and hostname. (Key if you intend to use cookies.)
+While working on my <a href="https://wyrihaximus.net/projects/cakephp/ratchet.html" title="Ratchet for CakePHP" target="_blank">CakePHP Ratchet plugin</a> I got to the point where my server had to be prepared for the new way of communication. Lukely nginx released 1.3.13 with websocket support recently. Thus allowing to serve both the website and websockets over the same port and hostname. (Key if you intend to use cookies.)
 <!-- More -->
 To acomplish this we define 2 location blocks. 
 

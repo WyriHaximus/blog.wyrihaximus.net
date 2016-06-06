@@ -22,7 +22,7 @@ Check out [twitter.com/buttons](https://twitter.com/buttons)
 
 ### Original post ###
 
-For [wow-screenshots.net](http://wow-screenshots.net/) I was looking to boost the loading speed of the site. By spending as little time as possible waiting on additional resources. The [Tweet Button](http://twitter.com/about/resources/tweetbutton) by Twitter is loading in a blocking way so it is slowing down the page. It uses basic HTML elements and transforms them with a little bit of javascript. We can load the javascript in a non-blocking way to give the user a faster page loading experience. [Flattr](https://flattr.com/support/integrate/js) is showing how it's done by loading the script in a asynchronous way and and transform basic HTML elements into widgets:
+For [wow-screenshots.net](https://wow-screenshots.net/) I was looking to boost the loading speed of the site. By spending as little time as possible waiting on additional resources. The [Tweet Button](https://twitter.com/about/resources/tweetbutton) by Twitter is loading in a blocking way so it is slowing down the page. It uses basic HTML elements and transforms them with a little bit of javascript. We can load the javascript in a non-blocking way to give the user a faster page loading experience. [Flattr](https://flattr.com/support/integrate/js) is showing how it's done by loading the script in a asynchronous way and and transform basic HTML elements into widgets:
 <!-- More -->
 
 ~~~html

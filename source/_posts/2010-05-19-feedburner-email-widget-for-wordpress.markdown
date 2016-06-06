@@ -26,4 +26,4 @@ Since I started using Wordpress a few weeks ago 1 thing been nagging me. No Feed
 ### Widget control ###
 ![](http://static.wyrihaximus.net/blog/wordpress-feedburner-email-website-backend.png)
 
-For more information please consult the [project page](http://wyrihaximus.net/projects/wordpress/feedburner-email-widget/).
+For more information please consult the [project page](https://wyrihaximus.net/projects/wordpress/feedburner-email-widget/).

@@ -18,7 +18,7 @@ tags:
 - WyriMaps
 ---
 
-One way to speed up <a title="WyriMaps.net World of Warcraft Map" href="http://wyrimaps.net/wow">WyriMaps.net</a> is to preload popular tiles and nodes to avoid the disk IO build up with a lot of visitors on the map moving around, zooming in and out and adding/removing node sets to the map. Using tmpfs is a simple way to use the RAM as extra cache to speed up your webpages. Tho <a href="http://bretthoerner.com/blog/2008/oct/27/using-nginx-memcached-module-django/">another way</a> to do that is using <a title="Nginx Memcached Module" href="http://wiki.nginx.org/NginxHttpMemcachedModule">memcached</a> wich is more interesting if you have <a href="http://www.igvita.com/2008/02/11/nginx-and-memcached-a-400-boost/">several servers</a> instead of one.
+One way to speed up <a title="WyriMaps.net World of Warcraft Map" href="https://wyrimaps.net/wow">WyriMaps.net</a> is to preload popular tiles and nodes to avoid the disk IO build up with a lot of visitors on the map moving around, zooming in and out and adding/removing node sets to the map. Using tmpfs is a simple way to use the RAM as extra cache to speed up your webpages. Tho <a href="http://bretthoerner.com/blog/2008/oct/27/using-nginx-memcached-module-django/">another way</a> to do that is using <a title="Nginx Memcached Module" href="http://wiki.nginx.org/NginxHttpMemcachedModule">memcached</a> wich is more interesting if you have <a href="http://www.igvita.com/2008/02/11/nginx-and-memcached-a-400-boost/">several servers</a> instead of one.
 
 <!-- More -->
 
@@ -88,7 +88,7 @@ location = /404.html {
 }
 ~~~
 
-As the block shows I'm serving it from RAM and everytime the machine boots a script puts the 404.html file on the tmpfs mount. This results in the following config and keeps <a href="http://wyrimaps.net/wow">WyriMaps.net/WoW</a> fast under high load.
+As the block shows I'm serving it from RAM and everytime the machine boots a script puts the 404.html file on the tmpfs mount. This results in the following config and keeps <a href="https://wyrimaps.net/wow">WyriMaps.net/WoW</a> fast under high load.
 
 ~~~nginx
 error_log /dev/null crit;
