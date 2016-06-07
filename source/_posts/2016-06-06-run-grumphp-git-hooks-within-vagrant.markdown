@@ -70,7 +70,7 @@ parameters:
 # Gotchas
 
 To make the vagrant setup work correctly you have to ensure GrumPHP has access to your `.git` directory. This can be set using the [`git_dir`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) parameter. Also you might have to add
-`cd /your/project` to your `.bashrc`. (See the documentation for [`hooks_reset`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) on that.) And finally vagrant has to be running, otherwise `vagrant ssh` will fail with an error. 
+`cd /your/project` to your `.bashrc`. (See the documentation for [`hooks_preset`](https://github.com/phpro/grumphp/blob/master/doc/parameters.md) on that.) And finally vagrant has to be running, otherwise `vagrant ssh` will fail with an error. 
 
 # Conclusion 
 
