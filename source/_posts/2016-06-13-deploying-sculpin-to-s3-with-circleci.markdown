@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deploying Sculpin to S3 with CircleCI"
-date: 2016-06-03 21:12dw
+date: 2016-06-13 21:12dw
 comments: true
 categories:
 - PHP
