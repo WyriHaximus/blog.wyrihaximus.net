@@ -42,7 +42,7 @@ We need an [IAM User](https://aws.amazon.com/documentation/iam/) to access the b
 
 # circle.yml
 
-Next up is creating a `circle.yml` file that will instruct [CircleCI](https://circleci.com/) what to do when we push commits or create tag.
+Next up is creating a [`circle.yml`](https://circleci.com/docs/configuration/) file that will instruct [CircleCI](https://circleci.com/) what to do when we push commits or create tag.
 
 First we need to tell it that we use [`PHP`](https://php.net), and since I prefer things to be bleeding edge we'll be using PHP 7 here:
 ```yaml
