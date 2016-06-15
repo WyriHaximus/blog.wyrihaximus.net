@@ -51,6 +51,8 @@ machine:
     version: 7.0.4
 ```
 
+## Dependencies
+
 We also cache the vendor directory for a quick composer install in case nothing changed and composer's cache directory in case we need to install new packages/updated/downgraded packages we might have in cache:
 ```yaml
 dependencies:
@@ -58,6 +60,8 @@ dependencies:
     - vendor
     - ~/.composer/cache
 ```
+
+## Tests
 
 CircleCI assumes that every build runs tests. In case of PHP projects it will attempt to run [`phpunit`](https://phpunit.de/) but I'm using [`GrumPHP`](https://github.com/phpro/grumphp) for my blog as very simple unit tests have been added and I'm working on a linter for Sculpin that ensure it catches issues before generation. Since all my posts these days are written using pull requests, [so is this post](https://github.com/WyriHaximus/blog.wyrihaximus.net/pull/9), the linter will catch any issues while working on it.
 ```yaml
@@ -73,8 +77,9 @@ The `pre` and `post` are there to inform CircleCI of our tests results and show 
 
 ![jUnit result](/images/posts/nl1c9KO.png)
 
+## Deployment
 
-Deployment settings are what controlls when you publish changes. In my setup I [tag releases](https://github.com/WyriHaximus/blog.wyrihaximus.net/tags) for deployment. Another way would be a special deployment branch but I find this easier to manage. [It is up to you how you prefer to deploy, CircleCI has you covered.](https://circleci.com/docs/configuration/#deployment)
+Deployment settings are what controlls when you publish changes. In my setup I [tag releases](https://github.com/WyriHaximus/blog.wyrihaximus.net/tags) for deployment. Another way would be a special deployment branch but I find this easier to manage. [It is up to you how you prefer to deploy, CircleCI has you covered.](https://circleci.com/docs/configuration/#deployment) Once a tag 
 ```yaml
 deployment:
   production:
