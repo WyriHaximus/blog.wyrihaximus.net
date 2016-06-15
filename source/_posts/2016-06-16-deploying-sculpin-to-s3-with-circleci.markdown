@@ -69,6 +69,10 @@ test:
   post:
     - cp /tmp/junit.xml $CIRCLE_TEST_REPORTS/phpunit/junit.xml
 ```
+The `pre` and `post` are there to inform CircleCI of our tests results and show us information about it like this:
+
+![jUnit result](/images/posts/nl1c9KO.png)
+
 
 Deployment settings are what controlls when you publish changes. In my setup I [tag releases](https://github.com/WyriHaximus/blog.wyrihaximus.net/tags) for deployment. Another way would be a special deployment branch but I find this easier to manage. [It is up to you how you prefer to deploy, CircleCI has you covered.](https://circleci.com/docs/configuration/#deployment)
 ```yaml
