@@ -42,8 +42,45 @@ We need an [IAM User](https://aws.amazon.com/documentation/iam/) to access the b
 
 # circle.yml
 
-Next up is creating a `circle.yml` file that will instruct [CircleCI](https://circleci.com/) what to do when we push or tag something to the repo.
+Next up is creating a `circle.yml` file that will instruct [CircleCI](https://circleci.com/) what to do when we push commits or create tag.
 
+First we need to tell it that we use [`PHP`](https://php.net), and since I prefer things to be bleeding edge we'll be using PHP 7 here:
+```yaml
+machine:
+  php:
+    version: 7.0.4
+```
+
+We also cache the vendor directory for a quick composer install in case nothing changed and composer's cache directory in case we need to install new packages/updated/downgraded packages we might have in cache:
+```yaml
+dependencies:
+  cache_directories:
+    - vendor
+    - ~/.composer/cache
+```
+
+CircleCI assumes that every build runs tests. In case of PHP projects it will attempt to run [`phpunit`](https://phpunit.de/) but I'm using [`GrumPHP`](https://github.com/phpro/grumphp) for my blog as very simple unit tests have been added and I'm working on a linter for Sculpin that ensure it catches issues before generation. Since all my posts these days are written using pull requests, [so is this post](https://github.com/WyriHaximus/blog.wyrihaximus.net/pull/9), the linter will catch any issues while working on it.
+```yaml
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+  override:
+    - ./vendor/bin/grumphp run
+  post:
+    - cp /tmp/junit.xml $CIRCLE_TEST_REPORTS/phpunit/junit.xml
+```
+
+Deployment settings are what controlls when you publish changes. In my setup I [tag releases](https://github.com/WyriHaximus/blog.wyrihaximus.net/tags) for deployment. Another way would be a special deployment branch but I find this easier to manage. [It is up to you how you prefer to deploy, CircleCI has you covered.](https://circleci.com/docs/configuration/#deployment)
+```yaml
+deployment:
+  production:
+    tag: /.*/
+    commands:
+      - vendor/bin/sculpin generate --env=prod || ( echo "Could not generate the site" && exit )
+      - aws s3 sync output_prod/ s3://the-s3-bucket-name/
+```
+
+When combining that we come to the final result:
 ```yaml
 machine:
   php:
@@ -52,7 +89,6 @@ dependencies:
   cache_directories:
     - vendor
     - ~/.composer/cache
-    - composer install --no-scripts --no-progress
 test:
   pre:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
