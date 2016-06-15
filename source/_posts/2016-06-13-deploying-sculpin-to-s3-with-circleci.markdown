@@ -42,6 +42,8 @@ We need an [IAM User](https://aws.amazon.com/documentation/iam/) to access the b
 
 # circle.yml
 
+Next up is creating a `circle.yml` file that will instruct [CircleCI](https://circleci.com/) what to do when we push or tag something to the repo.
+
 ```yaml
 machine:
   php:
