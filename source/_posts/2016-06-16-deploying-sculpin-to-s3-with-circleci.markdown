@@ -79,7 +79,9 @@ The `pre` and `post` are there to inform CircleCI of our tests results and show 
 
 ## Deployment
 
-Deployment settings are what controlls when you publish changes. In my setup I [tag releases](https://github.com/WyriHaximus/blog.wyrihaximus.net/tags) for deployment. Another way would be a special deployment branch but I find this easier to manage. [It is up to you how you prefer to deploy, CircleCI has you covered.](https://circleci.com/docs/configuration/#deployment) Once a tag 
+Deployment settings are what controlls when you publish changes. In my setup I [tag releases](https://github.com/WyriHaximus/blog.wyrihaximus.net/tags) for deployment. Another way would be a special deployment branch but I find this easier to manage. [It is up to you how you prefer to deploy, CircleCI has you covered.](https://circleci.com/docs/configuration/#deployment) 
+
+Once a tag has been created the commands kick into action. The first command will generate the blog or exit while trying. The second command syncs the generated site to S3. The interesting bit about the `aws` command is that it is installed by default in the build container and uses the credentials we set earlier in this post.
 ```yaml
 deployment:
   production:
