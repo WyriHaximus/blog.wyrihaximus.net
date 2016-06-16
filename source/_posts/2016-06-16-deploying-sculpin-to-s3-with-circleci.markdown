@@ -111,7 +111,7 @@ deployment:
   production:
     tag: /.*/
     commands:
-      - vendor/bin/sculpin generate --env=prod || ( echo "Could not generate the site" && exit )
+      - vendor/bin/sculpin generate --env=prod
       - aws s3 sync output_prod/ s3://the-s3-bucket-name/
 ```
 
