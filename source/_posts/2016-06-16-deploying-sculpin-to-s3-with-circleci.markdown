@@ -28,7 +28,7 @@ Since porting git over to another [remote](https://help.github.com/articles/push
 
 # Prerequisites
 
-* A Sculpin blog on Github, in my case that was simple because [I already put my blog on github](https://github.com/WyriHaximus/blog.wyrihaximus.net) a whole ago so others could send PR's
+* A Sculpin blog on Github, in my case that was simple because [I already put my blog on github](https://github.com/WyriHaximus/blog.wyrihaximus.net) a while ago so others could send PR's
 * A S3 bucket setup to use
 * A special IAM User and it's keys just for this project and deploying with CircleCI that has access to the S3 bucket containing the blog
 
