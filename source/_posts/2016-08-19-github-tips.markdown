@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Github tips"
-date: 2016-08-18 09:12dw
+date: 2016-08-19 09:12dw
 comments: true
 categories:
 - PHP
