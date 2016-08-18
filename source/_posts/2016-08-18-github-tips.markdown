@@ -14,16 +14,22 @@ tags:
 - Opera
 - Safari
 social:
-  image_relative: /images/posts/35NxTej.png
+  image_relative: /images/posts/daftpunktocat-cat.gif
 ---
 
 [`Github`](https://github.com/) has fundamentally changed the opensource landscape, especially for those among us remembering the sourceforge days. While Github is powerful out of the box there are some tips, tricks, and browser addons that can be used to improve the experience. 
 
-![Deployment](/images/posts/35NxTej.png)
+![Deployment](/images/posts/daftpunktocat-cat.gif)
 
 <!-- More -->
 
 # Tips
+
+* Following interesting developers like [`Jakub Kulhan`](https://github.com/jakubkulhan), [`David Dan`](https://github.com/davidwdan), and in case you're interested [here is my account](https://github.com/wyrihaximus/).
+* Star all the repositories that are interesting or might be handy in the future (I'm currently at 1.4K starred repositories). You can always search through your starred repositories to find what you've starred ages ago at [github.com/stars](https://github.com/stars). (PSA: This information is public and can be viewed by everyone, also users not signed in. If you hasitate starring a repository you find interesting for what ever reason, keep a list on [Google Keep](https://keep.google.com/), [Evernote](https://evernote.com/), [Dropbox](https://www.dropbox.com/) etc etc.)
+* Subscribe to the [Github Explode](https://github.com/explore) newsletter at the bottom of the explode page, or by going [here](https://github.com/explore/subscribe). Mine is set to daily. It sends you a short list of the trending repositories for today, but also what the developers you follow starred the past 24 hours.
+
+![Github Explode Subscribe](/images/posts/rEq3ivg.png)
 
 # Tricks
 
@@ -45,7 +51,7 @@ The default experience on [github.com](https://github.com/) is powerful by defau
 
 ## PixelBlock (![Chrome](/images/browsers/chrome_24x24.png))
 
-While [`PixelBlock`](https://chrome.google.com/webstore/detail/pixelblock/jmpmfcjnflbcoidlgapblgpgbilinlem?utm_source=chrome-app-launcher-info-dialog) isn't technically a Github browser addon, it is a Gmail browser addon. It blocks tracking pixels in emails, Github's tracking pixels included. As mentioned before I watch all projects and repositories I'm involved with and that can lead to a lot of email at times. The issues with Github's tracking pixel is that when you read the mail it will also mark those comments tracked on github.com. That is fine but it if you also use [github.com's unread notifications](https://github.com/notifications) you lost track of those on the website. 
+While [`PixelBlock`](https://chrome.google.com/webstore/detail/pixelblock/jmpmfcjnflbcoidlgapblgpgbilinlem?utm_source=chrome-app-launcher-info-dialog) isn't technically a Github browser addon, it is a Gmail browser addon. It blocks tracking pixels in emails, Github's tracking pixels included. As mentioned before I watch all projects and repositories I'm involved with and that can lead to a lot of email at times. The issues with Github's tracking pixel is that when you read the mail it will also mark those comments tracked on github.com. That is fine but it if you also use [github.com's unread notifications](https://github.com/notifications) you lost track of those on the website. As a bonus it also blocks a lot of other tracking pixels.
 
 ![PixelBlock](/images/posts/YmKYONg.png)
 
