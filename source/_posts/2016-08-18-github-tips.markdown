@@ -33,6 +33,8 @@ social:
 
 # Tricks
 
+* Sign your tags, with `git tag -s -m "" 1.2.3`, using a GPG key, for example from [keybase.io](https://keybase.io/). The great advantage from this is that your users can verify their downloads against attacks. For more information on how to set that up check [this repository](https://github.com/pstadler/keybase-gpg-github).
+
 # Browser addons
 
 The default experience on [github.com](https://github.com/) is powerful by default but these addons amp it up a notch.
