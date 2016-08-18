@@ -39,9 +39,15 @@ The default experience on [github.com](https://github.com/) is powerful by defau
 
 ## OctoLinker (![Chrome](/images/browsers/chrome_24x24.png)/![Firefox](/images/browsers/firefox_24x24.png)/![Opera](/images/browsers/opera_24x24.png))
 
-[`OctoLinker`](https://github.com/OctoLinker/browser-extension/) OctocLinker is a great time server, when in a `composer.json` it lets you click a dependency taking you to that dependency's repository. No need to look it up on [`packagist`](https://packagist.org/) anymore, the addon does that for you.
+[`OctoLinker`](https://github.com/OctoLinker/browser-extension/) is a great time server, when in a `composer.json` it lets you click a dependency taking you to that dependency's repository. No need to look it up on [`packagist`](https://packagist.org/) anymore, the addon does that for you.
   
 <iframe width="960" height="720" src="https://www.youtube-nocookie.com/embed/OXCwVxHWSBs?rel=0" frameborder="0" allowfullscreen></iframe>
+
+## Octotree (![Chrome](/images/browsers/chrome_24x24.png)/![Firefox](/images/browsers/firefox_24x24.png)/![Opera](/images/browsers/opera_24x24.png)/![Safari](/images/browsers/safari_24x24.png))
+
+[`Octotree`](https://github.com/buunguyen/octotree/) Makes your whole repository directory structure available as a tree for quick and easy browsing.
+ 
+![Octotree](/images/posts/octotree.png)
 
 ## Isometric Contributions (![Chrome](/images/browsers/chrome_24x24.png)/![Firefox](/images/browsers/firefox_24x24.png)/![Safari](/images/browsers/safari_24x24.png))
 
