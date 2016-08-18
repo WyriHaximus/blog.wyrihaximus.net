@@ -27,7 +27,7 @@ social:
 
 * Following interesting developers like [`Jakub Kulhan`](https://github.com/jakubkulhan), [`David Dan`](https://github.com/davidwdan), and in case you're interested [here is my account](https://github.com/wyrihaximus/).
 * Star all the repositories that are interesting or might be handy in the future (I'm currently at 1.4K starred repositories). You can always search through your starred repositories to find what you've starred ages ago at [github.com/stars](https://github.com/stars). (PSA: This information is public and can be viewed by everyone, also users not signed in. If you hasitate starring a repository you find interesting for what ever reason, keep a list on [Google Keep](https://keep.google.com/), [Evernote](https://evernote.com/), [Dropbox](https://www.dropbox.com/) etc etc.)
-* Subscribe to the [Github Explode](https://github.com/explore) newsletter at the bottom of the explode page, or by going [here](https://github.com/explore/subscribe). Mine is set to daily. It sends you a short list of the trending repositories for today, but also what the developers you follow starred the past 24 hours.
+* Subscribe to the [Github Explore](https://github.com/explore) newsletter at the bottom of the explore page, or by going [here](https://github.com/explore/subscribe). Mine is set to daily. It sends you a short list of the trending repositories for today, but also what the developers you follow starred the past 24 hours.
 
 ![Github Explode Subscribe](/images/posts/rEq3ivg.png)
 
