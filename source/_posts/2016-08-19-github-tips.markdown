@@ -55,7 +55,7 @@ The default experience on [github.com](https://github.com/) is powerful by defau
 
 ## Isometric Contributions (![Chrome](/images/browsers/chrome_24x24.png)/![Firefox](/images/browsers/firefox_24x24.png)/![Safari](/images/browsers/safari_24x24.png))
 
-[`Isometric Contributions`](https://github.com/jasonlong/isometric-contributions) is mainly just a fancy, and have to admint very cool, way of displaying your contribution graph.
+[`Isometric Contributions`](https://github.com/jasonlong/isometric-contributions) is mainly just a fancy, and have to admit very cool, way of displaying your contribution graph.
 
 ![Isometric Contributions](/images/posts/35NxTej.png)
 
