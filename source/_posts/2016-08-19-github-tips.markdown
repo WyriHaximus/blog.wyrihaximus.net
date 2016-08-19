@@ -64,7 +64,3 @@ The default experience on [github.com](https://github.com/) is powerful by defau
 While [`PixelBlock`](https://chrome.google.com/webstore/detail/pixelblock/jmpmfcjnflbcoidlgapblgpgbilinlem?utm_source=chrome-app-launcher-info-dialog) isn't technically a Github browser addon, it is a Gmail browser addon. It blocks tracking pixels in emails, Github's tracking pixels included. As mentioned before I watch all projects and repositories I'm involved with and that can lead to a lot of email at times. The issues with Github's tracking pixel is that when you read the mail it will also mark those comments tracked on github.com. That is fine but it if you also use [github.com's unread notifications](https://github.com/notifications) you lost track of those on the website. As a bonus it also blocks a lot of other tracking pixels.
 
 ![PixelBlock](/images/posts/YmKYONg.png)
-
-# Conclusion
-
-conclusion
