@@ -34,6 +34,7 @@ social:
 # Tricks
 
 * Sign your tags, with `git tag -s -m "" 1.2.3`, using a GPG key, for example from [keybase.io](https://keybase.io/). The great advantage from this is that your users can verify their downloads against attacks. For more information on how to set that up check [this repository](https://github.com/pstadler/keybase-gpg-github).
+* Make pull requests for everything, and I mean everything. If you're not doing this it might sound like a lot of extra work, and it in a way it is, but it allows you to keep track of different features and you can work on two features at the same time without them interfering within master. Add [`Travis CI`](https://travis-ci.org/), [`CircleCI`](https://circleci.com/), and/or [`AppVeyor`](https://ci.appveyor.com/) to the mix for quality control and always know what the status of your code/project is.
 
 # Browser addons
 
