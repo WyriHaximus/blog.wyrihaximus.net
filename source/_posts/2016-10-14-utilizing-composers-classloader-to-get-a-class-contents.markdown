@@ -47,7 +47,7 @@ private function locateClassloader()
 
 ### Locating the file we want to parse
 
-Since we have the class loader from `autoload.php` we can utilize that to file a class we want to use:
+Since we have the class loader from `autoload.php` we can utilize that to file a class we want to use by calling `findFile`, a method composer uses to a requested class for autoloading:
 
 ```php
 $classLocation = $this->locateClassloader()->findFile($classToFind);
