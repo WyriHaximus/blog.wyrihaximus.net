@@ -15,7 +15,7 @@ social:
   image_relative: /images/posts/logo-composer-transparent3.png
 ---
 
-[`Travis`](https://travis-ci.org/) is the go to CI to run your tests on as an opensource project, but it is limited to only Linux (and with some hassle you can also run your tests on OS X). But it doesn't do Windows, and while popular opinion states you shouldn't run (PHP on) Windows, there is a significant amount of shops and developers that do. In this post I'll walk you through setting up your tests on [`AppVeyor`](https://www.appveyor.com/), a Windows CI.
+[`Travis`](https://travis-ci.org/) is the go to CI for run your tests on as an opensource project, but it is limited to only Linux (and with some hassle you can also run your tests on OS X). But it doesn't do Windows, and while popular opinion states you shouldn't run (PHP on) Windows, there is a significant amount of shops and developers that do. In this post I'll walk you through setting up your tests on [`AppVeyor`](https://www.appveyor.com/), a Windows CI.
 
 ![Composer](/images/posts/logo-composer-transparent3.png)
 
@@ -23,13 +23,13 @@ social:
 
 # AppVeyor, Travis for Windows but with a twist
 
-At first glance [`Travis`](https://travis-ci.org/) and [`AppVeyor`](https://www.appveyor.com/) look a like, ignoring the looks, they both lets you run builds to test or do others thing, and both are controlled by a YAML file. But [`AppVeyor`](https://www.appveyor.com/) has a few gotches you need to be aware of. First of all you create more then one build setup, so be sure to double check if you haven't already create a build for a project.
+At first glance [`Travis`](https://travis-ci.org/) and [`AppVeyor`](https://www.appveyor.com/) look a like, ignoring the looks, they both lets you run builds to test or do others thing, and both are controlled by a YAML file. But [`AppVeyor`](https://www.appveyor.com/) has a few gotches you need to be aware of. First of all you can create more then one build setup, so be sure to double check if you haven't already create a build for a project.
 
 # Setting up the configuration file
 
 ## The basics
 
-[`AppVeyor`](https://www.appveyor.com/) needs to know a few basics such as the platform we want to run on, since 64bits is widely used these days I'm configuring my builds to only test on `x64`, but if you want/need to test on 32bits systems you can add `x86` as well. We're also giving it a generic clone folder. Initially I had a different folder for each project but that turns messy when copying the config between repositories. 
+[`AppVeyor`](https://www.appveyor.com/) needs to know a few basics such as the platform we want to run on, since 64bits is widely used these days I'm configuring my builds to only test on `x64`, but if you want/need to test on 32bits systems you can add `x86` to the list. We're also giving it a generic clone folder. Initially I had a different folder for each project but that turns messy when copying the config between repositories. 
 
 ```YAML
 build: false
@@ -56,7 +56,7 @@ environment:
 
 ## The composer cache (and only the composer cache)
 
-Now we want to cache composers downloaded files cache to speed up `composer install`. I can hear you think after reading the installation for PHP we could [probably cache that](https://www.appveyor.com/docs/build-cache/#caching-chocolatey-packages) as well, don't! [`AppVeyor`](https://www.appveyor.com/) has a limit of [1GB](https://www.appveyor.com/docs/build-cache/#cache-size-beta) of cache space per user (free plan), so caching composers dist files isn't much of a problem. But when you start caching [`Chocolatey`](https://chocolatey.org/) files it quickly ramps up to 40 to 50MB per job. So in the config in this post we have 3 jobs, which is 120 to 150MB in total. Add PHP 5.6  to your build matrix and you ramp it up to 300MB. So that's a third of your cache gone. Instead only caching composers dist files is about 5MB per repo in my situation. Going to up 30MB when running 6 jobs, giving you up to ten times as much cache available. This of course isn't an issue when you have a few packages you test on [`AppVeyor`](https://www.appveyor.com/), but in my case, well I have [a lot](https://packagist.org/users/WyriHaximus/packages/)...
+Now we want to cache composers downloaded files cache to speed up `composer install`. I can hear you think after reading the installation for PHP we could [probably cache that](https://www.appveyor.com/docs/build-cache/#caching-chocolatey-packages) as well, don't! [`AppVeyor`](https://www.appveyor.com/) has a limit of [1GB](https://www.appveyor.com/docs/build-cache/#cache-size-beta) of cache space per user (free plan), so caching composers dist files isn't much of a problem. But when you start caching [`Chocolatey`](https://chocolatey.org/) files it quickly ramps up to 40 to 50MB per job. So in the config in this post we have 3 jobs, which is 120 to 150MB in total. Add PHP 5.6  to your build matrix and you ramp it up to 300MB. So that's a third of your cache gone. Instead only caching composers dist files is about 5MB per repo in my situation. Going to up 30MB when running 6 jobs, giving you up to ten times as much cache available. This of course isn't an issue when you have a few packages you test on [`AppVeyor`](https://www.appveyor.com/), but in my case, well I have [a lot](https://packagist.org/users/WyriHaximus/packages/)... Note that we link composers cache location to the lock file, when ever that file changes the cache is wiped.
 
 ```YAML
 ## Cache composer bits
@@ -116,6 +116,8 @@ Because we only want the latest version we run it through `Select-Object` to sel
 Once again we wrap the result of that operation in brackets so it is presented to `cinst` as a `$var`. Now we can do the actual installation with `cinst`.
 Running `cinst` with `-y` will confirm all prompts, the second argument `php` is the package we want to install, and `--version` uses the version we determent with the previous commands.
 All of that combined will install the latest PHP `7.0` version we'll run our tests against.
+
+Beyond that it is all fairly simple, we enable a few extensions, downloaded composer, install dependencies, and show them (useful for debugging dependencies issues). An interesting note here is that `appveyor-retry` will retry the command is prepends when it fails.
 
 ## Running your tests
 
