@@ -132,6 +132,6 @@ test_script:
 
 ## Conclusion
 
-    This configuration file gives you the way on configuring PHP versions as you might be used to on Travis. You can see the [`api-clients/psr7-oauth1`](https://github.com/php-api-clients/psr7-oauth1) package is one of the repo's using it. You can see it on [AppVeyor here](https://ci.appveyor.com/project/WyriHaximus/psr7-oauth1).
+This configuration file gives you the way on configuring PHP versions as you might be used to on Travis. You can see the [`api-clients/psr7-oauth1`](https://github.com/php-api-clients/psr7-oauth1) package is one of the repo's using it. You can see it on [AppVeyor here](https://ci.appveyor.com/project/WyriHaximus/psr7-oauth1).
 
 ![api-clients/psr7-oauth1 jobs](/images/posts/AK0kM2s.png)
