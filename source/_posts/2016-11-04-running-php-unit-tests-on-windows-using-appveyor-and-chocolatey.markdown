@@ -12,12 +12,12 @@ tags:
 - AppVeyor
 - Chocolatey
 social:
-  image_relative: /images/posts/logo-composer-transparent3.png
+  image_relative: /images/posts/appveyor-and-chocolatey.png
 ---
 
 [`Travis`](https://travis-ci.org/) is the go to CI for run your tests on as an opensource project, but it is limited to only Linux (and with some hassle you can also run your tests on OS X). But it doesn't do Windows, and while popular opinion states you shouldn't run (PHP on) Windows, there is a significant amount of shops and developers that do. In this post I'll walk you through setting up your tests on [`AppVeyor`](https://www.appveyor.com/), a Windows CI.
 
-![Composer](/images/posts/logo-composer-transparent3.png)
+![AppVeyor && Chocolatey](/images/posts/appveyor-and-chocolatey.png)
 
 <!-- More -->
 
