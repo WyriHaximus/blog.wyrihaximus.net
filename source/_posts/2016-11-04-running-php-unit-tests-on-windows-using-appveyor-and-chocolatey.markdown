@@ -15,7 +15,7 @@ social:
   image_relative: /images/posts/appveyor-and-chocolatey.png
 ---
 
-[`Travis`](https://travis-ci.org/) is the go to CI for run your tests on as an opensource project, but it is limited to only Linux (and with some hassle you can also run your tests on OS X). But it doesn't do Windows, and while popular opinion states you shouldn't run (PHP on) Windows, there is a significant amount of shops and developers that do. In this post I'll walk you through setting up your tests on [`AppVeyor`](https://www.appveyor.com/), a Windows CI.
+[`Travis`](https://travis-ci.org/) is the go to CI for run your tests on as an opensource project, but it is limited to only Linux (and with some hassle you can also run your tests on OS X). But it doesn't do Windows, and while popular opinion states you shouldn't run (PHP on) Windows, there is a significant amount of shops and developers that do. In this post I'll walk you through my configuration file for [`AppVeyor`](https://www.appveyor.com/), a Windows CI.
 
 ![AppVeyor && Chocolatey](/images/posts/appveyor-and-chocolatey.png)
 
@@ -129,3 +129,9 @@ test_script:
     - cd c:\projects\php-project-workspace
     - vendor/bin/phpunit -c phpunit.xml.dist
 ```
+
+## Conclusion
+
+This configuration file gives you the way on configuring PHP versions as you might be used to on Travis. You can see the [`api-clients/psr7-oauth1`](https://github.com/php-api-clients/psr7-oauth1) package is one of the repo's using it. You can see it on [AppVeyor here](https://ci.appveyor.com/project/WyriHaximus/psr7-oauth1).
+
+![api-clients/psr7-oauth1 jobs](/images/posts/AK0kM2s.png)
