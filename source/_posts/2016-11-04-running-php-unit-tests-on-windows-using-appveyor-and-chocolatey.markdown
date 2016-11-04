@@ -56,7 +56,7 @@ environment:
 
 ## The composer cache (and only the composer cache)
 
-Now we want to cache composers downloaded files cache to speed up `composer install`. I can hear you think after reading the installation for PHP we could [probably cache that](https://www.appveyor.com/docs/build-cache/#caching-chocolatey-packages) as well, don't! [`AppVeyor`](https://www.appveyor.com/) has a limit of [1GB](https://www.appveyor.com/docs/build-cache/#cache-size-beta) of cache space per user (free plan), so caching composers dist files isn't much of a problem. But when you start caching [`Chocolatey`](https://chocolatey.org/) files it quickly ramps up to 40 to 50MB per job. So in the config in this post we have 3 jobs, which is 120 to 150MB in total. Add PHP 5.6  to your build matrix and you ramp it up to 300MB. So that's a third of your cache gone. Instead only caching composers dist files is about 5MB per repo in my situation. Going to up 30MB when running 6 jobs, giving you up to ten times as much cache available. This of course isn't an issue when you have a few packages you test on [`AppVeyor`](https://www.appveyor.com/), but in my case, well I have [a lot](https://packagist.org/users/WyriHaximus/packages/)... Note that we link composers cache location to the lock file, when ever that file changes the cache is wiped.
+Now we want to cache composers downloaded files cache to speed up `composer install`. I can hear you think after reading the installation for PHP we could [probably cache that](https://www.appveyor.com/docs/build-cache/#caching-chocolatey-packages) as well, don't! [`AppVeyor`](https://www.appveyor.com/) has a limit of [1GB](https://www.appveyor.com/docs/build-cache/#cache-size-beta) of cache space per user (free plan), so caching composers dist files isn't much of a problem. But when you start caching [`Chocolatey`](https://chocolatey.org/) files it quickly ramps up to 40 to 50MB per job. So in the config in this post we have 3 jobs, which is 120 to 150MB in total. Add PHP 5.6  to your build matrix and you ramp it up to 300MB. So that's a third of your cache gone. Instead only caching composers dist files is about 5MB per repo in my situation. Going to up 30MB when running 6 jobs, giving you up to ten times as much cache available. This of course isn't an issue when you have a few packages you test on [`AppVeyor`](https://www.appveyor.com/), but in my case, well I have [a lot](https://packagist.org/users/WyriHaximus/packages/)... Note that we link composers cache location to the lock file, whenever the lock file changes the cache is wiped.
 
 ```YAML
 ## Cache composer bits
@@ -79,7 +79,7 @@ init:
 
 ## Installing PHP and run composer install
 
-This is where the true magic happens. This section ensures PHP, composer, and your packages dependencies are installed. It looks like a lot but what is important is `cinst`, `appveyor DownloadFile`, and the `composer` calls.
+This is where the true magic happens. This section ensures PHP, composer, and your package's dependencies are installed. It looks like a lot but what is important is `cinst`, `appveyor DownloadFile`, and the `composer` calls.
 
 ```YAML
 ## Install PHP and composer, and run the appropriate composer command
@@ -132,6 +132,6 @@ test_script:
 
 ## Conclusion
 
-This configuration file gives you the way on configuring PHP versions as you might be used to on Travis. You can see the [`api-clients/psr7-oauth1`](https://github.com/php-api-clients/psr7-oauth1) package is one of the repo's using it. You can see it on [AppVeyor here](https://ci.appveyor.com/project/WyriHaximus/psr7-oauth1).
+    This configuration file gives you the way on configuring PHP versions as you might be used to on Travis. You can see the [`api-clients/psr7-oauth1`](https://github.com/php-api-clients/psr7-oauth1) package is one of the repo's using it. You can see it on [AppVeyor here](https://ci.appveyor.com/project/WyriHaximus/psr7-oauth1).
 
 ![api-clients/psr7-oauth1 jobs](/images/posts/AK0kM2s.png)
