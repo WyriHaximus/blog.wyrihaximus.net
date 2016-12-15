@@ -10,12 +10,12 @@ tags:
 - PHP
 - CommandBus
 social:
-  image_relative: /images/posts/php-api-clients-logo.png
+  image_relative: /images/posts/command-bus-to-awesome-town-2-638.jpg
 ---
 
 The [`PHP API Clients`](https://php-api-clients.org/) I'm working on utilizes a [command bus](https://github.com/php-api-clients/command-bus) ([`league/tactician`](http://tactician.thephpleague.com/)) internally. Wrapped in a thing promise layer for 
 
-![Command Bus](/images/posts/php-api-clients-logo-960.png)
+![Command Bus](/images/posts/command-bus-to-awesome-town-2-638.jpg)
 
 <!-- More -->
 
