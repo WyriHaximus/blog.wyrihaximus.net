@@ -1,4 +1,5 @@
 linters:
+    yamllint:
     csslint:
     phpcs:
         standard: 'PSR2'
