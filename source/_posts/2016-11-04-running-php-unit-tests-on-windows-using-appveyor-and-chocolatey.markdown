@@ -85,7 +85,7 @@ This is where the true magic happens. This section ensures PHP, composer, and yo
 ## Install PHP and composer, and run the appropriate composer command
 install:
     - IF EXIST c:\tools\php (SET PHP=0)
-    - ps: appveyor-retry cinst -y php --version ((choco search php --exact --all-versions -r | select-string -pattern $Env:php_ver_target | Select-Object -first 1) -replace '[php|]','')
+    - ps: appveyor-retry cinst --ignore-checksums -y php --version ((choco search php --exact --all-versions -r | select-string -pattern $Env:php_ver_target | Select-Object -first 1) -replace '[php|]','')
     - cd c:\tools\php
     - IF %PHP%==1 copy php.ini-production php.ini /Y
     - IF %PHP%==1 echo date.timezone="UTC" >> php.ini
@@ -106,7 +106,7 @@ First `cinst`. `cinst` is part of the pre installed [`Chocolatey`](https://choco
 With some help from [`Rob Reynolds`](https://twitter.com/ferventcoder) from [`Chocolatey`](https://chocolatey.org/) and some [`PowerShell`](https://en.wikipedia.org/wiki/PowerShell) magic I've came to the following one liner:
 
 ```powershell
-cinst -y php --version ((choco search php --exact --all-versions -r | select-string -pattern $Env:php_ver_target | Select-Object -first 1) -replace '[php|]','')
+cinst --ignore-checksums -y php --version ((choco search php --exact --all-versions -r | select-string -pattern $Env:php_ver_target | Select-Object -first 1) -replace '[php|]','')
 ```
 
 Lets dissect that. First we run `choco search php --exact --all-versions -r` which lists all PHP versions, one version a line in the following format `php|7.0.12`. It isn't perfect but it is a good start.
@@ -114,10 +114,10 @@ Next we filter out only the versions we want, in our case `7.0.*`. By using [`se
 Because we only want the latest version we run it through `Select-Object` to select the top line using `Select-Object -first 1`. We wrap all of these commands in brackets so we can perform the next operation on it. 
 `cinst` doesn't understand a version formatted `php|7.0.12` we have to strip the `php|` off, we can do that with the build in `$var -replace`. Be case we wrapped the previous operations in brackets it is treated as `$var` in powershell and we can run the replace over it. ` -replace '[php|]',''`.
 Once again we wrap the result of that operation in brackets so it is presented to `cinst` as a `$var`. Now we can do the actual installation with `cinst`.
-Running `cinst` with `-y` will confirm all prompts, the second argument `php` is the package we want to install, and `--version` uses the version we determent with the previous commands.
+Running `cinst` with `-y` will confirm all prompts, `--ignore-checksums` don't run the checksum checks which is could be needed at time, the second argument `php` is the package we want to install, and `--version` uses the version we determent with the previous commands. (We're also putting a `appveyor-retry` in front of it to ensure it will do 3 attempts before giving up. Giving windows can be flaky at times we need the retries, and `--ignore-checksums` to ensure the build doesn't fail on trivial errors.)
 All of that combined will install the latest PHP `7.0` version we'll run our tests against.
 
-Beyond that it is all fairly simple, we enable a few extensions, downloaded composer, install dependencies, and show them (useful for debugging dependencies issues). An interesting note here is that `appveyor-retry` will retry the command is prepends when it fails.
+Beyond that it is all fairly simple, we enable a few extensions, downloaded composer, install dependencies, and show them (useful for debugging dependencies issues).
 
 ## Running your tests
 
@@ -135,3 +135,7 @@ test_script:
 This configuration file gives you the way on configuring PHP versions as you might be used to on Travis. You can see the [`api-clients/psr7-oauth1`](https://github.com/php-api-clients/psr7-oauth1) package is one of the repo's using it. You can see it on [AppVeyor here](https://ci.appveyor.com/project/WyriHaximus/psr7-oauth1).
 
 ![api-clients/psr7-oauth1 jobs](/images/posts/AK0kM2s.png)
+
+## Edits
+
+* 8 January 2017 - worded notes about `appveyor-retry` and `--ignore-checksums` into the `cinst` part of the post. Thanks to [`Niklas Keller`](https://github.com/kelunik)'s efforts and related [post](http://blog.kelunik.com/2017/01/08/travis-composer-dependencies.html).
