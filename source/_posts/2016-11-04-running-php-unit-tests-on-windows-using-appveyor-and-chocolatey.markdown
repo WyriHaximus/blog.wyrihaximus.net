@@ -111,21 +111,6 @@ install:
 test_script:
     - cd c:\projects\php-project-workspace
     - vendor/bin/phpunit -c phpunit.xml.dist
-
-    - cd c:\tools\php
-    - IF %PHP%==1 copy php.ini-production php.ini /Y
-    - IF %PHP%==1 echo date.timezone="UTC" >> php.ini
-    - IF %PHP%==1 echo extension_dir=ext >> php.ini
-    - IF %PHP%==1 echo extension=php_openssl.dll >> php.ini
-    - IF %PHP%==1 echo extension=php_mbstring.dll >> php.ini
-    - IF %PHP%==1 echo extension=php_fileinfo.dll >> php.ini
-    - IF %PHP%==1 echo @php %%~dp0composer.phar %%* > composer.bat
-    - appveyor-retry appveyor DownloadFile https://getcomposer.org/composer.phar
-    - cd c:\projects\php-project-workspace
-    - IF %dependencies%==lowest appveyor-retry composer update --prefer-lowest --no-progress --profile -n
-    - IF %dependencies%==current appveyor-retry composer install --no-progress --profile
-    - IF %dependencies%==highest appveyor-retry composer update --no-progress --profile -n
-    - composer show
 ```
 
 First `cinst`. `cinst` is part of the pre installed [`Chocolatey`](https://chocolatey.org/) software, it is in reality a short cut to [`choco install`](https://chocolatey.org/docs/commands-install). 
