@@ -41,12 +41,6 @@ That means as much that all synchronous clients don't do actual work, but instea
 This has a few advantages as there is a lot less duplicated code by using [`clue/block-react`](https://github.com/clue/php-block-react), by [`Christian Lück`](https://twitter.com/another_clue), to turn an async promise into a sync result that can be return as usual.
 (In case you want to use the async client in a more sync way, take a look at [`Recoil`](https://github.com/recoilphp/recoil).)
 
-# Toolkit
-
-In the coming days I'll go over the internal tool kit used in the project. Explaining each package no matter how simple. The first post will be tomorrow about the command bus.
-
-* Command bus
-
 # Conclusion
 
 None of the clients is done yet, the [`Travis` client](https://github.com/php-api-clients/travis) is pretty close though. But the others aren't.
