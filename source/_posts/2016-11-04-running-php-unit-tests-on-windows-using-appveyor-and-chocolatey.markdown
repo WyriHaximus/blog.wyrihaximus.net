@@ -2,6 +2,7 @@
 layout: post
 title: "Running php unit tests on Windows using AppVeyor and Chocolatey"
 date: 2016-11-04 13:31dw
+date_updated: 2017-02-25
 comments: true
 categories:
 - PHP
