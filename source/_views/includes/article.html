@@ -6,9 +6,18 @@
                     <p><img alt="Cees-Jan" class="img-circle" src="/images/photo-cj.jpg" width="50px" height="50px"> <a href="https://plus.google.com/{{ site.googleplus_user }}?rel=author" target="_blank" itemprop="author" itemscope itemtype="http://schema.org/Person"><ba itemprop="name">Cees-Jan Kiewiet</ba></a></p>
                     <p>
                         <bd>
-                            <time itemprop="datePublished" content="{{ post.date|date('c') }}" datetime="{{ post.date|date('c') }}">
-                                <span class="day">{{ post.date|date('j') }}</span>&nbsp;<span class="month">{{ post.date|date('F') }}</span>&nbsp;<span class="year">{{ post.date|date('Y') }}</span>
-                            </time>
+                            {% if post.date_updated is defined and post.date_updated is not empty %}
+                                <time itemprop="dateUpdated" content="{{ post.date_updated|date('c') }}" datetime="{{ post.date_updated|date('c') }}">
+                                    Updated on: <span class="day">{{ post.date_updated|date('j') }}</span>&nbsp;<span class="month">{{ post.date_updated|date('F') }}</span>&nbsp;<span class="year">{{ post.date_updated|date('Y') }}</span>
+                                </time>
+                                <time itemprop="datePublished" content="{{ post.date|date('c') }}" datetime="{{ post.date|date('c') }}">
+                                    (Originally posted on: <span class="day">{{ post.date|date('j') }}</span>&nbsp;<span class="month">{{ post.date|date('F') }}</span>&nbsp;<span class="year">{{ post.date|date('Y') }}</span>)
+                                </time>
+                            {% else %}
+                                <time itemprop="datePublished" content="{{ post.date|date('c') }}" datetime="{{ post.date|date('c') }}">
+                                    <span class="day">{{ post.date|date('j') }}</span>&nbsp;<span class="month">{{ post.date|date('F') }}</span>&nbsp;<span class="year">{{ post.date|date('Y') }}</span>
+                                </time>
+                            {% endif %}
                         </bd>
                     </p>
                     {% if index %}
