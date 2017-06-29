@@ -36,38 +36,59 @@ To use it pass it an instance of the event loop and a child process `Process` in
 
 A few years ago I was doing a lot of similar looking projects that did RPC communication with child processes. 
 Which resulted in writing [`wyrihaximus/react-child-process-messenger`](https://github.com/WyriHaximus/reactphp-child-process-messenger) and [`wyrihaximus/react-child-process-pool`](https://github.com/WyriHaximus/reactphp-child-process-pool) (we'll go over pool in the next article) so I wouldn't have to reimplement that code in each new project. 
-It evolved from a wrapper around [`react/child-process`](https://github.com/reactphp/child-process) that handled all communication between the parent and the child with a lot of hands on coding required. Into a package that takes a class name and takes care of the rest.
+It evolved from a wrapper around [`react/child-process`](https://github.com/reactphp/child-process) that handled all communication between the parent and the child. But with a lot of hands on coding required to get it running. Into a package that takes a class name and takes care of the rest.
+(The more hands on approach is still possible but you don't have to.)
 
-For example a class that gives you the time and microtime:
+For example a class that checks if a given number is a prime or not: 
 
 ```php
 use React\EventLoop\LoopInterface;
 use WyriHaximus\React\ChildProcess\Messenger\ChildInterface;
 use WyriHaximus\React\ChildProcess\Messenger\Messages\Payload;
+use WyriHaximus\React\ChildProcess\Messenger\Messenger;
 
-class Tardis implements ChildInterface
+class Optimus implements ChildInterface
 {
     public static function create(Messenger $messenger, LoopInterface $loop)
-    {
-        $messenger->registerRpc('time', function (Payload $payload) {
+    {    
+        $messenger->registerRpc('isPrime', function (Payload $payload) {
             return [
-                'time'      => time(),
-                'microtime' => microtime(true),
+                'isPrime' => self::isPrime($payload['number']),
             ];
         });
+    }
+    
+    private static function isPrime(int $number)
+    {
+        for($i=$n>>1;$i&&$n%$i--;);return!$i&&$n>1;
     }
 }
 ```
 
 (Note: the returned resolve always has to be an array because the communication is JSON serialized and assumes arrays.)
 
-All we need to do is tell the `MessengerFactory` that we want to create a new parent from the `Tardis` class and it takes care of creating a new parent messenger, spawn the child process and then resolve the promise notifying the user it is ready for use.
+All we need to do is tell the `MessengerFactory` that we want to create a new parent from the `Optimus` class and it takes care of creating a new parent messenger, spawn the child process and then resolve the promise notifying the user it is ready for use.
 
 ```php
-MessengerFactory::parentFromClass(Tardis::class, $loop)->then(function (Messenger $messenger) {
-    return $messenger->rpc('time');
-})->done(function (array $times) {
-    var_export($times);
+use React\EventLoop\Factory;
+use WyriHaximus\React\ChildProcess\Messenger\Factory as MessengerFactory;
+use WyriHaximus\React\ChildProcess\Messenger\Messages\Factory as MessageFactory;
+use WyriHaximus\React\ChildProcess\Messenger\Messages\Payload;
+use WyriHaximus\React\ChildProcess\Messenger\Messenger;
+
+MessengerFactory::parentFromClass(\Optimus::class, $loop)->then(function (Messenger $messenger) {
+    return $messenger->rpc(
+        MessageFactory::rpc('isPrime', ['number' => 66])
+    )->always(function () use ($messenger) {
+        $messenger->softTerminate(); // Be sure to terminate the child when we're done
+    });
+})->done(function (Payload $result) {
+    if ($result['isPrime']) {
+        echo 'Prime', PHP_EOL;
+        return;
+    }
+
+    echo 'Not a prime', PHP_EOL;
 });
 ```
 
