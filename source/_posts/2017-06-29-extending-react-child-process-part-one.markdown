@@ -15,7 +15,7 @@ social:
   image_relative: /images/posts/T9I6A89.jpg
 ---
 
-[`react/child-process`](https://github.com/reactphp/child-process) is very flexible and can work a lot of ways but sometimes you don't want to be bothered with the details of how it works and a simpler API to do that. In this post we're going over several of my packages to do so.
+[`react/child-process`](https://github.com/reactphp/child-process)  is very flexible and can work a lot of ways but sometimes you don't want to be bothered with the details of how it works and *just want* a simpler API to do that.
 
 <!-- More -->
 
