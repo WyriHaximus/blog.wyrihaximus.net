@@ -8,7 +8,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="google-site-verification" content="wWTnH_l1Gfq3CiRkUtbFcuVcXZO9MB1ar0740K3F55Q" />
         <meta name="flattr:id" content="m0lokm">
-        <link href="/css/wyrihaximus.net.css" rel="stylesheet">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
 
         <link rel="apple-touch-startup-image" href="/images/jackson/2048x2048.png">
         <meta name="mobile-web-app-capable" content="yes">
@@ -65,7 +66,7 @@
             }
         </style>
     </head>
-    <body class="blog">
+    <body>
         <header>
             <nav>
                 <div class="navbar navbar-inverse navbar-static-top">
@@ -101,40 +102,38 @@
 
         {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
 
-        <footer>
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <h4>Powered by</h4>
-                            <p>
-                                <span class="credit">
-                                    <a href="https://sculpin.io/">Sculpin</a><br />
-                                    <a href="https://aws.amazon.com/">AWS S3 + CloudFront</a><br />
-                                    <a href="https://m.do.co/c/7493728c79e4">Digital Ocean</a><br />
-                                    <a href="https://disqus.com/">Disqus</a><br />
-                                    {#<a href="https://github.com/wyrihaximus/ratchet">wyrihaximus/rathet</a><br />#}
-                                    {#<a href="https://github.com/wyrihaximus/html-compress">wyrihaximus/html-compress</a><br />#}
-                                </span>
-                            </p>
-                        </div>
-                        <div class="col-lg-4">
-                            <h4>My Links</h4>
-                            <p>
-                                <i class="fa fa-twitter fa-fw"></i> <a href="https://twitter.com/WyriHaximus">Twitter</a><br/>
-                                <i class="fa fa-github fa-fw"></i> <a href="https://github.com/WyriHaximus">Github</a><br/>
-                                <i class="fa fa-rss fa-fw"></i> <a href="/atom.xml">Feed</a><br/>
-                                <i class="fa fa-amazon fa-fw"></i> <a href="https://www.amazon.co.uk/gp/registry/wishlist/1TSLGZ8HU2ORF?sort=universal-title">Amazon Wishlist</a><br/>
-                                <i class="fa fa-google-plus fa-fw"></i> <a href="https://plus.google.com/116291745551237181952?rel=author">Google+</a><br/>
-                            </p>
-                        </div>
-                        <div class="col-lg-4">
-                            <h4>Copyright</h4>
-                            <p>Copyright &copy; {{ "now"|date("Y") }} - Cees-Jan Kiewiet</p>
-                        </div>
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h4>Powered by</h4>
+                        <p>
+                            <span class="credit">
+                                <a href="https://sculpin.io/">Sculpin</a><br />
+                                <a href="https://aws.amazon.com/">AWS S3 + CloudFront</a><br />
+                                <a href="https://m.do.co/c/7493728c79e4">Digital Ocean</a><br />
+                                <a href="https://disqus.com/">Disqus</a><br />
+                                {#<a href="https://github.com/wyrihaximus/ratchet">wyrihaximus/rathet</a><br />#}
+                                {#<a href="https://github.com/wyrihaximus/html-compress">wyrihaximus/html-compress</a><br />#}
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>My Links</h4>
+                        <p>
+                            <i class="fa fa-twitter fa-fw"></i> <a href="https://twitter.com/WyriHaximus">Twitter</a><br/>
+                            <i class="fa fa-github fa-fw"></i> <a href="https://github.com/WyriHaximus">Github</a><br/>
+                            <i class="fa fa-rss fa-fw"></i> <a href="/atom.xml">Feed</a><br/>
+                            <i class="fa fa-amazon fa-fw"></i> <a href="https://www.amazon.co.uk/gp/registry/wishlist/1TSLGZ8HU2ORF?sort=universal-title">Amazon Wishlist</a><br/>
+                            <i class="fa fa-google-plus fa-fw"></i> <a href="https://plus.google.com/116291745551237181952?rel=author">Google+</a><br/>
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>Copyright</h4>
+                        <p>Copyright &copy; {{ "now"|date("Y") }} - Cees-Jan Kiewiet</p>
                     </div>
                 </div>
-            </footer>
+            </div>
         </footer>
 
         <div style="position: absolute !important; top: 0px; border: 0px; right: 0px; z-index: 1001;">

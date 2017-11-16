@@ -8,28 +8,31 @@ use:
     - posts
 ---
 {% for post in page.pagination.items %}
-    {% include 'includes/article.html' with {post: post, index: true} %}
+    {% set colour = 'grey' %}
+    {% if loop.index is divisible by(2) %}
+        {% set colour = 'white' %}
+    {% endif %}
+    <div id="{{ colour }}">
+        {% include 'includes/article.html' with {post: post, index: true} %}
+    </div>
 {% endfor %}
 
 {% if page.pagination.previous_page or page.pagination.next_page %}
-    <div class="article">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <hr />
-                    <ul class="pager">
-                        {% if page.pagination.previous_page %}
-                            <li class="previous">
-                                <a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>
-                            </li>
-                        {% endif %}
-                        {% if page.pagination.next_page %}
-                            <li class="next">
-                                <a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <ul class="pager">
+                    {% if page.pagination.previous_page %}
+                        <li class="previous">
+                            <a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>
+                        </li>
+                    {% endif %}
+                    {% if page.pagination.next_page %}
+                        <li class="next">
+                            <a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>
+                        </li>
+                    {% endif %}
+                </ul>
             </div>
         </div>
     </div>
