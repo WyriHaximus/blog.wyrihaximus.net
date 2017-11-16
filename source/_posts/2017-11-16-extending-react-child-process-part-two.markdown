@@ -19,7 +19,7 @@ tags:
 
 <!-- More -->
 
-# wyrihaximus/react-child-process-pool 
+#### wyrihaximus/react-child-process-pool 
 
 The pool package has nearly exactly the same API as `wyrihaximus/react-child-process-messenger` 
 with the difference that you're dispatching calls to the first available child process in the pool.
@@ -27,6 +27,8 @@ This makes setting up resource pools or pools for CPU intensive fairly simple. O
 assigning a child process to each CPU core available. (OSX and Windows CPU core detection are on the roadmap.)
 In fact `wyrihaximus/react-child-process-pool` is using [`wyrihaximus/react-child-process-promise`](/2017/06/extending-react-child-process-part-one/#wyrihaximus%2Freact-child-process-promise) 
 from the previous article under the hood to detect the CPU core count.
+
+#### Doctrine DBAL
 
 Lets set up a flexible pool that executes [`Doctrine DBAL`](https://github.com/doctrine/dbal) queries for you and walk you through it in the code comments. 
 But first we need a class to run inside the child process:  
@@ -67,7 +69,7 @@ final class DoctrineDBAL implements ChildInterface
 }
 ```
 
-Now that we have a simple class to run inside the child process:
+Now that we have a class handling the `DBAL` interaction to run inside the child process:
 
 ```php
 use React\EventLoop\Factory as EventLoopFactory;
@@ -127,7 +129,7 @@ In that case `MAX_SIZE` is set to the number of CPU cores detected. I want to hi
 on a flexible pool again, especially with database connections this avoid errors like `MySQL has gone away` when there is a long
 time between queries.
 
-# wyrihaximus/react-child-process-closure
+#### wyrihaximus/react-child-process-closure
 
 Now the above example is very powerful already, but what if we could bring running a random closure from 
 `wyrihaximus/react-child-process-promise` into the pool? That can be done with `wyrihaximus/react-child-process-closure`, and it 
@@ -159,7 +161,7 @@ Flexible::createFromClass(ClosureChild::class, $loop, $options)->then(function (
 });
 ```
 
-# Use with bunny/bunny for queue processing
+#### Use with bunny/bunny for queue processing
 
 Combining a flexible pool with [`bunny/bunny`](https://github.com/jakubkulhan/bunny) creates queue consumer that only requires resources when handling a message.
 
@@ -207,12 +209,19 @@ all([
 });
 ```
 
-# Conclusion
+#### Conclusion
 
 Child processes are very useful for a lot of different purposes, from image manipulation till gathering output from existing programs. 
-These two packages are create to make such operations easier. 
+These two packages are create to make such operations easier when dealing with a bulk of operations to be done. Which is why I've included 
+the bunny example, a pattern I'm actively using that in production.
 
-### P.S.
+#### Bonus: rx/child-process
+
+For those familiar with observables [`rx/child-process`](https://github.com/RxPHP/RxChildProcess) lets you stream the `STDOUT` and `STDERR` 
+output with [`reactivex/rxphp`](https://github.com/ReactiveX/RxPHP) observables. And you can use all the cool reactivex operators on it. For 
+those unfamiliar with observables I strongly recommend checking out [`RxMarbles`](http://rxmarbles.com/) for visualisations on Rx operators.
+
+#### P.S.
 
 The Doctrine DBAL example featured in this post can be found fully working at [`wyrihaximus/react-doctrine-dbal`](https://github.com/WyriHaximus/reactphp-doctrine-dbal) 
 on Github ready to be experimented with. 
