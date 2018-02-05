@@ -156,6 +156,6 @@ It has the following outcome:
 # Further reading
 
 Later this week two more posts will be posted going into different use cases of coroutines using Recoil. But if you want to dive 
-deeper in how coroutines work now, [Nikita Popov](https://twitter.com/nikita_ppv) wrote a I great, a bit long and technical, 
+deeper in how coroutines work now, [Nikita Popov](https://twitter.com/nikita_ppv) wrote a great, but bit long and technical, 
 article how coroutines work under the hood:
 [Cooperative multitasking using coroutines (in PHP!)](https://nikic.github.io/2012/12/22/Cooperative-multitasking-using-coroutines-in-PHP.html).
