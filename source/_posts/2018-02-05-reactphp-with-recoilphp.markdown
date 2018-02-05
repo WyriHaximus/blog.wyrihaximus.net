@@ -130,7 +130,8 @@ the following line of code
 echo $argv[$i], ': ', yield $resolver->resolve($argv[$i]), PHP_EOL;
 ```
 
-As you can see in the outcome of that code, the hostname gets printed, then that coroutine is paused and the 
+As you can see in the outcome of that code, the hostname gets printed, then that coroutine is paused and the other takes over 
+and starts printing it's first bit of text. By getting the desired value before printing we avoid this.
 
 ![Coroutine order gone wrong](/images/posts/coroutines-gone-wrong.png)
 
