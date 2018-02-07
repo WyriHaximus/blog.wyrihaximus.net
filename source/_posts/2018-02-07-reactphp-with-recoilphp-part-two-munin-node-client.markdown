@@ -279,6 +279,6 @@ The code is available at [`munin-node.php`](https://github.com/WyriHaximus/React
 In the above example all my three switches at home are queried (over a VPN) and the total bytes per port per switch 
 are outputted.
 
-# PSR
+# Friday's post: PSR-?
 
 In Friday's post we'll go into bridging a PSR to async land.
