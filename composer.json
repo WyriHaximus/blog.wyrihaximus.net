@@ -11,7 +11,7 @@
         "cocur/slugify": "@stable",
 
         "components/bootstrap": "~3.3.7",
-        "components/jquery": "~1.9.1",
+        "components/jquery": "~3.2.1",
         "components/highlightjs": "~7.3.0",
         "ramsey/sculpin-codeblock": "~1.0"
     },
