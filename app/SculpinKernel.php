@@ -8,9 +8,7 @@ if (!class_exists('SculpinKernel')) {
     {
         protected function getAdditionalSculpinBundles()
         {
-            return [
-                RamseySculpinCodeBlockBundle::class,
-            ];
+            return [];
         }
     }
 }
