@@ -32,7 +32,8 @@ composer require brunty/cigar --dev
 ````
 
 Secondly we create `.cigar.json` which contains a list of URL's, their expected status code, and optionally a chunk of the expected 
-content. The list shown below is from one of my older sites/projects [`wow-screenshots.net`](https://www.wow-screenshots.net):
+content. The list shown below is from one of my older sites/projects [`wow-screenshots.net`](https://www.wow-screenshots.net) I've 
+converted to fully run on ReactPHP the past month:
 
 ```json
 [
@@ -77,7 +78,8 @@ function main() {
 main
 ``` 
 
-1) We add the first line to `main()` that will start our server and launch it into the background using `&`:
+1) We add the first line to `main()` that will start our server and launch it into the background using `&`. `web.php` is 
+a simple HTTP server like [this ReactPHP HTTP Server example](https://github.com/reactphp/http/blob/master/examples/01-hello-world.php):
 ```bash
 php ./server.php &
 ```
