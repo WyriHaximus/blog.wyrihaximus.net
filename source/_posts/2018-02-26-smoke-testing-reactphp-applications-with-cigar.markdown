@@ -78,38 +78,38 @@ function main() {
 main
 ``` 
 
-1) We add the first line to `main()` that will start our server and launch it into the background using `&`. `web.php` is 
+**1)** We add the first line to `main()` that will start our server and launch it into the background using `&`. `web.php` is 
 a simple HTTP server like [this ReactPHP HTTP Server example](https://github.com/reactphp/http/blob/master/examples/01-hello-world.php):
 ```bash
 php ./server.php &
 ```
 
-2) Next we add the following line which will capture the `PID` of our server:
+**2)** Next we add the following line which will capture the `PID` of our server:
 ```bash
 local pid=$!
 ```
 
-3) Optionally we'll wait for a few seconds to give the server time to start:
+**3)** Optionally we'll wait for a few seconds to give the server time to start:
 ```bash
 sleep 5
 ```
 
-4) Now for the main attraction of this script, we run Cigar:
+**4)** Now for the main attraction of this script, we run Cigar:
 ```bash
 ./vendor/bin/cigar
 ```
 
-5) As bonus we capture Cigar's exit code and store it for later use:
+**5)** As bonus we capture Cigar's exit code and store it for later use:
 ```bash
 local ec=$?
 ```
 
-6) We shut down the application, rather aggressively using `-9` which kills it without giving it the change to clean up:
+**6)** We shut down the application, rather aggressively using `-9` which kills it without giving it the change to clean up:
 ```bash
 kill -9 $pid
 ```
 
-7) And finally we re-emit the Cigar exit code:
+**7)** And finally we re-emit the Cigar exit code:
 ```bash
 exit $ec
 ```
