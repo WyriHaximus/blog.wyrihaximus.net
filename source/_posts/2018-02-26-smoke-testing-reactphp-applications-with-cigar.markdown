@@ -19,7 +19,7 @@ social:
 Last week I came across [`Cigar`](https://github.com/Brunty/cigar), a smoke testing tool by [`Matt Brunt`](https://twitter.com/Brunty). 
 Which, to me, is great stepping stone for my personal projects/sites to integration tests. In this post we not only go into Cigar, but 
 also how to start your [`HTTP ReactPHP`](https://reactphp.org/http/) application, run cigar against it, and shut it down again. (Note 
-that it doesn't have to be a ReactPHP application it can be a NodeJS app, or PHP's build in webserver you use for testing.) 
+that it doesn't have to be a ReactPHP application it can also be a NodeJS app, or PHP's build in webserver you use for testing.) 
 
 <!-- More -->
 
