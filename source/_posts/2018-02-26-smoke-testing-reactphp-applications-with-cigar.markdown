@@ -72,7 +72,7 @@ script.
 ```bash
 #!/bin/bash
 
-function main() {
+function main {
 }
 
 main
@@ -121,7 +121,7 @@ All of the above combined is the `cigar.ash` script I run do my smoke testing:
 ```bash
 #!/bin/bash
 
-function main() {
+function main {
     php ./server.php &
     local pid=$!
     sleep 5
