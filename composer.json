@@ -19,7 +19,7 @@
     },
     "require-dev": {
         "phpro/grumphp": "^0.9.0",
-        "phpunit/phpunit": "^5.3"
+        "phpunit/phpunit": "^7.1"
     },
     "autoload": {
         "files": ["app/SculpinKernel.php"]
