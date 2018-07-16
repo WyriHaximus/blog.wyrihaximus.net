@@ -1,0 +1,62 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: chialab/php:7.2
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "composer.lock" }}
+      - run: composer global require hirak/prestissimo
+      - run: composer install -n --ansi --no-progress --optimize-autoloader
+      - save_cache:
+          paths:
+            - /root/repo/vendor
+            - /root/composer/cache/files
+          key: v1-dependencies-{{ checksum "composer.lock" }}
+      - run: vendor/bin/grumphp run
+      - run: vendor/bin/sculpin generate --env=prod
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - ./*
+  deploy:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      # Run local steps before AWS is required so if they
+      # fail you don't waste build time installing AWS CLI
+
+      # Install AWS CLI
+      # - include aws cli ci docker:
+      #     https://github.com/circleci/circleci-images/issues/53
+      # - use global install for aws and pip instead of --user:
+      #     https://discuss.circleci.com/t/how-to-add-a-path-to-path-in-circle-2-0/11554
+      - run: sudo apt-get update && sudo apt-get install -qq -y python-pip libpython-dev
+      - run: curl -O https://bootstrap.pypa.io/get-pip.py && sudo python get-pip.py
+      - run: sudo pip install -q awscli --upgrade
+
+      # Do stuff with AWS CLI
+      - run: aws s3 sync ~/repo/output_prod/ s3://php-api-clients.org/ --region eu-central-1
+workflows:
+  version: 2
+  build-n-deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
