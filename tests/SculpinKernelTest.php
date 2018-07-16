@@ -1,6 +1,8 @@
 <?php
 
-class SculpinKernelTest extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class SculpinKernelTest extends TestCase
 {
     public function testGetAdditionalSculpinBundles()
     {
