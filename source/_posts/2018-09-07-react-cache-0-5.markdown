@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "react/cache 0.5 in use"
+title: "react/cache in use"
 date: 2018-09-07 13:37dw
 comments: true
 categories:
