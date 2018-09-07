@@ -1,0 +1,119 @@
+---
+layout: post
+title: "react/cache 0.5 in use"
+date: 2018-09-07 13:37dw
+comments: true
+categories:
+- PHP
+- ReactPHP
+tags:
+- PHP
+- ReactPHP
+- Cache
+---
+
+Recently we, ReactPHP, released [0.5 of our cache package](https://github.com/reactphp/cache/releases/tag/v0.5.0) with 
+TTL and other [`PSR-16`](https://www.php-fig.org/psr/psr-16/) similarities. In this post we'll go over which packages 
+I recently updated and how I am using them in my sites. 
+
+<!-- More -->
+
+# JSON and msgpack
+
+The [`JSON`](https://github.com/WyriHaximus/reactphp-cache-json) and [`msgpack`](https://github.com/WyriHaximus/reactphp-cache-msgpack) 
+packages are decorators around other [`CacheInterface`](https://reactphp.org/cache/#cacheinterface) implementors to 
+encode/decode data when writing/reading from the decorated cache. Where the `JSON` package is useful for writing arrays 
+to for example `Redis`, it chokes in non-UTF-8 data. This is where [`msgpack`](https://msgpack.org/) comes in handy, 
+it encodes pretty much anything (in my experience) and writes to the decorated cache.
+
+```php
+// Stores everything in `ArrayCache` JSON encoded
+$cache = new Json(new ArrayCache());
+```
+
+# Redis
+
+While [`react/cache`](https://reactphp.org/cache/) ships with the in memory [`ArrayCache`](https://reactphp.org/cache/#arraycache) 
+it only lasts as long as the PHP process is alive. As a more permanent cache I use [`Redis`](https://redis.io/). With 
+it's native support for [`TTL`](https://en.wikipedia.org/wiki/Time_to_live) it works well for my use cases. It is build 
+on [`clue/redis-react`](https://github.com/clue/php-redis-react) and needs a connected redis client to work.
+
+```php
+$factory->createClient()->then(function (Client $client) {
+    $cache = new Redis($client, 'cache:key:prefix:', /** Optional TTL value here overwriting set passed value */);
+});
+```
+
+# Fallback
+
+The [`fallback`](https://github.com/WyriHaximus/reactphp-cache-fallback) package has been specifically designed to be 
+a building block for keeping the most recent items in memory while offloading the rest to `Redis` or any other longer 
+term storage. But it call be used with any cache pair.
+
+There are a few ways to use it, one of them is to start with an empty cache and slowly populate it from your fallback 
+cache (redis in this case) and let is slowly cache everything fetched. Bear in mind that this only works well when the 
+cache holds a small finite number of items as otherwise your memory usage will explode.
+```php
+$cache = new Fallback(
+    new ArrayCache(),
+    new Redis($redis, 'cache:key:')
+);
+```
+
+# react/http session middleware
+
+Due to ReactPHP's nature you can't use `$_SESSION` so I had to implement my own [session handling middleware](https://packagist.org/packages/wyrihaximus/react-http-middleware-session) 
+to have sessions in my sites. To store sessions it accepts a `CacheInterface` implementation leaving the storage details 
+up to the user.
+
+The following bit of code is the session configuration for [`WyriMaps`](https://www.wyrimaps.net/) which ultimately 
+stores sessions in `Redis` but covers a few packages we discussed above. First of all it uses the fallback cache to 
+deal with the array cache which is configured to only hold the 5 latest items ([`LRU`](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU)) 
+in memory. When a `get` returns a `null` it falls back to the `JSON` cache which wraps the `Redis` cache to see if it 
+can be found in the more permanent cache storage. The main reason to wrap only the `Redis` cache with the `JSON` cache 
+and not wrap `JSON` around the fallback cache is that we only `JSON` encode/decode interactions with `Redis`.
+
+```php
+new SessionMiddleware(
+    'VolJinForWarchief',
+    new Fallback(
+        new ArrayCache(5),
+        new Json(
+            new RedisCache($redis, 'cache:sessions:', 604800)
+        )
+    ),
+    [/** Cookie settings */]
+);
+```
+
+# react/http webroot preload middleware
+
+[`WyriMaps`](https://www.wyrimaps.net/), like most sites, also serves `CSS`, `JavaScript`, fonts, images, and more. 
+To do that in a simple way I've crafted [`wyrihaximus/react-http-middleware-webroot-preload`](https://github.com/WyriHaximus/reactphp-http-middleware-webroot-preload) 
+which reads all file contents from the given webroot and loads that in memory to super fast access (below 1ms internally). 
+But the site is under active development and to keep everything working for users already on the site I need to keep a 
+few version of the `JavaScript` files available for a while. As a result the amount of files in memory keep growing and 
+growing, so to mitigate that only the latest requested files are kept in memory. The rest of the files are encoded with 
+`msgpack` stored into redis. The reason for using `msgpack` and not `JSON` to store the array holding the contents and mime 
+type is that `PHP`'s `JSON` encoder chokes on anything not UTF-8, which binary files easily can be, `msgpack` doesn't 
+has issues with that.
+
+```php
+new WebrootPreloadMiddleware(
+    '/var/wwww/public/',
+    $logger,
+    new Fallback(
+        new ArrayCache(33),
+        new Msgpack(
+            new RedisCache($redis, 'cache:' . $version . ':webrootpreload:', 60 * 60 * 24 * 31 * 6)
+        )
+    )
+);
+```
+
+# Conclusion
+
+My `react/cache` packages allow me to keep the memory usage of my ReactPHP applications low while still have resources 
+previously cached in memory with in reach. For some apps the memory dropped nearly 10MB implementing the fallback to 
+redis setup by sacrificing a few ms of response time for those static resources in redis and keeping it at below 1ms 
+for those in memory. 🍦🍦🍦 
