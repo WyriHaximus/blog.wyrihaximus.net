@@ -2793,7 +2793,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.9.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -2836,7 +2836,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -3061,20 +3061,20 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.36.0",
+            "version": "v1.38.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "730c9c4471b5152d23061feb02b03382264c8a15"
+                "reference": "754b8dfc0026585eb8498ec4bf5ff240b6b34db7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/730c9c4471b5152d23061feb02b03382264c8a15",
-                "reference": "730c9c4471b5152d23061feb02b03382264c8a15",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/754b8dfc0026585eb8498ec4bf5ff240b6b34db7",
+                "reference": "754b8dfc0026585eb8498ec4bf5ff240b6b34db7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
+                "php": ">=5.4.0",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "require-dev": {
@@ -3085,7 +3085,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.36-dev"
+                    "dev-master": "1.38-dev"
                 }
             },
             "autoload": {
@@ -3123,7 +3123,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2018-12-16T10:34:11+00:00"
+            "time": "2019-03-12T12:42:04+00:00"
         },
         {
             "name": "webignition/internet-media-type",
@@ -5188,7 +5188,8 @@
         "sculpin/sculpin": 20,
         "dflydev/embedded-composer-console": 20,
         "dflydev/embedded-composer-core": 20,
-        "composer/composer": 20
+        "composer/composer": 20,
+        "cocur/slugify": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,
