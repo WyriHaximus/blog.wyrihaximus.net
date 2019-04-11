@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa45fbf421ec9cc841ca92848b6d8afa",
+    "content-hash": "f6a3f51af93f0fbd9948c9e8625a244c",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -73,23 +73,20 @@
         },
         {
             "name": "components/bootstrap",
-            "version": "3.3.7",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/bootstrap.git",
-                "reference": "fe6e7683be66ba45a725816efdb51d4566733043"
+                "reference": "6c183f17f5d8fbfb38af412c5e0a52135f7d01c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/bootstrap/zipball/fe6e7683be66ba45a725816efdb51d4566733043",
-                "reference": "fe6e7683be66ba45a725816efdb51d4566733043",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/6c183f17f5d8fbfb38af412c5e0a52135f7d01c9",
+                "reference": "6c183f17f5d8fbfb38af412c5e0a52135f7d01c9",
                 "shasum": ""
             },
             "require": {
-                "components/jquery": "1.9.1 - 3"
-            },
-            "suggest": {
-                "components/bootstrap-default": "Provide a theme for Bootstrap as components/bootstrap only provides the CSS as file assets"
+                "components/jquery": ">=2"
             },
             "type": "component",
             "extra": {
@@ -100,10 +97,7 @@
                     "files": [
                         "js/*.js",
                         "css/*.css",
-                        "css/*.map",
-                        "fonts/*",
-                        "less/mixins/*.less",
-                        "less/*.less"
+                        "css/*.map"
                     ],
                     "shim": {
                         "deps": [
@@ -132,12 +126,12 @@
                 "css",
                 "framework",
                 "front-end",
-                "less",
                 "mobile-first",
                 "responsive",
+                "sass",
                 "web"
             ],
-            "time": "2016-07-26T05:59:20+00:00"
+            "time": "2018-05-06T21:06:16+00:00"
         },
         {
             "name": "components/highlightjs",
