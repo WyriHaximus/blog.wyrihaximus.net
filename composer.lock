@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5da175935eaf7fc18952259ad13f583d",
+    "content-hash": "72dbeb899a402169026b42b4fa9f26fb",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -135,16 +135,16 @@
         },
         {
             "name": "components/highlightjs",
-            "version": "9.12.0",
+            "version": "v9.16.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/highlightjs.git",
-                "reference": "3686afa1decd999857ac9e1ae27c24df2e64be3a"
+                "reference": "1dea393aa70365843cfec34b1f365930d383bdfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/highlightjs/zipball/3686afa1decd999857ac9e1ae27c24df2e64be3a",
-                "reference": "3686afa1decd999857ac9e1ae27c24df2e64be3a",
+                "url": "https://api.github.com/repos/components/highlightjs/zipball/1dea393aa70365843cfec34b1f365930d383bdfe",
+                "reference": "1dea393aa70365843cfec34b1f365930d383bdfe",
                 "shasum": ""
             },
             "type": "component",
@@ -173,7 +173,7 @@
                 }
             ],
             "description": "Highlight.js highlights syntax in code examples on blogs, forums and in fact on any web pages.",
-            "time": "2017-06-04T08:08:15+00:00"
+            "time": "2019-11-05T19:09:33+00:00"
         },
         {
             "name": "components/jquery",
