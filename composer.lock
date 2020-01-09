@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72dbeb899a402169026b42b4fa9f26fb",
+    "content-hash": "9cd0046bede5b4a278af2ca8beedf39c",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -73,16 +73,16 @@
         },
         {
             "name": "components/bootstrap",
-            "version": "4.3.1",
+            "version": "4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/bootstrap.git",
-                "reference": "9487105b1b8c1db5bd1879429103deedd6982462"
+                "reference": "983313252725392091d8d2952276cbdcd4060014"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/bootstrap/zipball/9487105b1b8c1db5bd1879429103deedd6982462",
-                "reference": "9487105b1b8c1db5bd1879429103deedd6982462",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/983313252725392091d8d2952276cbdcd4060014",
+                "reference": "983313252725392091d8d2952276cbdcd4060014",
                 "shasum": ""
             },
             "require": {
@@ -96,6 +96,7 @@
                     ],
                     "files": [
                         "js/*.js",
+                        "js/*.map",
                         "css/*.css",
                         "css/*.map"
                     ],
@@ -112,16 +113,16 @@
             ],
             "authors": [
                 {
-                    "name": "Jacob Thornton",
-                    "email": "jacobthornton@gmail.com"
-                },
-                {
                     "name": "Mark Otto",
                     "email": "markdotto@gmail.com"
+                },
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
                 }
             ],
             "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-            "homepage": "http://getbootstrap.com",
+            "homepage": "https://getbootstrap.com",
             "keywords": [
                 "css",
                 "framework",
@@ -131,7 +132,7 @@
                 "sass",
                 "web"
             ],
-            "time": "2019-06-19T16:37:43+00:00"
+            "time": "2020-01-08T10:19:13+00:00"
         },
         {
             "name": "components/highlightjs",
