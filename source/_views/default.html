@@ -146,13 +146,13 @@
 
                 (function() {
                     var u="//{{ site.piwik_host_name }}/";
-                    _paq.push(['setTrackerUrl', u+'piwik.php']);
+                    _paq.push(['setTrackerUrl', u+'matomo.php']);
                     _paq.push(['setSiteId', {{ site.piwik_site_id }}]);
                     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
                 })();
             </script>
-            <noscript><p><img src="//{{ site.piwik_host_name }}/piwik.php?idsite={{ site.piwik_site_id }}" style="border:0;" alt="" /></p></noscript>
+            <noscript><p><img src="//{{ site.piwik_host_name }}/matomo.php?idsite={{ site.piwik_site_id }}" style="border:0;" alt="" /></p></noscript>
         {% endif %}
 
         {% if site.disqus_short_name and page.comments != false %}
