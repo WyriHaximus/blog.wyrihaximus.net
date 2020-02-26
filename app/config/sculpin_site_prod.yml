@@ -7,5 +7,5 @@ url: https://blog.wyrihaximus.net
 google_analytics_tracking_id: UA-63526-12
 
 # Piwik
-piwik_host_name: piwik.wyrihaximus.net
+piwik_host_name: analytics.wyrihaximus.net
 piwik_site_id: 5
