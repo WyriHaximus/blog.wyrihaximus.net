@@ -16,7 +16,7 @@ jobs:
             - /root/repo/vendor
             - /root/composer/cache/files
           key: v1-dependencies-{{ checksum "composer.lock" }}
-      - run: vendor/bin/grumphp run
+#      - run: vendor/bin/grumphp run
       - run: vendor/bin/sculpin generate --env=prod
       - persist_to_workspace:
           root: ~/repo
