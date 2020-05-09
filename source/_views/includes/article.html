@@ -84,9 +84,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
-                <section id="comment">
-                    <div id="commento"></div>
-                </section>
+                {% if page.comments == true %}
+                    <section id="comment">
+                        <div id="commento"></div>
+                    </section>
+                {% endif %}
             </div>
         </div>
     </div>
