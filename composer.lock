@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca31a624b5eb1bc4a91cacc91e5cda7c",
+    "content-hash": "9390d99ecf92b31ee3e107d1b2d95caf",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -73,16 +73,16 @@
         },
         {
             "name": "components/bootstrap",
-            "version": "4.4.1",
+            "version": "4.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/bootstrap.git",
-                "reference": "983313252725392091d8d2952276cbdcd4060014"
+                "reference": "a64e49cf3e338e4b90d9fd1963104a1440232c21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/bootstrap/zipball/983313252725392091d8d2952276cbdcd4060014",
-                "reference": "983313252725392091d8d2952276cbdcd4060014",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/a64e49cf3e338e4b90d9fd1963104a1440232c21",
+                "reference": "a64e49cf3e338e4b90d9fd1963104a1440232c21",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +132,7 @@
                 "sass",
                 "web"
             ],
-            "time": "2020-01-08T10:19:13+00:00"
+            "time": "2020-05-12T18:49:58+00:00"
         },
         {
             "name": "components/highlightjs",
