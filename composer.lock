@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca31a624b5eb1bc4a91cacc91e5cda7c",
+    "content-hash": "9390d99ecf92b31ee3e107d1b2d95caf",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -73,16 +73,16 @@
         },
         {
             "name": "components/bootstrap",
-            "version": "4.4.1",
+            "version": "4.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/bootstrap.git",
-                "reference": "983313252725392091d8d2952276cbdcd4060014"
+                "reference": "41d99b0cd311dd1cec4a7a32f0439f0b7e47317c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/bootstrap/zipball/983313252725392091d8d2952276cbdcd4060014",
-                "reference": "983313252725392091d8d2952276cbdcd4060014",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/41d99b0cd311dd1cec4a7a32f0439f0b7e47317c",
+                "reference": "41d99b0cd311dd1cec4a7a32f0439f0b7e47317c",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +132,7 @@
                 "sass",
                 "web"
             ],
-            "time": "2020-01-08T10:19:13+00:00"
+            "time": "2020-08-06T10:14:06+00:00"
         },
         {
             "name": "components/highlightjs",
@@ -1523,6 +1523,7 @@
                 "javascript",
                 "minification"
             ],
+            "abandoned": true,
             "time": "2016-04-19T09:28:22+00:00"
         },
         {
@@ -1972,6 +1973,16 @@
                 "linter",
                 "parser",
                 "validator"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/Seldaek",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/seld/jsonlint",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-04-30T19:05:18+00:00"
         },
@@ -2716,6 +2727,20 @@
                 "polyfill",
                 "portable"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-05-08T16:50:20+00:00"
         },
         {
@@ -2774,6 +2799,20 @@
                 "polyfill",
                 "portable",
                 "shim"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-05-08T16:50:20+00:00"
         },
@@ -3407,5 +3446,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
