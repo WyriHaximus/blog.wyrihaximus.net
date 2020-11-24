@@ -10,7 +10,7 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "composer.lock" }}
 #      - run: composer global require hirak/prestissimo
-      - run: composer install -n --ansi --no-progress --optimize-autoloader
+      - run: composer install -n --ansi --no-progress --optimize-autoloader --ignore-platform-reqs
       - save_cache:
           paths:
             - /root/repo/vendor
