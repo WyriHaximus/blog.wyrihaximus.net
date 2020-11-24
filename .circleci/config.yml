@@ -9,7 +9,7 @@ jobs:
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "composer.lock" }}
-      - run: composer global require hirak/prestissimo
+#      - run: composer global require hirak/prestissimo
       - run: composer install -n --ansi --no-progress --optimize-autoloader
       - save_cache:
           paths:
