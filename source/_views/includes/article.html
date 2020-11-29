@@ -22,6 +22,12 @@
                 {% if index %}
                     <h4><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h4>
                 {% else %}
+                    {% if date(post.date) < date('-1years') %}
+                        <div class="alert alert-{% if date(post.date) < date('-2years') %}danger{% else %}warning{% endif %}" role="alert">
+                            This is an {% if date(post.date) < date('-2years') %}very {% endif %}old post, information in this post might not be up to date with the latest documentation/language features/package versions etc. If you ran into any issues please open an issue on <a href="https://github.com/WyriHaximus/blog.wyrihaximus.net/">this blog's GitHub Repository</a>.
+                        </div>
+                    {% endif %}
+
                     <h4>{{ post.title }}</h4>
                 {% endif %}
 
