@@ -6,7 +6,7 @@ use Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel;
 if (!class_exists('SculpinKernel')) {
     class SculpinKernel extends AbstractKernel
     {
-        protected function getAdditionalSculpinBundles()
+        protected function getAdditionalSculpinBundles(): array
         {
             return [];
         }
