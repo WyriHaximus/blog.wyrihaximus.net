@@ -1,0 +1,18 @@
+name: Continuous Integration
+on:
+  push:
+  pull_request:
+jobs:
+  generate-blog:
+    name: Generate Blog
+    runs-on: ubuntu-latest
+    container:
+      image: wyrihaximusnet/php:7.4-nts-alpine3.12-dev-root
+    steps:
+      - uses: actions/checkout@v1
+      - name: Composer Install
+        run: composer install --ansi --no-progress --no-interaction --prefer-dist -o
+      - name: Generate Blog
+        run: vendor/bin/sculpin generate --env=prod
+      - name: Find It all
+        run: find output_prod
