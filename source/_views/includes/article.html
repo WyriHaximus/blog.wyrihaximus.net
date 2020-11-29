@@ -16,7 +16,7 @@
                             <time itemprop="datePublished" content="{{ post.date|date('c') }}" datetime="{{ post.date|date('c') }}">
                                 <span class="day">{{ post.date|date('j') }}</span>&nbsp;<span class="month">{{ post.date|date('F') }}</span>&nbsp;<span class="year">{{ post.date|date('Y') }}</span>
                             </time>
-                        {% endif %}
+                        {% endif %}{% if not index %} - <a href="https://github.com/WyriHaximus/blog.wyrihaximus.net/blob/master/source/{{ post.relative_pathname }}">Post source at 🐙</a>{% endif %}
                     </bd>
                 </p>
                 {% if index %}
