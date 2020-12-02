@@ -1491,30 +1491,35 @@
         },
         {
             "name": "react/http",
-            "version": "v0.8.7",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/http.git",
-                "reference": "9aa446fd86745403a09c315c90d4e464fd84382b"
+                "reference": "754b0c18545d258922ffa907f3b18598280fdecd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/http/zipball/9aa446fd86745403a09c315c90d4e464fd84382b",
-                "reference": "9aa446fd86745403a09c315c90d4e464fd84382b",
+                "url": "https://api.github.com/repos/reactphp/http/zipball/754b0c18545d258922ffa907f3b18598280fdecd",
+                "reference": "754b0c18545d258922ffa907f3b18598280fdecd",
                 "shasum": ""
             },
             "require": {
                 "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
                 "php": ">=5.3.0",
+                "psr/http-message": "^1.0",
+                "react/event-loop": "^1.0 || ^0.5",
                 "react/promise": "^2.3 || ^1.2.1",
                 "react/promise-stream": "^1.1",
-                "react/socket": "^1.0 || ^0.8.3",
-                "react/stream": "^1.0 || ^0.7.1",
+                "react/socket": "^1.6",
+                "react/stream": "^1.1",
                 "ringcentral/psr7": "^1.2"
             },
             "require-dev": {
                 "clue/block-react": "^1.1",
-                "phpunit/phpunit": "^9.0 || ^5.7 || ^4.8.35"
+                "clue/http-proxy-react": "^1.3",
+                "clue/reactphp-ssh-proxy": "^1.0",
+                "clue/socks-react": "^1.0",
+                "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.35"
             },
             "type": "library",
             "autoload": {
@@ -1526,16 +1531,53 @@
             "license": [
                 "MIT"
             ],
-            "description": "Event-driven, streaming plaintext HTTP and secure HTTPS server for ReactPHP",
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@clue.engineering",
+                    "homepage": "https://clue.engineering/"
+                },
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "reactphp@ceesjankiewiet.nl",
+                    "homepage": "https://wyrihaximus.net/"
+                },
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com",
+                    "homepage": "https://sorgalla.com/"
+                },
+                {
+                    "name": "Chris Boden",
+                    "email": "cboden@gmail.com",
+                    "homepage": "https://cboden.dev/"
+                }
+            ],
+            "description": "Event-driven, streaming HTTP client and server implementation for ReactPHP",
             "keywords": [
+                "async",
+                "client",
                 "event-driven",
                 "http",
+                "http client",
+                "http server",
                 "https",
+                "psr-7",
                 "reactphp",
                 "server",
                 "streaming"
             ],
-            "time": "2020-07-05T11:32:28+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/clue",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-09-11T11:01:51+00:00"
         },
         {
             "name": "react/promise",
@@ -1878,16 +1920,16 @@
         },
         {
             "name": "sculpin/sculpin",
-            "version": "3.0.3",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sculpin/sculpin.git",
-                "reference": "81b5c64f46069ef598ac2d75cd57b0eaa461c56a"
+                "reference": "8b62800755c04f554064ae0f2c46f7a4a79a515a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sculpin/sculpin/zipball/81b5c64f46069ef598ac2d75cd57b0eaa461c56a",
-                "reference": "81b5c64f46069ef598ac2d75cd57b0eaa461c56a",
+                "url": "https://api.github.com/repos/sculpin/sculpin/zipball/8b62800755c04f554064ae0f2c46f7a4a79a515a",
+                "reference": "8b62800755c04f554064ae0f2c46f7a4a79a515a",
                 "shasum": ""
             },
             "require": {
@@ -1899,17 +1941,17 @@
                 "ext-mbstring": "*",
                 "michelf/php-markdown": "^1.9",
                 "netcarver/textile": "^3.6",
-                "php": "^7.2",
-                "react/http": "^0.8.3",
+                "php": "^8.0 || ^7.3",
+                "react/http": "^1.0",
                 "sculpin/sculpin-theme-composer-plugin": "^1.0",
-                "symfony/config": "^4.1",
-                "symfony/console": "^4.1",
-                "symfony/dependency-injection": "^4.1",
-                "symfony/event-dispatcher": "^4.1",
-                "symfony/filesystem": "^4.1",
-                "symfony/finder": "^4.1",
-                "symfony/http-kernel": "^4.1",
-                "symfony/yaml": "^4.1",
+                "symfony/config": "^4.4.13",
+                "symfony/console": "^4.4.13",
+                "symfony/dependency-injection": "^4.4.13",
+                "symfony/event-dispatcher": "^4.4.13",
+                "symfony/filesystem": "^4.4.13",
+                "symfony/finder": "^4.4.13",
+                "symfony/http-kernel": "^4.4.13",
+                "symfony/yaml": "^4.4.13",
                 "twig/extensions": "^1.5",
                 "twig/twig": "^2.5",
                 "webignition/internet-media-type": "^0.4.8"
@@ -1927,9 +1969,9 @@
                 "sculpin/twig-bundle": "self.version"
             },
             "require-dev": {
-                "phpdocumentor/reflection-docblock": "^4.3",
-                "phpstan/phpstan": "^0.10.3",
-                "phpunit/phpunit": "^7.3",
+                "phpdocumentor/reflection-docblock": "^5.2",
+                "phpstan/phpstan": "^0.12.57",
+                "phpunit/phpunit": "^9.4",
                 "squizlabs/php_codesniffer": "^3.3",
                 "symfony/css-selector": "^4.1",
                 "symfony/dom-crawler": "^4.1",
@@ -1977,7 +2019,7 @@
                 "site",
                 "static"
             ],
-            "time": "2019-12-05T07:27:19+00:00"
+            "time": "2020-12-01T19:41:31+00:00"
         },
         {
             "name": "sculpin/sculpin-theme-composer-plugin",
@@ -2806,16 +2848,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v5.1.9",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "1e6e9e28369ddd3fd66ca14a469c21ae9b51969a"
+                "reference": "e4576271ee99123aa59a40564c7b5405f0ebd1e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/1e6e9e28369ddd3fd66ca14a469c21ae9b51969a",
-                "reference": "1e6e9e28369ddd3fd66ca14a469c21ae9b51969a",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/e4576271ee99123aa59a40564c7b5405f0ebd1e6",
+                "reference": "e4576271ee99123aa59a40564c7b5405f0ebd1e6",
                 "shasum": ""
             },
             "require": {
@@ -2872,7 +2914,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-15T22:55:04+00:00"
+            "time": "2020-11-27T06:13:25+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -3362,16 +3404,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.1.9",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "006fc2312ee014e1ba46c01185423c010310d00f"
+                "reference": "173a79c462b1c81e1fa26129f71e41333d846b26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/006fc2312ee014e1ba46c01185423c010310d00f",
-                "reference": "006fc2312ee014e1ba46c01185423c010310d00f",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/173a79c462b1c81e1fa26129f71e41333d846b26",
+                "reference": "173a79c462b1c81e1fa26129f71e41333d846b26",
                 "shasum": ""
             },
             "require": {
@@ -3443,7 +3485,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-26T23:46:31+00:00"
+            "time": "2020-11-27T00:39:34+00:00"
         },
         {
             "name": "symfony/yaml",
