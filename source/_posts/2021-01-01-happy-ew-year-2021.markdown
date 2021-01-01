@@ -7,8 +7,6 @@ categories:
 - Blogging
 tags:
 - Blogging
-- 2020
-- 2021
 social:
   image_relative: /images/posts/oliebollen.jpg
 ---
