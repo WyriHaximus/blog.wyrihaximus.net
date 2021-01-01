@@ -1,16 +1,14 @@
 ---
 layout: post
 title: "Happy (New Year|2021)!"
-date: 2020-01-01 13:37dw
+date: 2021-01-01 13:37dw
 comments: true
 categories:
-- PHP
-- ReactPHP
+- Blogging
 tags:
-- PHP
-- ReactPHP
-- Threads
-- PSR-15
+- Blogging
+- 2020
+- 2021
 social:
   image_relative: /images/posts/oliebollen.jpg
 ---
