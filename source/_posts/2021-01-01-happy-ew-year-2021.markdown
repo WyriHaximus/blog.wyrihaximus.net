@@ -12,12 +12,12 @@ tags:
 - Threads
 - PSR-15
 social:
-  image_relative: /images/posts/needle-4854847_640.jpg
+  image_relative: /images/posts/oliebollen.jpg
 ---
 
 Happy new year! May it be finishing off the crap 2020 started, and get a lot better after that!
 
-![Oliebollen](/images/posts/needle-4854847_640.jpg)
+![Oliebollen](/images/posts/oliebollen.jpg)
 
 <!-- More -->
 
