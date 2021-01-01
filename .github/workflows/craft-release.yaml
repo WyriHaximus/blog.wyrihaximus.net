@@ -61,6 +61,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
       - name: Composer Install
         run: composer install --ansi --no-progress --no-interaction --prefer-dist -o
       - name: Generate Blog
