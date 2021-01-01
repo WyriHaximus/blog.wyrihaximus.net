@@ -1,0 +1,42 @@
+---
+layout: post
+title: "Happy (New Year|2021)!"
+date: 2020-01-01 13:37dw
+comments: true
+categories:
+- PHP
+- ReactPHP
+tags:
+- PHP
+- ReactPHP
+- Threads
+- PSR-15
+social:
+  image_relative: /images/posts/oliebollen.jpg
+---
+
+Happy new year! May it be finishing off the crap 2020 started, and get a lot better after that!
+
+![Oliebollen](/images/posts/oliebollen.jpg)
+
+<!-- More -->
+
+## Looking back at 2020
+
+While 2020 was different then I planned, I did make a metric ton of progress on [`reactphp-parallel`](https://github.com/reactphp-parallel/reactphp-parallel) with most notable [`worker pools`](https://github.com/reactphp-parallel/worker-pool) and at the top [`object proxy`](https://github.com/reactphp-parallel/object-proxy) (almost done), bringing fast and scalable easy to use non-blocking threading to PHP using [`ext-parallel`](https://github.com/krakjoe/parallel).
+
+2020 was also the year, well I started the cluster a few hours minutes before, where I moved all my projects from self-managed VPSes to a Kubernetes cluster removing the need to manage to VPSes. (And gain the management of the said cluster 🤣.) This brought me to start opensourcing some of the [`Helm charts`](https://github.com/WyriHaximusNet/helm-charts) I've been making to run things on my cluster. Including some of things I've build for my specific needs. Including a [`redirect`](https://github.com/WyriHaximusNet/helm-charts/tree/master/charts/redirect) service, a [`default-backend`](https://github.com/WyriHaximusNet/helm-charts/tree/master/charts/default-backend) with random 404 pages, my first [`kubernetes operator for redis database assignment`](https://github.com/WyriHaximusNet/helm-charts/tree/master/charts/redis-db-assignment-operator).
+
+## Looking forward into 2021
+
+While my intention of 2020 was to build the Docker image for [`redirect`](https://github.com/WyriHaximusNet/docker-redirect) in a different language each month, heaving to deal with the mental health fall out of mandatory WFH loosing travel time, a strong disconnect between work and private life, no more in person meet ups etc etc. Still intending to pick it back up, maybe March 2021 is when I continue with it.
+
+Finishing off the [`object proxy`](https://github.com/reactphp-parallel/object-proxy) is also high on this years list. Already actively using it in projects, and the use of it, and [`reactphp-parallel`](https://github.com/reactphp-parallel/reactphp-parallel) in general, will only increase in 2021.
+
+GitHub automation is also a big topic for me. 2020 ended for me porting Kubernetes cronjobs that approve and merge mergeable PR's from specific bots ([`Dependabot`](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates) and [`Image optimize bot`](https://imgbot.net/)), to webhook triggered merging and approving. Bringing the time a PR from those bots is open from up to several hours (the cronjobs only run a few times a day), to a few minutes. (The PR's get merged the moment they turn mergeable with a clean mergeable state.)
+
+There is one more thing I want to start doing this year, and that's blog more. Not perse long posts, but also short and quick posts with small snippets about for able Kubernetes tricks. (Like the custom prometheus metrics HPA set up I've done a few days ago.)
+
+## Conclusion
+
+While things sucked in 2020, there were also a lot of good and positive things. And I'm looking positively at 2021, and hoping to see the lot of you again this year!
