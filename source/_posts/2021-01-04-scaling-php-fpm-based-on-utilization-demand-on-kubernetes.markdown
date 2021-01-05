@@ -75,19 +75,14 @@ resource tight (enough to run it) container for metrics scraping from FPM, assum
       path: /metrics
       port: fpm-metrics
   env:
-    # Address on which to expose metrics and web interface.
     - name: PHP_FPM_SCRAPE_URI
       value: tcp://127.0.0.1:9666/status
-    # FastCGI address where FPM listens on, e.g. unix:///tmp/php.sock;/status or tcp://127.0.0.1:9000/status
     - name: PHP_FPM_WEB_LISTEN_ADDRESS
       value: 6999
-    # Path under which to expose metrics.
     - name: PHP_FPM_WEB_TELEMETRY_PATH
       value: /metrics
-    # Enable to calculate process numbers via php-fpm_exporter since PHP-FPM sporadically reports wrong active/idle/total process numbers.
     - name: PHP_FPM_FIX_PROCESS_COUNT
       value: "false"
-    # Only log messages with the given severity or above. Valid levels: [debug, info, warn, error, fatal] (default "error")
     - name: PHP_FPM_LOG_LEVEL
       value: info
   resources:
