@@ -131,6 +131,30 @@ exposes that percentage as a custom metric.
 
 For more information on the details and how a custom metric works have a look [`configuration documentation`](https://github.com/DirectXMan12/k8s-prometheus-adapter/blob/master/docs/config.md).
 
+# Validating the custom metrics
+
+Before we can start on the Horizontal Pod Autoscaler we want to make sure our metrics are picked up and available as 
+expected. We can achieve that by making a raw request for those metrics using kubectl. The call is as follows:
+
+```bash
+kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1/namespaces/REPLACE_THIS_NAMESPACE/pods/*/phpfpm_process_utilization"
+```
+
+*Note:* Be sure to replace `REPLACE_THIS_NAMESPACE` with the namespace you deployed your PHP FPM deployment to.
+
+![Kubernetes PHP FPM custom metrics Kubectl raw GET](/images/posts/kubernetes-php-fpm-custom-metrics-raw-get.png)
+
+The result should like something like the above. If you don't get anything back keep in mind it might take up to a 
+minute depending on how often you refresh the metrics.
+
+Alternatively you can get the custom metric across namespaces with:
+
+```bash
+kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1/namespaces/*/metrics/phpfpm_process_utilization"
+```
+
+![Kubernetes PHP FPM custom metrics Kubectl raw GET namespaces](/images/posts/kubernetes-php-fpm-custom-metrics-raw-get-namespaces.png)
+
 # Horizontal Pod Autoscaler
 
 Putting this all together is the Horizontal Pod Autoscaler. Out of the box it can scale on CPU and memory usage 
