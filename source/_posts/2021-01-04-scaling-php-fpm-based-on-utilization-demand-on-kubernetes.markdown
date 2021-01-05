@@ -47,6 +47,10 @@ traffic. Once you have container metrics from Kubernetes have a look at how much
 adjust to the point where the CPU won't get throttled anymore, and your container won't get OOMKilled for using too 
 much memory.
 
+*Note:* Make sure that you tweak the resources well before you move on to the next steps, it is really important for the 
+stability of your service and effects autoscaling fundamentally same as the `FPM` configuration. The engineering team 
+at `Omio` write a great article that dives deep in how [CPU throttling works in `Kubernetes`](https://medium.com/omio-engineering/cpu-limits-and-aggressive-throttling-in-kubernetes-c5b20bd8a718).
+
 # Metrics
 
 In order to scale we need one very important bit of information: Metrics. Since FPM doesn't expose [`Prometheus`](https://prometheus.io/) 
@@ -75,14 +79,19 @@ resource tight (enough to run it) container for metrics scraping from FPM, assum
       path: /metrics
       port: fpm-metrics
   env:
+    # FastCGI address where FPM listens on, we're connecting over TCP
     - name: PHP_FPM_SCRAPE_URI
       value: tcp://127.0.0.1:9666/status
+    # Address on which to expose metrics and web interface.
     - name: PHP_FPM_WEB_LISTEN_ADDRESS
       value: 6999
+    # Path under which to expose metrics.
     - name: PHP_FPM_WEB_TELEMETRY_PATH
       value: /metrics
+    # Enabled to calculate process numbers via php-fpm_exporter since PHP-FPM sporadically reports wrong active/idle/total process numbers.
     - name: PHP_FPM_FIX_PROCESS_COUNT
-      value: "false"
+      value: "true"
+    # Only log messages with the given severity or above. Valid levels: [debug, info, warn, error, fatal] (default "error")
     - name: PHP_FPM_LOG_LEVEL
       value: info
   resources:
