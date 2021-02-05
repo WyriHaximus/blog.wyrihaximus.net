@@ -28,7 +28,8 @@ migrate them to `ghcr.io`.
 
 In kubernetes `1.20` `Docker` has been depricated and replaced with `containerd`. This on it's own isn't a change that 
 worried me. However, it turned out to be incompatible with images hosted on `docker.pkg.github.com`, much to my 
-surprise. Started digging around after accepting it wasn't a weird config glitch. After a while I found that there 
+surprise. This resulted in all my projects getting stuck in the `ImagePullErr` phase on the new nodes. 
+Started digging around after accepting it wasn't a weird config glitch. After a while I found that there 
 are slight differences between `Docker` and `containerd` when it comes to pulling images and supported versions. Long 
 story short `containerd` doesn't support what ever runs `docker.pkg.github.com`. Since I already have a few public 
 images on `ghcr.io` (also by `GitHub`), and those are also running in my cluster, and where pulling fine, I decided to 
