@@ -8,10 +8,11 @@ categories:
 - Digitalocean
 - Kubernetes
 tags:
-- PHP
+- Docker
 - Kubernetes
-- FPM
-- Metrics
+- Containerd
+- Digitalocean
+- GitHub
 social:
   image_relative: /images/posts/kubernetes-1.20-chaos.jpg
 ---
