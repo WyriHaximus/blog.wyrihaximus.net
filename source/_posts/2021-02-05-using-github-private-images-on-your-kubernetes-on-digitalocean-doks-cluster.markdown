@@ -59,7 +59,7 @@ it to the rest.
 
 # Conclusion
 
-While I totally don't core that  they swapped `Docker` with `containerd` in `Kubernetes` 1.20, it would have been nice 
+While I totally don't care that  they swapped `Docker` with `containerd` in `Kubernetes` 1.20, it would have been nice 
 if `DigitalOcean` is going to update their linter with a warning about this. This is partially why I enjoy running the 
 latest versions of almost everything: shit breaks and I have to fix it, learning new things in the frustrating but 
 rewarding process.
