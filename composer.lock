@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "094d9830e1d5a8d2b4db12f0f4301979",
+    "content-hash": "a5fbb227f6fd247cd8c7f83450e83579",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -183,16 +183,16 @@
         },
         {
             "name": "components/jquery",
-            "version": "3.5.1",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/jquery.git",
-                "reference": "b33e8f0f9a1cb2ae390cf05d766a900b53d2125b"
+                "reference": "6cf38ee1fd04b6adf8e7dda161283aa35be818c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/jquery/zipball/b33e8f0f9a1cb2ae390cf05d766a900b53d2125b",
-                "reference": "b33e8f0f9a1cb2ae390cf05d766a900b53d2125b",
+                "url": "https://api.github.com/repos/components/jquery/zipball/6cf38ee1fd04b6adf8e7dda161283aa35be818c3",
+                "reference": "6cf38ee1fd04b6adf8e7dda161283aa35be818c3",
                 "shasum": ""
             },
             "type": "component",
@@ -221,7 +221,7 @@
             ],
             "description": "jQuery JavaScript Library",
             "homepage": "http://jquery.com",
-            "time": "2020-05-05T13:21:02+00:00"
+            "time": "2021-03-20T19:13:42+00:00"
         },
         {
             "name": "dflydev/ant-path-matcher",

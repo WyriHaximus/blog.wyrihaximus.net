@@ -5,7 +5,7 @@
         "cocur/slugify": "@stable",
 
         "components/bootstrap": "^4.6.0",
-        "components/jquery": "~3.3.1 || ~3.4.0 || ~3.5.0",
+        "components/jquery": "^3.6.0",
         "components/highlightjs": "9.16.2"
     },
     "config": {
