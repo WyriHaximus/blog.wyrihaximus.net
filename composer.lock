@@ -78,16 +78,16 @@
         },
         {
             "name": "components/bootstrap",
-            "version": "4.6.0",
+            "version": "4.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/bootstrap.git",
-                "reference": "16442b1b2ac3dbc357fb4137b46cc3e1096ff4da"
+                "reference": "97f06b5527fba4083b85b7bdb152513ad8c7d6ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/bootstrap/zipball/16442b1b2ac3dbc357fb4137b46cc3e1096ff4da",
-                "reference": "16442b1b2ac3dbc357fb4137b46cc3e1096ff4da",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/97f06b5527fba4083b85b7bdb152513ad8c7d6ce",
+                "reference": "97f06b5527fba4083b85b7bdb152513ad8c7d6ce",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "sass",
                 "web"
             ],
-            "time": "2021-01-23T18:24:55+00:00"
+            "time": "2021-11-09T13:15:59+00:00"
         },
         {
             "name": "components/highlightjs",
