@@ -16,7 +16,7 @@ social:
   image_relative: /images/posts/php-8.1-fibers.jpg
 ---
 
-PHP 8.1 is out and the hip new feature for non-blocking and asynchronous programming in PHP are fibers. In this port
+PHP 8.1 is out and the hip new feature for non-blocking and asynchronous programming in PHP are fibers. In this post
 we're going to explore them and see how we at ReactPHP will start with them at the edge.
 
 ![PHP 8.1 fibers (green threads)](/images/posts/php-8.1-fibers.jpg)
@@ -43,7 +43,7 @@ async(function () {
 
 # await
 
-Await lets you suspend the fiber your code currently runs in. A fiber can only resumed once, and cannot be resumed
+Await lets you suspend the fiber your code currently runs in. A fiber can only be resumed once, and cannot be resumed
 again unless it has been started again. So the following, only with the main fiber, will not work:
 
 ```php
@@ -89,7 +89,7 @@ async(function () {
 
 ## Request Handler
 
-If you decide not to run your entire application in a fiber the next best to also use them are anything that reacts to 
+If you decide not to run your entire application in a fiber the next best way to use them are with anything that reacts to 
 something external like request handlers.
 
 ```php
@@ -206,7 +206,7 @@ await(test());
 
 > (Posted by [`Bart Vanhoutte`](https://github.com/bartvanhoutte) on [`react/async#16`](https://github.com/reactphp/async/issues/16#issuecomment-989829770).)
 
-These synthetic examples, but they demonstrate the problem well.
+These are synthetic examples, but they demonstrate the problem well.
 
 # Conclusion
 
