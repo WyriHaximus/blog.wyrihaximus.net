@@ -206,7 +206,7 @@ await(test());
 
 > (Posted by [`Bart Vanhoutte`](https://github.com/bartvanhoutte) on [`react/async#16`](https://github.com/reactphp/async/issues/16#issuecomment-989829770).)
 
-These synthetic examples, but they demonstrate the problem well.
+These are synthetic examples, but they demonstrate the problem well.
 
 # Conclusion
 
