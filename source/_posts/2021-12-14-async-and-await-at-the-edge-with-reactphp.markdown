@@ -89,7 +89,7 @@ async(function () {
 
 ## Request Handler
 
-If you decide not to run your entire application in a fiber the next best to also use them are anything that reacts to 
+If you decide not to run your entire application in a fiber the next best way to use them are with anything that reacts to 
 something external like request handlers.
 
 ```php
