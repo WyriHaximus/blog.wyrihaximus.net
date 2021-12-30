@@ -12,7 +12,7 @@ tags:
 - security
 - policy
 social:
-  image_relative: /images/posts/header.jpg
+  image_relative: /images/posts/kyverno/header.jpg
 ---
 
 DigitalOcean put a [challenge](https://www.digitalocean.com/community/pages/kubernetes-challenge) out at the end of 
