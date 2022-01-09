@@ -33,6 +33,17 @@ policies discussed in this post on [GitHub here](https://github.com/WyriHaximus/
 For this challenge I created the cluster by hand instead of terraform, and had some fun with adding five node pools 
 with two nodes each and autoscaling on them.
 
+![Create Cluster](/images/posts/kyverno/create-cluster.png)
+
+Keep in mind that you need to change the autoscaling after creating the cluster, you cannot do that while setting it 
+up through the UI.
+
+![Set Autoscaling](/images/posts/kyverno/set-autoscaling.png)
+
+Give it some time, and you have a nice 10 node cluster.
+
+![10 Node Cluster](/images/posts/kyverno/10-node-cluster.png)
+
 # Deploying Kyverno
 
 As usual installing something through Helm is a walk in the park and should take less than a minute. The following four 
@@ -45,6 +56,12 @@ helm repo update
 helm install kyverno kyverno/kyverno --namespace kyverno --create-namespace --atomic
 helm install kyverno-policies kyverno/kyverno-policies --namespace kyverno --atomic
 ```
+
+![Install Kyverno](/images/posts/kyverno/installing-kyverno.png)
+
+Give it a minute or two and you have `Kyverno` running on your cluster:
+
+![Kyverno Running](/images/posts/kyverno/kyverno-running.png)
 
 # Example: Pod anti-affinity
 
@@ -120,6 +137,11 @@ spec:
             - "kube-system"
             - kyverno
 ```
+
+My recommendation would be to manage your cluster's policies through a `Helm` chart or `TerraForm`. But for now we're 
+applying it with `kubectl`:
+
+![Applying policy](/images/posts/kyverno/applying-policy.png)
 
 So when you try to deploy something without the required anti affinity, 
 like [`hello`](https://artifacthub.io/packages/helm/cloudecho/hello) with the following Helm command, it fails:
@@ -213,6 +235,19 @@ spec:
 
 As you can see this is very similar to the pod anti-affinity. (When I started writing this post the expectation was 
 that this example would not be as similar, well lesson learned!) 
+
+When using this policy on a DigitalOcean cluster with only `amd64` nodes you get a bunch pending pods that can't go 
+anywhere because DigitalOcean only has `amd64` nodes:
+
+![Pending Pods](/images/posts/kyverno/pending-pods.png)
+
+We already know the why, but you can check a pod's events why it is pending:
+
+![Why Pod is Pending](/images/posts/kyverno/why-pod-is-pending.png)
+
+We can also see the CPU architecture of the node by its labels:
+
+![Node labels](/images/posts/kyverno/node-labels.png)
 
 # Testing
 
