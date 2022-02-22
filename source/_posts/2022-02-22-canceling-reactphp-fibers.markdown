@@ -41,7 +41,7 @@ $promise = async(static function (): int {
 
 $promise->cancel();
 await($promise);
-````
+```
 
 If you however decide to try and catch that `await` you will reach `echo 'b';`. The exception you caught however
 isn't thrown by the bottom await function. Just as with synchronous code catching it lets you ignore the exception or
