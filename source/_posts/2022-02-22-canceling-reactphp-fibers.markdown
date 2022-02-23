@@ -18,7 +18,8 @@ social:
 
 A feature that we really needed to make our fiber integration complete is the cancellation of them. Or to be more 
 precise, the cancellation any awaited promise yielding operations in that fiber and as a consequence the fiber that 
-those are awaited in.
+those are awaited in. This post goes into detail how different cancelation scenarios work for 
+[the PR introducing it](https://github.com/reactphp/async/pull/20).
 
 ![Cancelled PHP 8.1 fibers (green threads)](/images/posts/php-8.1-fibers-cancelled.jpg)
 > [Photo by Jeffrey Czum from Pexels](https://www.pexels.com/photo/concrete-building-under-blue-sky-4004291/)
