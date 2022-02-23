@@ -19,7 +19,8 @@ social:
 A feature that we really needed to make our fiber integration complete is the cancellation of them. Or to be more 
 precise, the cancellation any awaited promise yielding operations in that fiber and as a consequence the fiber that 
 those are awaited in. This post goes into detail how different cancelation scenarios work for 
-[the PR introducing it](https://github.com/reactphp/async/pull/20).
+[the PR introducing it](https://github.com/reactphp/async/pull/20), and was originally part of that PR's documentation 
+but was replaced by a simpler section.
 
 ![Cancelled PHP 8.1 fibers (green threads)](/images/posts/php-8.1-fibers-cancelled.jpg)
 > [Photo by Jeffrey Czum from Pexels](https://www.pexels.com/photo/concrete-building-under-blue-sky-4004291/)
@@ -127,3 +128,7 @@ $promise = async(static function (): int {
 
 $promise->cancel();
 ```
+
+# Conclusion
+
+While this text didn't make the cut in the PR, as most of it is implied. I did feel it is important to put it out there for those looking for some more explicit clarity on this subject.
