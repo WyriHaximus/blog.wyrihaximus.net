@@ -14,7 +14,7 @@ tags:
 - Async
 - Await
 social:
-  image_relative: /images/posts/php-8.1-fibers-cancelled.jpg
+  image_relative: /images/posts/pexels-pixabay-159049.jpg
 ---
 
 The road to fibers didn't start for me in 2021 when the [`fibers` RFC](https://wiki.php.net/rfc/fibers) went into vote. 
