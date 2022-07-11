@@ -109,7 +109,7 @@ c) Every return type hint will be `Generator` regardless of what that function o
 
 # Threads with ext-parallel
 
-When [Joe Watkins](https://twitter.com/krakjoe), the author of [` [`ext-pthreads`](https://www.php.net/manual/en/pthreads.installation.php) `](https://www.php.net/manual/en/pthreads.installation.php), came with [`ext-parallel`](https://www.php.net/manual/en/book.parallel.php) as te spiritual successor of  [`ext-pthreads`](https://www.php.net/manual/en/pthreads.installation.php) . I was 
+When [Joe Watkins](https://twitter.com/krakjoe), the author of [`ext-pthreads`](https://www.php.net/manual/en/pthreads.installation.php), came with [`ext-parallel`](https://www.php.net/manual/en/book.parallel.php) as te spiritual successor of  [`ext-pthreads`](https://www.php.net/manual/en/pthreads.installation.php) . I was 
 excited because it means you can now do threading in PHP without all the messy overhead ` [`ext-pthreads`](https://www.php.net/manual/en/pthreads.installation.php) ` required to 
 managed your threads. The following code is enough to start a new thread:
 
