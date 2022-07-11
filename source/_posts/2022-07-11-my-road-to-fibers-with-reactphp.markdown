@@ -385,3 +385,7 @@ async(function () {
     }
 });
 ```
+
+To conclude, I'm really happy to see [`react/async`](https://reactphp.org/async/) tagged and rock solid stable. After 
+running with it for months in all kind of projects I'm really pleased the with result. Can't wait to see what everyone 
+will be building with it!
