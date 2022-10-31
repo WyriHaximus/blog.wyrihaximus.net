@@ -26,7 +26,7 @@ post is published. Also, posts won't be written in a logical order but more in o
 done. As such the "Home Assistant" post will come before the "Node Software set up" post because the former can be done
 again without changes or data loss due to the "Terraform" and "Storage" posts.
 
-![Waved fibers into a near pattern](/images/posts/k8s-lego-cluster-toc.jpg)
+![Kubernetes Lego Cluster](/images/posts/k8s-lego-cluster-toc.jpg)
 
 <!-- More -->
 
@@ -42,7 +42,7 @@ again without changes or data loss due to the "Terraform" and "Storage" posts.
 
 ## Supportive hardware
 
-* Persistent Data Storage
+* [Persistent Data Storage](/2022/11/building-a-kubernetes-homelab-with-raspberry-pies-and-lego-persistent-data-storage-for-pvcs)
 * Cooling
 
 ## Nodes
