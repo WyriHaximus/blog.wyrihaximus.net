@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Migrating from self-hosted in Kubernetes Databases to managed hosted at Digital Ocean or the story of how I started working on Opportunistic TLS in ReactPHP"
-date: 202-01-01 13:37dw
+date: 2023-01-01 13:37dw
 comments: true
 categories:
 - Kubernetes
