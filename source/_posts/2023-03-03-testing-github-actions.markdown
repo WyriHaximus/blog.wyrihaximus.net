@@ -38,7 +38,7 @@ on:
   pull_request:
 jobs:
   get-next-release-version:
-    name: Test Get Next Release version on ${{ matrix.os }}
+    name: Test Get Next Release version on {{ "${{" }} matrix.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -46,7 +46,7 @@ jobs:
           - ubuntu-latest
           - windows-latest
           - macos-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: {{ "${{" }} matrix.os }}
     steps:
       - uses: actions/checkout@v3
       - name: 'Get Next Release version'
@@ -58,12 +58,12 @@ jobs:
         uses: nick-fields/assert-action@v1
         with:
           expected: "666"
-          actual: ${{ steps.next-release-version.outputs.version }}
+          actual: {{ "${{" }} steps.next-release-version.outputs.version }}
       - name: Assert R Version Output
         uses: nick-fields/assert-action@v1
         with:
           expected: "r666"
-          actual: ${{ steps.next-release-version.outputs.r_version }}
+          actual: {{ "${{" }} steps.next-release-version.outputs.r_version }}
 ```
 
 The top of the file is pretty standard, we only run it on the main branch or on pull requests.
@@ -84,7 +84,7 @@ box, we will not cancel any things of one of the fails and add that to the jobs 
 ```yaml
 jobs:
   get-next-release-version:
-    name: Test Get Next Release version on ${{ matrix.os }}
+    name: Test Get Next Release version on {{ "${{" }} matrix.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -92,7 +92,7 @@ jobs:
           - ubuntu-latest
           - windows-latest
           - macos-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: {{ "${{" }} matrix.os }}
 ```
 
 The steps is where it gets interesting, we first checkout the code, and then run the action by using a path reference 
@@ -116,12 +116,12 @@ and `r_version` should be `r666`. To assert that we add two actions call to the 
         uses: nick-fields/assert-action@v1
         with:
           expected: "666"
-          actual: ${{ steps.next-release-version.outputs.version }}
+          actual: {{ "${{" }} steps.next-release-version.outputs.version }}
       - name: Assert R Version Output
         uses: nick-fields/assert-action@v1
         with:
           expected: "r666"
-          actual: ${{ steps.next-release-version.outputs.r_version }}
+          actual: {{ "${{" }} steps.next-release-version.outputs.r_version }}
 ```
 
 Once the PR introducing this was merged in the next PR the new output method replaces the old one and these assertions 
