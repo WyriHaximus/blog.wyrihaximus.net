@@ -53,6 +53,7 @@ again without changes or data loss due to the "Terraform" and "Storage" posts.
 
 ## Enclosure
 
+* MoC base plating
 * Node enclosure
 * MoC Theme
 * Cable management
