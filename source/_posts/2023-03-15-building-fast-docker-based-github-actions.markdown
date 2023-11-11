@@ -17,7 +17,7 @@ social:
 
 One of my pet peeves when using GitHub Actions are Docker based Actions that build on every single run. It’s such a wasteful and error prone way to create an action. Not only does it take longer to set up the action when you run it due to whatever command is ran in there, also any issue on the network will make it fail and requires human intervention to start it up again. In this post I’ll go over my set up of using tagged images hosted on Docker Hub/GitHub Container Registry, and how to make the `username/action@v1` way of versioning Actions work with that.
 
-![Waved fibers into a near pattern](/images/posts/pexels-james-wheeler-1598075.jpg)
+![Containers moving fast along the railroad](/images/posts/pexels-james-wheeler-1598075.jpg)
 > [Photo by James Wheeler from Pexels](https://www.pexels.com/photo/passing-train-on-the-tracks-1598075/)
 
 <!-- More -->
