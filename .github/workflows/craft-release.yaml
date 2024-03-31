@@ -69,7 +69,7 @@ jobs:
         run: composer install --ansi --no-progress --no-interaction --prefer-dist -o
       - name: Generate Blog
         run: vendor/bin/sculpin generate --env=prod
-      - uses: shallwefootball/s3-upload-action@v1.1.2
+      - uses: shallwefootball/s3-upload-action@v1.3.3
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
