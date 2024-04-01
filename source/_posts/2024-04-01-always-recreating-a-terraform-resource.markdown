@@ -61,10 +61,8 @@ resource "helm_release" "pushgateway" {
 First we introduce a new resource that will always change on every single run:
 
 ```terraform
-resource "null_resource" "always_reinstall_pushgateway" {
-  triggers = {
-    timestamp = timestamp()
-  }
+resource "terraform_data" "replacement" {
+  input = timestamp()
 }
 ```
 
@@ -90,7 +88,7 @@ resource "helm_release" "pushgateway" {
 
   lifecycle {
     replace_triggered_by = [
-      null_resource.always_reinstall_pushgateway
+      terraform_data.replacement
     ]
   }
 }
@@ -103,9 +101,14 @@ reinstalled again I'm reinstalling it when it's configuration changes. To achiev
 it's values file hash to force recreation:
 
 ```terraform
-resource "null_resource" "always_run" {
-  triggers = {
-    timestamp = "${sha256(file("${path.module}/helm.values.yaml"))}"
-  }
+resource "terraform_data" "replacement" {
+  input = [
+    sha256(file("${path.module}/chart/values.yaml")),
+    sha256(file("${path.module}/helm.values.yaml")),
+  ]
 }
 ```
+
+### Edits
+
+* 1 April 2024: Updated to use `terraform_data` instead of `null_resource` after a suggestion from [Charles](https://mastodon.social/@charlesnru) on [Mastodon](https://mastodon.social/@charlesnru/112197086991928351).
