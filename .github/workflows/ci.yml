@@ -9,7 +9,7 @@ jobs:
     container:
       image: wyrihaximusnet/php:7.4-nts-alpine3.12-dev-root
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Composer Install
         run: composer install --ansi --no-progress --no-interaction --prefer-dist -o
       - name: Generate Blog
