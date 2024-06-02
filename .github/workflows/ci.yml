@@ -7,7 +7,7 @@ jobs:
     name: Generate Blog
     runs-on: ubuntu-latest
     container:
-      image: wyrihaximusnet/php:7.4-nts-alpine3.12-dev-root
+      image: wyrihaximusnet/php:8.0-nts-alpine3.12-dev-root
     steps:
       - uses: actions/checkout@v1
       - name: Composer Install
