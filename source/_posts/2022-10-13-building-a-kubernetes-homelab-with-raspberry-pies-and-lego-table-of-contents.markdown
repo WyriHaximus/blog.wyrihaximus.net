@@ -37,7 +37,7 @@ again without changes or data loss due to the "Terraform" and "Storage" posts.
 
 ## Network
 
-* Switch
+* [Switch](/2024/07/building-a-kubernetes-homelab-with-raspberry-pies-and-lego-network-switch)
 * Configuration
 
 ## Supportive hardware
