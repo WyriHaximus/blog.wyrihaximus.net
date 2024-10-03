@@ -37,14 +37,14 @@ Today, as I’m writing this which is two days ago when you first might be readi
 This set up solves a few issues:
 
 - BuildX is cool, but it doesn’t let you save and load multiplatform images as docker build does
-- No images with suffixes on the registry anymore that soi it with images anyone will unlikely use directly
+- No images with suffixes on the registry anymore that soil it with images anyone will unlikely use directly
 - Only one step to push instead of two
 
 Note: This post is based on this [PR](https://github.com/WyriHaximusNet/docker-redirect/pull/163) on [wyrihaximusnet/docker-redirect](https://github.com/WyriHaximusNet/docker-redirect) if you just want to skip to the workflow. It’s a project I started to learn a ton of languages just a bit, but it got knocked into the background due to the impact the covid pandemic had on me.
 
 ### Set up
 
-The workflow needs some basic set up which includes the image name, which registries to push to, a job that does some JSON magic, and a job that will make the supported platforms available. (The jobs could use some polishing preferably into a way that doesn’t require an jobs. But that is an improvement for another time.)
+The workflow needs some basic set up which includes the image name, which registries to push to, a job that does some JSON magic, and a job that will make the supported platforms available. (The jobs could use some polishing preferably into a way that doesn’t require any jobs. But that is an improvement for another time.)
 
 ```yaml
 name: Continuous Integration
@@ -98,13 +98,13 @@ Once it’s set up we can build the image using the normal docker build command.
 docker image build --platform={{ "${{" }} matrix.platform }} -t "${DOCKER_IMAGE}:reactphp-{{ "${{" }} env.PLATFORM_PAIR }}" --no-cache .
 ```
 
-Once the image has been build we use good old `docker save` to save the image to a tarball, for later use we make sure we include the platform in the file name:
+Once the image has been built we use good old `docker save` to save the image to a tarball, for later use we make sure we include the platform in the file name:
 
 ```bash
 docker save "${DOCKER_IMAGE}:reactphp-{{ "${{" }} env.PLATFORM_PAIR }}" -o ./docker-image/docker_image-{{ "${{" }} env.PLATFORM_PAIR }}.tar
 ```
 
-Then, we upload the directory the tarball is in as an artifact, and make sure we use the platform in the name, this will be come in handy later:
+Then, we upload the directory the tarball is in as an artifact, and make sure we use the platform in the name, this will come in handy later:
 
 ```yaml
 - uses: actions/upload-artifact@v4
@@ -157,7 +157,7 @@ Next we’ll get the image artifact:
     path: /tmp/docker-image
 ```
 
-Next we load the image into Docker, this works fine because it’s only build for a single platform and no multi platform manifest is at play:
+Next we load the image into Docker, this works fine because it’s only built for a single platform and no multi platform manifest is at play:
 
 ```bash
 docker load --input /tmp/docker-image/docker_image-{{ "${{" }} env.PLATFORM_PAIR }}.tar
@@ -201,7 +201,7 @@ The full job:
 
 ### Pushing
 
-The reason we don’t need a public registry is because for the pushing we’ll run one locally as a service on the job. We’ll use it in pretty much the same way as the public registry, but this way we don’t soil it temporary tags:
+The reason we don’t need a public registry is because for the pushing we’ll run one locally as a service on the job. We’ll use it in pretty much the same way as the public registry, but this way we don’t clutter it with temporary tags:
 
 ```yaml
 services:
