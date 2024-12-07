@@ -9,7 +9,10 @@
         "components/highlightjs": "9.16.2"
     },
     "config": {
-        "component-dir": "source/components"
+        "component-dir": "source/components",
+        "allow-plugins": {
+            "sculpin/sculpin-theme-composer-plugin": true
+        }
     },
     "require-dev": {
     },
