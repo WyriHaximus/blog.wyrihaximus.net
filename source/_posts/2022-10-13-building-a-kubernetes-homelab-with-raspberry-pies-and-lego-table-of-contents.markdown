@@ -33,7 +33,8 @@ again without changes or data loss due to the "Terraform" and "Storage" posts.
 ## Management
 
 * TerraForm
-* Node autoscaling
+* Node Autoscaling - Stage I
+* Node Autoscaling - Stage II
 
 ## Network
 
@@ -47,19 +48,19 @@ again without changes or data loss due to the "Terraform" and "Storage" posts.
 
 ## Nodes
 
-* Power
-* Storage
+* [Power](/2024/09/building-a-kubernetes-homelab-with-raspberry-pies-and-lego-nodes-power/)
+* [Storage](/2024/08/building-a-kubernetes-homelab-with-raspberry-pies-and-lego-nodes-storage/)
 * Kubernetes
 
 ## Enclosure
 
 * MoC base plating
-* Node enclosure
+* [Node enclosure](/2024/12/building-a-kubernetes-homelab-with-raspberry-pies-and-lego-nodes-enclosure/)
 * MoC Theme
 * Cable management
 
 ## Services
 
 * GitHub Actions Runners
-* Home Assistant & Node Red
+* Home Assistant
 * RabbitMQ
