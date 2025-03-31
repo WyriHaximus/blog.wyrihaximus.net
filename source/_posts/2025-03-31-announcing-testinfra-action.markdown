@@ -15,7 +15,7 @@ tags:
 - Testing
 - OCI
 social:
-  image_relative: /images/test-infra-output.png
+  image_relative: /images/posts/test-infra-output.png
 ---
 
 One of the key parts of [`Building Secure Images with GitHub Actions`](https://blog.wyrihaximus.net/2024/10/building-secure-images-with-github-actions/) 
@@ -25,7 +25,7 @@ of that desire.
 
 So here it is the: [`TestInfra Action`](https://github.com/marketplace/actions/testinfra-action).
 
-![TestInfra output](/images/test-infra-output.png)
+![TestInfra output](/images/posts/test-infra-output.png)
 
 <!-- More -->
 
