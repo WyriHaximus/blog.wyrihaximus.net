@@ -19,7 +19,7 @@ social:
 ---
 
 One of the key parts of [`Building Secure Images with GitHub Actions`](https://blog.wyrihaximus.net/2024/10/building-secure-images-with-github-actions/) 
-is unit testing the image just build. While for most of my repositories this has been some bash script in the repo that 
+is unit testing the image just built. While for most of my repositories this has been some bash script in the repo that 
 I copied to the next new repo. Always had the desire to make something more clean than that, this action is the outcome 
 of that desire.
 
@@ -47,14 +47,14 @@ Another major requirement is that it should be easy to use. This resulted in som
 # Challenges
 
 The biggest issue I had while creating this action was to keep the container running. Not because it was hard to do, 
-but because I head to realise it depends on each image if it keeps running after started or not. The 
+but because I had to realise it depends on each image if it keeps running after being started or not. The 
 [original](https://github.com/usabilla/php-docker-template/blob/1e379cfdb90f9b03b4e4e4c6b7212134091040ce/test-cli.sh#L24) 
 I took this from, [copied](https://github.com/WyriHaximusNet/docker-php/blob/345e0fca8d7b2099fef71af2c244c7b70f800107/test-zts.sh#L42) 
 over again and again, and then taking the script and putting it in this action; took care of that. This is why the 
 action has a `cmd` for image that require that. Something that keeps running like `PHP` or `nodejs` REPL is good enough.
 
 The coming challenge is going to be updating my [PHP Docker](https://github.com/WyriHaximusNet/docker-php) workflow. 
-It’s build to test all different tags build in a single build run, this action isn’t very keep on that. It can only 
+It’s built to test all different tags build in a single build run, this action isn’t very keep on that. It can only 
 handle a single test suite for the images you pass it. So no looping or any of that, going to have to do a major 
 overhaul of that workflow. But hopefully this refactor is one I can use in my other image building workflows until the 
 point I can have one general one as a reusable workflow.
