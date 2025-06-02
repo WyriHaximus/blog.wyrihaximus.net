@@ -13,7 +13,7 @@ tags:
 - Threads
 - ext-parallel
 social:
-  image_relative: /images/posts/test-infra-output.png
+  image_relative: /images/posts/pexels-wolfgang-weiser-467045605-30720851.jpg
 ---
 
 With fibers in PHP 8.1 and templates types in [`Promise`](https://reactphp.org/promise/) v3 the main focus for 
