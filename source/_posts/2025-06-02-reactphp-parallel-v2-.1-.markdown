@@ -17,7 +17,7 @@ social:
 ---
 
 With fibers in PHP 8.1 and templates types in [`Promise`](https://reactphp.org/promise/) v3 the main focus for 
-ReactPHP Parallel v2 is a simpler type safe user facing API. With [`Promise`](https://reactphp.org/promise/) v3 and 
+[ReactPHP Parallel v2](https://github.com/reactphp-parallel/reactphp-parallel) is a simpler type safe user facing API. With [`Promise`](https://reactphp.org/promise/) v3 and 
 [`Async`](https://reactphp.org/async/) v4 providing exactly with we need to make this transformation.
 
 ![Vibrant Cargo Trains at Hamburg Rail Terminal](/images/posts/pexels-wolfgang-weiser-467045605-30720851.jpg)
