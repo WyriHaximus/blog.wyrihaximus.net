@@ -6,10 +6,12 @@ comments: true
 categories:
 - PHP
 - ReactPHP
+- ext-parallel
 tags:
 - 8.1
 - Fibers
 - Threads
+- ext-parallel
 - PHP
 - Async
 - Await

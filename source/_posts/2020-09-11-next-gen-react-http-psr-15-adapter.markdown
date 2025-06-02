@@ -6,10 +6,12 @@ comments: true
 categories:
 - PHP
 - ReactPHP
+- ext-parallel
 tags:
 - PHP
 - ReactPHP
 - Threads
+- ext-parallel
 - PSR-15
 social:
   image_relative: /images/posts/needle-4854847_640.jpg
