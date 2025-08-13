@@ -29,7 +29,7 @@ jobs:
       - generate-changelog
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         env:
           CHANGELOG: ${{ needs.generate-changelog.outputs.changelog }}
       - run: |
@@ -60,7 +60,7 @@ jobs:
       - create-release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@20529878ed81ef8e78ddf08b480401e6101a850f # v2
         with:
