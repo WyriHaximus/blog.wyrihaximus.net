@@ -23,7 +23,7 @@ social:
 When I initially started building Docker images only `amd64` was relevant, and having a build ⇒ Scan ⇒ Test ⇒ Push cycle was as easy as using docker save and docker load. But with `arm64` becoming more and more popular, including with my own home cluster, I needed to add images for `arm64`. For a while this meant I was pushing images with `-amd64` and `-arm64` suffixes before combining them into one “image”. All because I want to ensure no images with CVE’s or bugs are pushed. Skipping those is not acceptable for me as a Software Engineer.
 
 ![Photo of an astronaut pained on the back of shipping containers](/images/posts/building-secure-images-with-github-actions.jpg)
-> [Photo by Pixabay](https://www.pexels.com/photo/astronaut-graffiti-on-semi-trailers-163811/)
+> [Photo by Pixabay from Pexels](https://www.pexels.com/photo/astronaut-graffiti-on-semi-trailers-163811/)
 
 <!-- More -->
 
