@@ -1,6 +1,6 @@
 {
     "require": {
-        "sculpin/sculpin": "^3.0",
+        "sculpin/sculpin": "^3.2.0",
         "wyrihaximus/html-compress-sculpin": "^1.0",
         "cocur/slugify": "@stable",
 
