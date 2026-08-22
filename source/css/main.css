@@ -7,14 +7,79 @@
  * URL: http://blacktie.co
  */
 
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+:root {
+    color-scheme: light dark;
+    --color-bg: #ffffff;
+    --color-bg-muted: #f2f2f2;
+    --color-bg-card: #f9f9f9;
+    --color-border-card: #e7e7e7;
+    --color-shadow-card: rgba(0, 0, 0, 0.04);
+    --color-text: #555555;
+    --color-text-muted: #777777;
+    --color-text-soft: #999999;
+    --color-heading: #333333;
+    --color-link: #1abc9c;
+    --color-link-hover: #7b7b7b;
+    --color-hr: #cccccc;
+    --color-brand: #1abc9c;
+    --color-brand-dark: #16a085;
+    --color-navbar-hover: #222222;
+    --color-footer-bg: #2f2f2f;
+    --color-footer-text: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --color-bg: #121614;
+        --color-bg-muted: #1a1f1d;
+        --color-bg-card: #1e2421;
+        --color-border-card: #2c3330;
+        --color-shadow-card: rgba(0, 0, 0, 0.35);
+        --color-text: #c5cbc8;
+        --color-text-muted: #9aa39e;
+        --color-text-soft: #7a847e;
+        --color-heading: #e8eeeb;
+        --color-link: #2dd4b5;
+        --color-link-hover: #a8b0ac;
+        --color-hr: #3a4240;
+        --color-navbar-hover: #0f1412;
+        --color-footer-bg: #0a0d0c;
+        --color-footer-text: #ffffff;
+    }
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-bg: #121614;
+    --color-bg-muted: #1a1f1d;
+    --color-bg-card: #1e2421;
+    --color-border-card: #2c3330;
+    --color-shadow-card: rgba(0, 0, 0, 0.35);
+    --color-text: #c5cbc8;
+    --color-text-muted: #9aa39e;
+    --color-text-soft: #7a847e;
+    --color-heading: #e8eeeb;
+    --color-link: #2dd4b5;
+    --color-link-hover: #a8b0ac;
+    --color-hr: #3a4240;
+    --color-navbar-hover: #0f1412;
+    --color-footer-bg: #0a0d0c;
+    --color-footer-text: #ffffff;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+}
 
 body {
-  	background-color: #ffffff;
+  	background-color: var(--color-bg);
   	font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
-    color: #555;
+    color: var(--color-text);
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -24,7 +89,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #333;
+    color: var(--color-heading);
 }
 
 h1 {
@@ -48,7 +113,7 @@ p {
 
 /* Links */
 a {
-    color: #1abc9c;
+    color: var(--color-link);
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -60,7 +125,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #7b7b7b;
+    color: var(--color-link-hover);
     text-decoration: none;
     outline: 0;
 }
@@ -78,7 +143,7 @@ a:after {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--color-hr);
     margin: 1em 0;
     padding: 0;
 }
@@ -95,8 +160,8 @@ a:after {
 }
 
 .navbar-inverse {
-	background-color: #1abc9c;
-	border-color: #16a085;
+	background-color: var(--color-brand);
+	border-color: var(--color-brand-dark);
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -104,7 +169,7 @@ a:after {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
-	color: #222222;
+	color: var(--color-navbar-hover);
 }
 
 .navbar-brand {
@@ -121,8 +186,48 @@ a:after {
 	border-color: transparent;
 }
 
+#theme-toggle {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+#theme-toggle .theme-icon {
+    display: block;
+    width: 1.15em;
+    height: 1.15em;
+}
+
+#theme-toggle .theme-icon[hidden] {
+    display: none;
+}
+
+.navbar-inverse .navbar-nav > li > .network-meter {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    padding: 10px 15px;
+    line-height: 20px;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .navbar-inverse .navbar-nav > li > .network-meter {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+.network-meter-rate {
+    opacity: 0.9;
+}
+
 .progress-bar-theme {
-  background-color: #1abc9c;
+  background-color: var(--color-brand);
 }
 
 
@@ -144,22 +249,22 @@ a:after {
 #ww {
 	padding-top: 70px;
 	padding-bottom: 70px;
-	background-color: #f2f2f2;
+	background-color: var(--color-bg-muted);
 }
 
 
 #footer {
-	background-color: #2f2f2f;
+	background-color: var(--color-footer-bg);
 	padding-top: 50px;
 	padding-bottom: 50px; 
 }
 
 #footer p {
-	color: white;
+	color: var(--color-footer-text);
 }
 
 #footer h4 {
-	color: white;
+	color: var(--color-footer-text);
 	text-transform: uppercase;
 	padding-bottom: 20px;
 }
@@ -170,13 +275,13 @@ a:after {
 #grey {
 	padding-top: 60px;
 	padding-bottom: 60px;
-	background-color: #f2f2f2;
+	background-color: var(--color-bg-muted);
 }
 
 #white {
 	padding-top: 60px;
 	padding-bottom: 60px;
-	background-color: #ffffff;
+	background-color: var(--color-bg);
 }
 
 
@@ -185,7 +290,7 @@ a:after {
 bd {
 	font-size: 12px;
 	text-transform: uppercase;
-	color: #d2d2d2;
+	color: var(--color-text-soft);
 	font-weight: 700;
 }
 
@@ -238,5 +343,20 @@ bt {
 
 .glyphicon {
 	font-size: 40px;
-	color: #1abc9c;
+	color: var(--color-brand);
+}
+
+/* Dark mode: code blocks and syntax highlighting */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) pre,
+    :root:not([data-theme="light"]) pre code.hljs {
+        background-color: var(--color-bg-card);
+        color: var(--color-text);
+    }
+}
+
+:root[data-theme="dark"] pre,
+:root[data-theme="dark"] pre code.hljs {
+    background-color: var(--color-bg-card);
+    color: var(--color-text);
 }

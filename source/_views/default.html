@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>{% block title %}{{ page.title }}{% endblock %} &mdash; {{ site.title }}</title>
         <meta charset="utf-8">
         <meta name="theme-color" content="#1abc9c">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script>
+            (function () {
+                try {
+                    var theme = null;
+                    var host = location.hostname;
+                    if (host === 'wyrihaximus.net' || /\.wyrihaximus\.net$/i.test(host)) {
+                        var match = document.cookie.match(/(?:^|; )theme=([^;]*)/);
+                        if (match) {
+                            theme = decodeURIComponent(match[1]);
+                        }
+                    }
+                    if (!theme) {
+                        theme = localStorage.getItem('theme');
+                    }
+                    if (theme === 'light' || theme === 'dark') {
+                        document.documentElement.setAttribute('data-theme', theme);
+                    }
+                } catch (e) {}
+            })();
+        </script>
         <meta name="google-site-verification" content="wWTnH_l1Gfq3CiRkUtbFcuVcXZO9MB1ar0740K3F55Q" />
         <meta name="flattr:id" content="m0lokm">
         <link href="/css/bootstrap.css" rel="stylesheet">
@@ -43,40 +63,64 @@
         </style>
     </head>
     <body>
-        <header>
-            <nav>
-                <div class="navbar navbar-inverse navbar-static-top" id="navBar">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="/">Cees-Jan <span id="emoji"></span></a>
-                        </div>
-                        <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <a href="https://www.wyrihaximus.net/">Home</a>
-                                </li>
-                                {#<li>
-                                    <a href="https://wwww.wyrihaximus.net/projects.html">Projects</a>
-                                </li>#}
-                                <li>
-                                    <a href="/">Blog</a>
-                                </li>
-                                {#<li>
-                                    <a href="https://wwww.wyrihaximus.net/contact.html">Contact</a>
-                                </li>#}
-                                {#<li>
-                                    <a href="https://www.patreon.com/wyrihaximus"><i class="fab fa-patreon fa-fw"></i> Patreon</a>
-                                </li>#}
-                            </ul>
-                        </div>
+        <header id="header">
+            <div class="navbar navbar-inverse navbar-static-top" id="navBar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">Cees-Jan <span id="emoji"></span></a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="https://www.wyrihaximus.net/">Home</a></li>
+                            <li><a href="/">Blog</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <span id="network-meter" class="network-meter" role="status" aria-live="polite" aria-label="WebSocket idle">
+                                    <span id="network-meter-in" class="network-meter-rate">↓ 0 B/s</span>
+                                    <span id="network-meter-out" class="network-meter-rate">↑ 0 B/s</span>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="#" id="theme-toggle" role="button" aria-label="System theme (click to change)" title="System theme">
+                                    <svg class="theme-icon" data-theme-icon="system" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M8 21h8M12 17v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        <g transform="translate(7.1 10) scale(0.26)" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round">
+                                            <circle cx="0" cy="0" r="4"/>
+                                            <path d="M0-10v2M0 8v2M-7.07-7.07l1.41 1.41M5.66 5.66l1.41 1.41M-10 0h2M8 0h2M-7.07 7.07l1.41-1.41M5.66-5.66l1.41-1.41"/>
+                                        </g>
+                                        <path d="M11.2 6.8l1.6 6.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <defs>
+                                            <clipPath id="theme-system-moon-half">
+                                                <rect x="12" y="0" width="12" height="24"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g transform="translate(11.4 6.6) scale(0.26)" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linejoin="round">
+                                            <g clip-path="url(#theme-system-moon-half)">
+                                                <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <svg class="theme-icon" data-theme-icon="light" viewBox="0 0 24 24" aria-hidden="true" focusable="false" hidden>
+                                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    <svg class="theme-icon" data-theme-icon="dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false" hidden>
+                                        <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="sr-only">Toggle theme</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </nav>
+            </div>
         </header>
 
         {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
@@ -216,6 +260,7 @@
         <script src="{{ site.url }}/components/highlightjs/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
+        <script src="/js/theme.js"></script>
         <script src="https://www.wyrihaximus.net/wyri_haximus/ratchet/js/client.js"></script>
         <script>;window.config=window.config||{};window.config.WyriHaximus=window.config.WyriHaximus||{};window.config.WyriHaximus.Ratchet=window.config.WyriHaximus.Ratchet||{};window.config.WyriHaximus.Ratchet.header={"realm":"header","url":"wss:\/\/www.wyrihaximus.net\/ws\/"};window.config.WyriHaximus.Ratchet.header.onchallenge=function(n,i,t){try{if(i==="jwt"){return new Promise(function(e,n){var i=new XMLHttpRequest();i.addEventListener("load",function(){e(JSON.parse(this.responseText).token)});i.open("GET","https://www.wyrihaximus.net/wyri_haximus/ratchet/j-w-t/token.json?realm=header");i.send()})};throw"don't know how to authenticate using '"+i+"'"}catch(e){console.log(e);throw e}};window.config.WyriHaximus.Ratchet.header.authmethods=["jwt"];window.WyriHaximus=window.WyriHaximus||{};window.WyriHaximus.Ratchet=window.WyriHaximus.Ratchet||{};window.WyriHaximus.Ratchet.header=new persistentAutobahn.PersistentAutobahn(window.config.WyriHaximus.Ratchet.header);</script>
         <script src="https://www.wyrihaximus.net/js/init.js"></script>
