@@ -102,6 +102,17 @@
         return readStoredTheme();
     }
 
+    function applyHighlightTheme(resolved) {
+        var light = document.getElementById('hljs-theme-light');
+        var dark = document.getElementById('hljs-theme-dark');
+        if (!light || !dark) {
+            return;
+        }
+
+        light.media = resolved === 'dark' ? 'not all' : 'all';
+        dark.media = resolved === 'dark' ? 'all' : 'not all';
+    }
+
     function apply(pref) {
         var root = document.documentElement;
         if (pref === 'system') {
@@ -119,6 +130,8 @@
         if (meta) {
             meta.setAttribute('content', resolved === 'dark' ? '#121614' : '#1abc9c');
         }
+
+        applyHighlightTheme(resolved);
 
         var button = document.getElementById('theme-toggle');
         if (!button) {

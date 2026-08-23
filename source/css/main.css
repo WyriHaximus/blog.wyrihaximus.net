@@ -346,17 +346,37 @@ bt {
 	color: var(--color-brand);
 }
 
-/* Dark mode: code blocks and syntax highlighting */
+/* Dark mode: Bootstrap inline code + pre chrome (highlight themes swapped in HTML) */
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) pre,
-    :root:not([data-theme="light"]) pre code.hljs {
-        background-color: var(--color-bg-card);
-        color: var(--color-text);
+    :root:not([data-theme="light"]) :not(pre) > code {
+        color: #f0a8bc;
+        background-color: #2a3230;
+    }
+
+    :root:not([data-theme="light"]) pre {
+        background-color: #1e2421;
+        border-color: #2c3330;
+        color: #abb2bf;
+    }
+
+    :root:not([data-theme="light"]) pre code {
+        color: inherit;
+        background-color: transparent;
     }
 }
 
-:root[data-theme="dark"] pre,
-:root[data-theme="dark"] pre code.hljs {
-    background-color: var(--color-bg-card);
-    color: var(--color-text);
+:root[data-theme="dark"] :not(pre) > code {
+    color: #f0a8bc;
+    background-color: #2a3230;
+}
+
+:root[data-theme="dark"] pre {
+    background-color: #1e2421;
+    border-color: #2c3330;
+    color: #abb2bf;
+}
+
+:root[data-theme="dark"] pre code {
+    color: inherit;
+    background-color: transparent;
 }

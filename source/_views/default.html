@@ -51,7 +51,27 @@
         <link rel="apple-touch-icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
         <link rel="apple-touch-icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
 
-        <link rel="stylesheet" href="{{ site.url }}/components/highlightjs/styles/xcode.css" />
+        <link rel="stylesheet" href="/css/highlightjs-xcode.css" id="hljs-theme-light" />
+        <link rel="stylesheet" href="/css/highlightjs-atom-one-dark.css" id="hljs-theme-dark" media="not all" />
+        <script>
+            (function () {
+                try {
+                    var theme = document.documentElement.getAttribute('data-theme');
+                    if (theme !== 'light' && theme !== 'dark') {
+                        theme = null;
+                    }
+                    var resolved = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                        ? 'dark'
+                        : 'light';
+                    var light = document.getElementById('hljs-theme-light');
+                    var dark = document.getElementById('hljs-theme-dark');
+                    if (light && dark) {
+                        light.media = resolved === 'dark' ? 'not all' : 'all';
+                        dark.media = resolved === 'dark' ? 'all' : 'not all';
+                    }
+                } catch (e) {}
+            })();
+        </script>
         <link href="{{ site.url }}/css/fontawesome.css" rel="stylesheet">
         <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/atom.xml" title="{{ site.title }} activity feed" />
         {% block metaTags %}
