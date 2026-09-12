@@ -1,0 +1,34 @@
+name: Release Management
+on:
+  pull_request:
+    types:
+      - opened
+      - labeled
+      - unlabeled
+      - synchronize
+      - reopened
+  milestone:
+    types:
+      - closed
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  packages: write
+jobs:
+  release-management:
+    name: Release Management
+    secrets: inherit
+    uses: WyriHaximus/github-workflows/.github/workflows/project-release-management.yaml@v1.0.1
+    with:
+      milestone: ${{ github.event.milestone.title }}
+      description: ${{ github.event.milestone.description }}
+      type: cdn
+      applicationType: commands
+      commands: make generate
+      commandsOutputPath: output_prod
+      awsAccessKeyIDSecret: AWS_KEY
+      awsSecretAccessKeySecret: AWS_SECRET
+      awsRegionSecret: AWS_REGION
+      awsEndpointUrlSecret: CDN_HOSTED_S3_ENDPOINT
+      cdnAwsS3BucketSecret: CDN_HOSTED_S3_BUCKET
