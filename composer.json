@@ -4,7 +4,7 @@
         "wyrihaximus/html-compress-sculpin": "^1.0",
         "cocur/slugify": "@stable",
 
-        "components/bootstrap": "^4.6.0",
+        "components/bootstrap": "^4.6.2",
         "components/jquery": "^3.6.0",
         "components/highlightjs": "9.16.2"
     },
